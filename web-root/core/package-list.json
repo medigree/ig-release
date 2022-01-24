@@ -1,0 +1,16 @@
+﻿{
+  "package-id": "hl7.fhir.be.core",
+  "title": "HL7 FHIR Implementation Guide: Example IG Release 1 - US Realm | STU1",
+  "canonical": "http://hl7belgium.org/profiles/fhir/core",
+  "introduction": "intro text",
+  "category": "test",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build",
+      "path": "http://localhost/",
+      "status": "ci-build",
+      "current": true
+    }
+  ]
+}
