@@ -1,6 +1,6 @@
 ﻿{
   "package-id": "hl7.fhir.be.core",
-  "title": "HL7 FHIR Implementation Guide: Example IG Release 1 - US Realm | STU1",
+  "title": "HL7 Belgium FHIR Implementation Guide - Core profiles",
   "canonical": "http://hl7belgium.org/profiles/fhir/core",
   "introduction": "intro text",
   "category": "test",
