@@ -2173,8 +2173,8 @@
       "language": [
         "en"
       ],
-      "history": "https://hl7belgium.org/profiles/fhir/ig/dk-core/history.html",
-      "canonical": "https://hl7belgium.org/profiles/fhir/ig/dk-core",
+      "history": "http://hl7.dk/fhir/ig/dk-core/history.html",
+      "canonical": "http://hl7.dk/fhir/ig/dk-core",
       "ci-build": "http://build.fhir.org/ig/hl7dk/dk-core/index.html"
     },
     {
@@ -3956,7 +3956,57 @@
       ]
     },
     {
-      "name": "HL7 FHIR Implementation Guide: BE Core",
+      "name": "HL7 FHIR Implementation Guide: DK Core",
+      "category": "??",
+      "npm-name": "dk-core",
+      "description": "??",
+      "authority": "??",
+      "country": "??",
+      "history": "http://hl7.dk/fhir/dk-core/history.html",
+      "language": [
+        "en"
+      ],
+      "canonical": "http://hl7.dk/fhir/dk-core",
+      "ci-build": "http://localhost",
+      "editions": [
+        {
+          "name": "Release",
+          "ig-version": "1.1.0",
+          "package": "dk-core#1.1.0",
+          "fhir-version": [
+            "4.0.1"
+          ],
+          "url": "http://hl7.dk/fhir/dk-core/1.1.0"
+        }
+      ]
+    },
+    {
+      "name": "HL7 FHIR Implementation Guide: DK Core",
+      "category": "??",
+      "npm-name": "hl7.fhir.dk.core",
+      "description": "??",
+      "authority": "??",
+      "country": "??",
+      "history": "http://hl7.dk/fhir/dk-core/history.html",
+      "language": [
+        "en"
+      ],
+      "canonical": "http://hl7.dk/fhir/dk-core",
+      "ci-build": "http://localhost",
+      "editions": [
+        {
+          "name": "Release",
+          "ig-version": "1.1.1",
+          "package": "hl7.fhir.dk.core#1.1.1",
+          "fhir-version": [
+            "4.0.1"
+          ],
+          "url": "http://hl7.dk/fhir/dk-core/1.1.1"
+        }
+      ]
+    },
+    {
+      "name": "HL7 FHIR Implementation Guide: Example IG Release 1 - US Realm | STU1",
       "category": "test",
       "npm-name": "hl7.fhir.be.core",
       "description": "??",

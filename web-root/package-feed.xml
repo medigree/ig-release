@@ -5,20 +5,20 @@
     <description>New Packages published by HL7Belgium></description>
     <link>http://hl7belgium.org/profiles/fhir/package-feed.xml</link>
     <generator>HL7, Inc FHIR Publication tooling</generator>
-    <lastBuildDate>Mon, 24 Jan 2022 11:06:40 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jan 2022 09:10:58 GMT</lastBuildDate>
     <atom:link href="http://hl7belgium.org/profiles/fhir/package-feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Jan 2022 11:06:40</pubDate>
+    <pubDate>Tue, 25 Jan 2022 09:10:58</pubDate>
     <language>en></language>
     <ttl>600</ttl>
     <item>
       <title>hl7.fhir.be.core#0.0.1</title>
-      <description>Example IG exercises many of the fields in a SUSHI configuration. (built Mon, Jan 24, 2022 23:03+0100+01:00)</description>
+      <description>Example IG exercises many of the fields in a SUSHI configuration. (built Tue, Jan 25, 2022 09:10+0100+01:00)</description>
       <link>http://hl7belgium.org/profiles/fhir/core/0.0.1/package.tgz</link>
       <guid isPermaLink="true">http://hl7belgium.org/profiles/fhir/core/0.0.1/package.tgz</guid>
       <dc:creator>HL7Belgium</dc:creator>
       <fhir:version>4.0.1</fhir:version>
       <fhir:kind>fhir.ig</fhir:kind>
-      <pubDate>Mon, 24 Jan 2022 12:00:00 GMT</pubDate>
+      <pubDate>Tue, 25 Jan 2022 12:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,9 @@
     <description>New publications by HL7Belgium></description>
     <link>http://hl7belgium.org/profiles/fhir/package-feed.xml</link>
     <generator>HL7, Inc FHIR Publication tooling</generator>
-    <lastBuildDate>Mon, 24 Jan 2022 11:06:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jan 2022 09:10:58 GMT</lastBuildDate>
     <atom:link href="http://hl7belgium.org/profiles/fhir/package-feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Jan 2022 11:06:41</pubDate>
+    <pubDate>Tue, 25 Jan 2022 09:10:58</pubDate>
     <language>en></language>
     <ttl>600</ttl>
     <item>
@@ -18,7 +18,7 @@
       <dc:creator>HL7Belgium</dc:creator>
       <fhir:version>4.0.1</fhir:version>
       <fhir:kind>fhir.ig</fhir:kind>
-      <pubDate>Mon, 24 Jan 2022 12:00:00 GMT</pubDate>
+      <pubDate>Tue, 25 Jan 2022 12:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
