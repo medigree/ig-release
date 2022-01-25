@@ -1,0 +1,37 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/docs/sushi/configuration                     │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: hl7.fhir.dk.core
+canonical: http://hl7.dk/fhir/core
+name: DKCore
+title: "HL7 FHIR Implementation Guide: DK Core"
+description: A FHIR Implementation Guide for the Danish common needs across healthcare sectors
+status: draft
+version: 1.1.1
+fhirVersion: 4.0.1
+copyrightYear: 2021+
+license: CC0-1.0
+releaseLabel: ci-build
+publisher:
+  name: HL7 Denmark
+  url: http://www.hl7.dk
+  email: jenskristianvilladsen@gmail.com
+
+jurisdiction: urn:iso:std:iso:3166#DK "Denmark"
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+menu:
+   Table of Contents: toc.html
+   Home: index.html
+   Guidance: guidance.html
+   Profiles: profiles.html
+   Extensions: extensions.html
+   Terminology: terminology.html
+   Artifacts: artifacts.html
+   Downloads: downloads.html
+
+parameters:
+  show-inherited-invariants: false

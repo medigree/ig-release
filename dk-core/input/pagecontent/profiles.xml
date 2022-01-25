@@ -1,0 +1,26 @@
+<div
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+    <p>
+    The following profiles set the base expectations for interacting with a system adhering to the danish FHIR DK CORE Implementation Guide :
+  </p>
+    <div>
+    {% include list-profiles.xhtml %}
+  </div>
+  <br />
+    <p>
+  The following profiles for FHIR <b>datatypes</b> have been defined for this implementation guide.
+    </p>
+    <div>
+{% for sd_hash in site.data.structuredefinitions -%}
+  {%- assign sd = sd_hash[1] -%}
+  {%- if sd.kind  == "complex-type" and sd.type != "Extension" -%}
+
+        <li>
+            <a href="{{sd.path}}">{{sd.title}}</a>
+        </li>
+  {%- endif -%}
+{%- endfor -%}  
+
+    </div>
+</div>
