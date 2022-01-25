@@ -16,8 +16,8 @@
   <!-- Project extras -->
   <link href="assets-hist/css/project.css" rel="stylesheet"/>
   <link href="assets-hist/css/pygments-manni.css" rel="stylesheet"/>
-   <link href="jquery-ui.css" rel="stylesheet"/>  
-  <link rel="stylesheet" href="assets/css/openhie.css"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/hl7-be.css"/>
 
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets-hist/ico/apple-touch-icon-144-precomposed.png"/>
@@ -41,22 +41,20 @@
       padding-left: 3px;
     }
   </style>   
-
+  
 </head>
 <body onload="document.body.style.opacity='1'">
 
  <div id="segment-header" class="segment">  <!-- segment-header -->
   <div class="container">  <!-- container -->
   <div id="project-nav">
-    <a no-external="true" id="project-logo" href="http://ohie.org">
-      <img src="assets/images/home.png" alt="Project home" height="71"/>
-    </a>
+          <a no-external="true" id="hl7-logo" href="https://hl7-belgium.org">
+            <img src="assets/images/hl7be-logo-header.png" alt="HL7 Belgium" height="65"/>
+          </a>
   </div>
-
-  <!-- Right logo - for example the FHIR logo -->
-  <!-- Make sure you have authorization to use the FHIR logo -->
-  <div id="family-nav">
-    <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fire.png" alt="FHIR website" height="70"/> </a>
+  <div id="fhir-nav">
+    <a no-external="true" id="fhir-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/>
+    </a>
    </div>
    <div id="ig-status" style="font-size:24px;padding-top: 20px;">
 <b id="ig-title">[%title%]</b>
