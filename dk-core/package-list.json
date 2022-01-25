@@ -1,0 +1,26 @@
+﻿{
+  "package-id": "hl7.fhir.dk.core",
+  "title": "HL7 Denmark Belgium FHIR Implementation Guide - Core profiles",
+  "canonical": "http://hl7.dk/fhir/core",
+  "introduction": "intro text",
+  "category": "test",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build",
+      "path": "http://localhost/",
+      "status": "ci-build",
+      "current": true
+    },
+    {
+      "version": "1.1.1",
+      "date": "2022-01-24",
+      "desc": "First release",
+      "path": "http://hl7.dk/fhir/core/1.1.1",
+      "status": "trial-use",
+      "fhirversion": "4.0.1",
+      "current": true
+    }
+  ]
+}
+
