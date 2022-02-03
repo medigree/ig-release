@@ -1,0 +1,1 @@
+java -jar publisher.jar -go-publish -source hl7.fhir.be.core -destination web-root -registry ig-registry/fhir-ig-list.json -history ig-history
