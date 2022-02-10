@@ -4,6 +4,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.dk.core
 canonical: http://hl7.dk/fhir/core
+url: http://hl7.dk/fhir/core
 name: DKCore
 title: "HL7 FHIR Implementation Guide: DK Core"
 description: A FHIR Implementation Guide for the Danish common needs across healthcare sectors

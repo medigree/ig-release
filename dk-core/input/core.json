@@ -1,0 +1,473 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.dk.core",
+  "url": "http://hl7.dk/fhir/core",
+  "version": "1.1.1",
+  "name": "DKCore",
+  "title": "HL7 FHIR Implementation Guide: DK Core",
+  "status": "draft",
+  "publisher": "HL7 Denmark",
+  "contact": [
+    {
+      "name": "HL7 Denmark",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.dk"
+        },
+        {
+          "system": "email",
+          "value": "jenskristianvilladsen@gmail.com"
+        }
+      ]
+    }
+  ],
+  "description": "A FHIR Implementation Guide for the Danish common needs across healthcare sectors",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "DK",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Denmark"
+        }
+      ]
+    }
+  ],
+  "packageId": "hl7.fhir.dk.core",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-authorization-identifier"
+        },
+        "name": "Danish Health Professionals Authorization Identifier",
+        "description": "Identifier holding the official [authorization identifier](https://en.stps.dk/en/health-professionals-and-authorities/online-register-registered-health-professionals/) for a practitioner.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-cvr-identifier"
+        },
+        "name": "Danish Central Business Register (CVR) Identifier",
+        "description": "Identifier holding a danish [CVR](https://datacvr.virk.dk/data/) number.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-cpr-identifier"
+        },
+        "name": "Danish Central Person Register (CPR) Identifier",
+        "description": "This structure holds the danish [CPR](https://cpr.dk/) identifier",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-organization"
+        },
+        "name": "Danish Core Organization Profile",
+        "description": "HL7 Denmark core profile for a danish health organization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-patient"
+        },
+        "name": "Danish Core Patient Profile",
+        "description": "HL7 Denmark core profile for a patient",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-practitioner"
+        },
+        "name": "Danish Core Practitioner Profile",
+        "description": "HL7 Denmark core profile for health professionals and other actors relevant in citizen and patient pathways",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-gln-identifier"
+        },
+        "name": "GLN Identifier",
+        "description": "Identifier holding a 13 digit GLN",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-kombit-org-identifier"
+        },
+        "name": "Kombit Org Identifier",
+        "description": "Identifier holding the organization code issued by KOMBIT",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lpr3-Identifier"
+        },
+        "name": "LPR3 Identifier",
+        "description": "Identifier holding a LPR3 identifier for an organization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-sor-identifier"
+        },
+        "name": "SOR Identifier",
+        "description": "Identifier holding the official SOR identifier for a danish healthcare organization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-municipalityCodes"
+        },
+        "name": "Danish Core Municipality codes",
+        "description": "Identifier holding the official identifier for a danish municipality",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dk-core-RegionalSubDivisionCodes"
+        },
+        "name": "Danish Core Regional Sub Division Codes Extension",
+        "description": "Identifier holding the official organization identifier for a danish region",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/DkCoreProfessionGroupValueSet"
+        },
+        "name": "dk-profession-group-valueset",
+        "description": "DK Profession Group codes",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/dk-core-cpr-identifier-system"
+        },
+        "name": "CPR Identifier",
+        "description": "This value set defines the set of codes that can be used to identify the danish CPR system.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/dk-core-MunicipalityCodes"
+        },
+        "name": "MunicipalityCodes",
+        "description": "Municipality codes used in Denmark",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/dk-core-RegionalSubDivisionCodes"
+        },
+        "name": "RegionalSubdivisionCodes",
+        "description": "Subdivision codes (Regional codes) used in Denmark",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/dk-core-cpr-identifier-system"
+        },
+        "name": "DkCoreCprIdentifierSystem",
+        "description": "Official CPR CodeSystem",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/DkCoreProfessionGroupCodes"
+        },
+        "name": "dk-profession-groups-codes",
+        "description": "DK health ProfessionGroup codes as defined by https://www.retsinformation.dk/eli/lta/2019/731, and derived from http://autregwebservice.sst.dk/autregservice.asmx/GetAllProfessionGroups. Code (5176) was not uniqe, and have been converted to 5176a and 5176b",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/283"
+        },
+        "name": "Example of valid patient with full address",
+        "description": "Example of valid patient with full address",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/AbrahamLaege"
+        },
+        "name": "AbrahamLæge",
+        "description": "Eksempel på lægen Abraham fra akutsygeplejen",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-practitioner"
+      },
+      {
+        "reference": {
+          "reference": "Organization/CenterForDiabetes"
+        },
+        "name": "Center for Diabetes",
+        "description": "Center for Diabetes",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization"
+      },
+      {
+        "reference": {
+          "reference": "Organization/CenterForDiabetesTeamDiabetes"
+        },
+        "name": "Center for Diabetes Team Diabetes",
+        "description": "Center for Diabetes Team Diabetes",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization"
+      },
+      {
+        "reference": {
+          "reference": "Organization/CenterForDiabetesTeamHjerte"
+        },
+        "name": "Center for Diabetes Team Hjerte",
+        "description": "Center for Diabetes Team Hjerte",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization"
+      },
+      {
+        "reference": {
+          "reference": "Organization/CenterForDiabetesTeamKvalitet"
+        },
+        "name": "Center for Diabetes Team Kvalitet",
+        "description": "Center for Diabetes Team Kvalitet",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization"
+      },
+      {
+        "reference": {
+          "reference": "Patient/Confidential"
+        },
+        "name": "Example of a patient with confidential adress and name",
+        "description": "Example of a patient with confidential adress and name",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/HanneSocialraadgiver"
+        },
+        "name": "HanneSocialrådgiver",
+        "description": "Eksempel på socialrådgiveren Hanne",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-practitioner"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/administrative-gender-supplement"
+        },
+        "name": "administrative-gender-supplement",
+        "description": "CodeSystem supplement with danish translations for administrative gender",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Organization/b08997bb-4476-4dd0-84dd-2e297f809364"
+        },
+        "name": "MedCom Test Organization",
+        "description": "MedCom Test Organization with SOR id",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization"
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/cpr"
+        },
+        "name": "cpr",
+        "description": "The Danish civil registration system (\"CPR\") encompasses basic personal data about anyone with a civil registration number. A civil registration number shall be allocated to anyone who: 1) is registered in the national register in Denmark on the grounds of birth or relocation from abroad; 2) is included under Arbejdsmarkedets TillægsPension (ATP); 3) according to the tax authorities, is required to have a civil registration number for the purpose of tax processing in Denmark.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/dk-core-municipality-codes"
+        },
+        "name": "dk-core-municipality-codes",
+        "description": "Municipality codes as defined by https://danmarksadresser.dk/adressedata/kodelister/kommunekodeliste/ and https://sundhedsdatastyrelsen.dk/-/media/sds/filer/rammer-og-retningslinjer/patientregistrering/relaterede/kommuneklassifikation.pdf",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/dk-core-municipality-codes-greenland"
+        },
+        "name": "dk-core-municipality-codes-greenland",
+        "description": "Greenland municipality codes as defined by https://www.iso.org/obp/ui/#iso:code:3166:GL and https://cpr.dk/cpr-systemet/kommunesammenlaegninger-opdeling/groenland-2018/",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/dk-core-regional-subdivision-codes"
+        },
+        "name": "dk-core-regional-subdivision-codes",
+        "description": "Subdivision codes (Regional codes) used in Denmark as found on https://www.iso.org/obp/ui/#iso:code:3166:DK",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/dk-marital-status"
+        },
+        "name": "dk-marital-status-of-CodeSystem",
+        "description": "DK marital statuses",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/dk-marital-status"
+        },
+        "name": "DK MaritalStatus",
+        "description": "This value set defines the set of codes that can be used to indicate the marital status of a person in Denmark.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/john"
+        },
+        "name": "Example of valid patient with multiple names",
+        "description": "Example of valid patient with multiple names",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/mogensen"
+        },
+        "name": "Example of valid patient with danish marital status",
+        "description": "Example of valid patient with danish marital status",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/sor"
+        },
+        "name": "sor",
+        "description": "SOR is provided by the Danish Health Data Authority under the Danish Ministry of Health. The register holds organizations within the Danish health sector, their geographical and virtual addresses as well as codes for their identification and for EDI-communication. Danish Health Data Authority is responsible for issuing and publishing codes to identify organizations across health care sectors and related public and private services. SOR includes organizational data on hospitals, the primary care sector (physiotherapists, general practitioners, dentists etc.) and municipal health service organizations as well as non-health care organizations that need to be able to receive data from the former.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/ukendt"
+        },
+        "name": "Example of valid patient unknown identifier registry",
+        "description": "Example of valid patient unknown identifier registry. The patient is a 'John Doe' with an Identifier from an unofficial register",
+        "exampleCanonical": "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/address-type-dk-supplement"
+        },
+        "description": "The type of an address (physical / postal)",
+        "exampleBoolean": false,
+        "name": "AddressType"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/address-use-dk-supplement"
+        },
+        "description": "The use of an address",
+        "exampleBoolean": false,
+        "name": "AddressUse"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/care-team-status-dk-supplement"
+        },
+        "description": "Indicates the status of the care team.",
+        "exampleBoolean": false,
+        "name": "CareTeamStatus"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/consent-state-codes-dk-supplement"
+        },
+        "description": "Indicates the state of the consent",
+        "exampleBoolean": false,
+        "name": "ConsentState"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/days-of-week-dk-supplement"
+        },
+        "description": "The days of the week.",
+        "exampleBoolean": false,
+        "name": "DaysOfWeek"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/episode-of-care-status-dk-supplement"
+        },
+        "description": "The status of the episode of care.",
+        "exampleBoolean": false,
+        "name": "EpisodeOfCareStatus"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/publication-status-dk-supplement"
+        },
+        "description": "The lifecycle status of a Value Set or Concept Map.",
+        "exampleBoolean": false,
+        "name": "PublicationStatus"
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/request-status-dk-supplement"
+        },
+        "description": "Codes identifying the stage lifecycle stage of a request",
+        "exampleBoolean": false,
+        "name": "RequestStatus"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/sor-organization-type"
+        },
+        "description": "Value set used for indicating the organization type for organizations from SOR",
+        "exampleBoolean": false,
+        "name": "SorOrganizationType"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "extensions.html",
+          "title": "Extensions",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "guidance.html",
+          "title": "Guidance",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "profiles.html",
+          "title": "Profiles",
+          "generation": "html"
+        },
+        {
+          "nameUrl": "terminology.html",
+          "title": "Terminology",
+          "generation": "html"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2021+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      }
+    ]
+  }
+}
