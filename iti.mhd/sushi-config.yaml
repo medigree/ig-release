@@ -8,7 +8,7 @@ name: IHE_MHD
 version: 4.0.3
 fhirVersion: 4.0.1
 status: active
-package: ihe.iti.mhd
+packageId: ihe.ITI.MHD
 title: "Mobile access to Health Documents (MHD)"
 description: ImplementationGuide for IHE IT Infrastructure Technical Framework Supplement Mobile access to Health Documents (MHD) Rev. 4.0.1 normative
 copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
