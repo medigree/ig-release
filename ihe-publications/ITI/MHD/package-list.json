@@ -1,9 +1,9 @@
 ﻿{
-  "package-id": "hl7.fhir.be.core",
+  "package-id": "ihe.ITI.MHD",
   "title": "IHE ITI MHD",
-  "canonical": "https://ihe.net/profiles/ITI/MHD",
+  "canonical": "https://profiles.ihe.net/ITI/MHD",
   "introduction": "intro text",
-  "category": "test",
+  "category": "EHR Access",
   "list": [
     {
       "version": "current",
