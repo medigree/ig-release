@@ -10,7 +10,7 @@
 id: core
 packageId: hl7.fhir.be.core
 canonical: http://hl7belgium.org/profiles/fhir/core
-url: http://hl7belgium.org/profiles/fhir/core/ImplementationGuide/core
+url: http://hl7belgium.org/profiles/fhir/core
 name: ExampleIG
 title: "HL7 FHIR Implementation Guide: Example IG Release 1 - US Realm | STU1"
 description: Example IG exercises many of the fields in a SUSHI configuration.
