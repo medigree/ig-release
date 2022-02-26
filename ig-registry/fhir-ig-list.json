@@ -4018,17 +4018,7 @@
       ],
       "canonical": "http://hl7belgium.org/profiles/fhir/core",
       "ci-build": "http://localhost",
-      "editions": [
-        {
-          "name": "Trial Use Ballot",
-          "ig-version": "0.0.1",
-          "package": "hl7.fhir.be.core#0.0.1",
-          "fhir-version": [
-            "4.0.1"
-          ],
-          "url": "http://hl7belgium.org/profiles/fhir/core/0.0.1"
-        }
-      ]
+      "editions": []
     }
   ]
 }
