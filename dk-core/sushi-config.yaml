@@ -2,7 +2,8 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration                     │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.dk.core
+id: core
+packageId: hl7.fhir.dk.core
 canonical: http://hl7.dk/fhir/core
 url: http://hl7.dk/fhir/core
 name: DKCore
