@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="DkCoreProfessionGroupValueSet"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include all codes defined in <a href="CodeSystem-DkCoreProfessionGroupCodes.html"><code>http://hl7.dk/fhir/core/CodeSystem/DkCoreProfessionGroupCodes</code></a></li></ul></div>
+  </text>
+  <url value="http://hl7.dk/fhir/core/ValueSet/DkCoreProfessionGroupValueSet"/>
+  <version value="1.1.1"/>
+  <name value="DkCoreProfessionGroupValueSet"/>
+  <title value="dk-profession-group-valueset"/>
+  <status value="active"/>
+  <date value="2022-07-19T14:34:29+01:00"/>
+  <publisher value="HL7 Denmark"/>
+  <contact>
+    <name value="HL7 Denmark"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.dk"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="jenskristianvilladsen@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="DK Profession Group codes"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://hl7.dk/fhir/core/CodeSystem/DkCoreProfessionGroupCodes"/>
+    </include>
+  </compose>
+</ValueSet>

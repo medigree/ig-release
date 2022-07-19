@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.FHIR.DK.CORE\Artifacts Summary - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7-dk.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.hl7.dk">
+            <img height="50" alt="Visit the HL7 Danish website" src="assets/images/HL7_Denmark.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>        
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HL7 FHIR Implementation Guide: DK Core</span>
+            <br/>
+            <span style="display:inline-block;">1.1.1 - ci-build
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="extensions.html">Extensions</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the HL7 Denmark Belgium FHIR Implementation Guide - Core profiles (v1.1.1: Trial Use Ballot 1) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. .  For a full list of available versions, see the <a href="http://hl7.dk/fhir/core/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <h2>Artifacts Summary</h2>
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated and any changes made will be overwritten--><div xmlns:html="http://www.w3.org/1999/xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#2">Structures: Data Type Profiles</a>
+      </li>
+      <li>
+         <a href="#3">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#4">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#5">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#6">Terminology: Naming Systems</a>
+      </li>
+      <li>
+         <a href="#7">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns:html="http://www.w3.org/1999/xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Structures: Resource Profiles </h3>
+   <p>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-organization.html"
+                     title="StructureDefinition/dk-core-organization">Danish Core Organization Profile</a>
+               </td>
+               <td>
+<p>HL7 Denmark core profile for a danish health organization</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-patient.html"
+                     title="StructureDefinition/dk-core-patient">Danish Core Patient Profile</a>
+               </td>
+               <td>
+<p>HL7 Denmark core profile for a patient</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-practitioner.html"
+                     title="StructureDefinition/dk-core-practitioner">Danish Core Practitioner Profile</a>
+               </td>
+               <td>
+<p>HL7 Denmark core profile for health professionals and other actors relevant in citizen and patient pathways</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="2"> </a>
+   <h3>Structures: Data Type Profiles </h3>
+   <p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-authorization-identifier.html"
+                     title="StructureDefinition/dk-core-authorization-identifier">Danish Health Professionals Authorization Identifier</a>
+               </td>
+               <td>
+<p>Identifier holding the official <a href="https://en.stps.dk/en/health-professionals-and-authorities/online-register-registered-health-professionals/">authorization identifier</a> for a practitioner.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-cvr-identifier.html"
+                     title="StructureDefinition/dk-core-cvr-identifier">Danish Central Business Register (CVR) Identifier</a>
+               </td>
+               <td>
+<p>Identifier holding a danish <a href="https://datacvr.virk.dk/data/">CVR</a> number.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-cpr-identifier.html"
+                     title="StructureDefinition/dk-core-cpr-identifier">Danish Central Person Register (CPR) Identifier</a>
+               </td>
+               <td>
+<p>This structure holds the danish <a href="https://cpr.dk/">CPR</a> identifier</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-gln-identifier.html"
+                     title="StructureDefinition/dk-core-gln-identifier">GLN Identifier</a>
+               </td>
+               <td>
+<p>Identifier holding a 13 digit GLN</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-kombit-org-identifier.html"
+                     title="StructureDefinition/dk-core-kombit-org-identifier">Kombit Org Identifier</a>
+               </td>
+               <td>
+<p>Identifier holding the organization code issued by KOMBIT</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-lpr3-Identifier.html"
+                     title="StructureDefinition/lpr3-Identifier">LPR3 Identifier</a>
+               </td>
+               <td>
+<p>Identifier holding a LPR3 identifier for an organization</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-sor-identifier.html"
+                     title="StructureDefinition/dk-core-sor-identifier">SOR Identifier</a>
+               </td>
+               <td>
+<p>Identifier holding the official SOR identifier for a danish healthcare organization</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="3"> </a>
+   <h3>Structures: Extension Definitions </h3>
+   <p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-municipalityCodes.html"
+                     title="StructureDefinition/dk-core-municipalityCodes">Danish Core Municipality codes</a>
+               </td>
+               <td>
+<p>Identifier holding the official identifier for a danish municipality</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-dk-core-RegionalSubDivisionCodes.html"
+                     title="StructureDefinition/dk-core-RegionalSubDivisionCodes">Danish Core Regional Sub Division Codes Extension</a>
+               </td>
+               <td>
+<p>Identifier holding the official organization identifier for a danish region</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="4"> </a>
+   <h3>Terminology: Value Sets </h3>
+   <p>
+    <p>These define sets of codes used by systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-DkCoreProfessionGroupValueSet.html"
+                     title="ValueSet/DkCoreProfessionGroupValueSet">dk-profession-group-valueset</a>
+               </td>
+               <td>
+<p>DK Profession Group codes</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-dk-core-cpr-identifier-system.html"
+                     title="ValueSet/dk-core-cpr-identifier-system">CPR Identifier</a>
+               </td>
+               <td>
+<p>This value set defines the set of codes that can be used to identify the danish CPR system.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-dk-core-MunicipalityCodes.html"
+                     title="ValueSet/dk-core-MunicipalityCodes">MunicipalityCodes</a>
+               </td>
+               <td>
+<p>Municipality codes used in Denmark</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-dk-core-RegionalSubDivisionCodes.html"
+                     title="ValueSet/dk-core-RegionalSubDivisionCodes">RegionalSubdivisionCodes</a>
+               </td>
+               <td>
+<p>Subdivision codes (Regional codes) used in Denmark</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-dk-marital-status.html"
+                     title="ValueSet/dk-marital-status">DK MaritalStatus</a>
+               </td>
+               <td>
+<p>This value set defines the set of codes that can be used to indicate the marital status of a person in Denmark.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-sor-organization-type.html"
+                     title="ValueSet/sor-organization-type">SorOrganizationType</a>
+               </td>
+               <td>
+<p>Value set used for indicating the organization type for organizations from SOR</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="5"> </a>
+   <h3>Terminology: Code Systems </h3>
+   <p>
+    <p>These define new code systems used by systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-dk-core-cpr-identifier-system.html"
+                     title="CodeSystem/dk-core-cpr-identifier-system">DkCoreCprIdentifierSystem</a>
+               </td>
+               <td>
+<p>Official CPR CodeSystem</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-DkCoreProfessionGroupCodes.html"
+                     title="CodeSystem/DkCoreProfessionGroupCodes">dk-profession-groups-codes</a>
+               </td>
+               <td>
+<p>DK health ProfessionGroup codes as defined by https://www.retsinformation.dk/eli/lta/2019/731, and derived from http://autregwebservice.sst.dk/autregservice.asmx/GetAllProfessionGroups. Code (5176) was not uniqe, and have been converted to 5176a and 5176b</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-administrative-gender-supplement.html"
+                     title="CodeSystem/administrative-gender-supplement">administrative-gender-supplement</a>
+               </td>
+               <td>
+<p>CodeSystem supplement with danish translations for administrative gender</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-dk-core-municipality-codes.html"
+                     title="CodeSystem/dk-core-municipality-codes">dk-core-municipality-codes</a>
+               </td>
+               <td>
+<p>Municipality codes as defined by https://danmarksadresser.dk/adressedata/kodelister/kommunekodeliste/ and https://sundhedsdatastyrelsen.dk/-/media/sds/filer/rammer-og-retningslinjer/patientregistrering/relaterede/kommuneklassifikation.pdf</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-dk-core-municipality-codes-greenland.html"
+                     title="CodeSystem/dk-core-municipality-codes-greenland">dk-core-municipality-codes-greenland</a>
+               </td>
+               <td>
+<p>Greenland municipality codes as defined by https://www.iso.org/obp/ui/#iso:code:3166:GL and https://cpr.dk/cpr-systemet/kommunesammenlaegninger-opdeling/groenland-2018/</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-dk-core-regional-subdivision-codes.html"
+                     title="CodeSystem/dk-core-regional-subdivision-codes">dk-core-regional-subdivision-codes</a>
+               </td>
+               <td>
+<p>Subdivision codes (Regional codes) used in Denmark as found on https://www.iso.org/obp/ui/#iso:code:3166:DK</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-dk-marital-status.html"
+                     title="CodeSystem/dk-marital-status">dk-marital-status-of-CodeSystem</a>
+               </td>
+               <td>
+<p>DK marital statuses</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-address-type-dk-supplement.html"
+                     title="CodeSystem/address-type-dk-supplement">AddressType</a>
+               </td>
+               <td>
+<p>The type of an address (physical / postal)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-address-use-dk-supplement.html"
+                     title="CodeSystem/address-use-dk-supplement">AddressUse</a>
+               </td>
+               <td>
+<p>The use of an address</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-care-team-status-dk-supplement.html"
+                     title="CodeSystem/care-team-status-dk-supplement">CareTeamStatus</a>
+               </td>
+               <td>
+<p>Indicates the status of the care team.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-consent-state-codes-dk-supplement.html"
+                     title="CodeSystem/consent-state-codes-dk-supplement">ConsentState</a>
+               </td>
+               <td>
+<p>Indicates the state of the consent</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-days-of-week-dk-supplement.html"
+                     title="CodeSystem/days-of-week-dk-supplement">DaysOfWeek</a>
+               </td>
+               <td>
+<p>The days of the week.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-episode-of-care-status-dk-supplement.html"
+                     title="CodeSystem/episode-of-care-status-dk-supplement">EpisodeOfCareStatus</a>
+               </td>
+               <td>
+<p>The status of the episode of care.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-publication-status-dk-supplement.html"
+                     title="CodeSystem/publication-status-dk-supplement">PublicationStatus</a>
+               </td>
+               <td>
+<p>The lifecycle status of a Value Set or Concept Map.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-request-status-dk-supplement.html"
+                     title="CodeSystem/request-status-dk-supplement">RequestStatus</a>
+               </td>
+               <td>
+<p>Codes identifying the stage lifecycle stage of a request</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="6"> </a>
+   <h3>Terminology: Naming Systems </h3>
+   <p>
+    <p>These define identifier and/or code system identities used by systems conforming to this implementation guide</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="NamingSystem-cpr.html" title="NamingSystem/cpr">cpr</a>
+               </td>
+               <td>
+<p>The Danish civil registration system (“CPR”) encompasses basic personal data about anyone with a civil registration number. A civil registration number shall be allocated to anyone who: 1) is registered in the national register in Denmark on the grounds of birth or relocation from abroad; 2) is included under Arbejdsmarkedets TillægsPension (ATP); 3) according to the tax authorities, is required to have a civil registration number for the purpose of tax processing in Denmark.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="NamingSystem-sor.html" title="NamingSystem/sor">sor</a>
+               </td>
+               <td>
+<p>SOR is provided by the Danish Health Data Authority under the Danish Ministry of Health. The register holds organizations within the Danish health sector, their geographical and virtual addresses as well as codes for their identification and for EDI-communication. Danish Health Data Authority is responsible for issuing and publishing codes to identify organizations across health care sectors and related public and private services. SOR includes organizational data on hospitals, the primary care sector (physiotherapists, general practitioners, dentists etc.) and municipal health service organizations as well as non-health care organizations that need to be able to receive data from the former.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="7"> </a>
+   <h3>Example: Example Instances </h3>
+   <p>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-283.html" title="Patient/283">Example of valid patient with full address</a>
+               </td>
+               <td>
+<p>Example of valid patient with full address</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-AbrahamLaege.html" title="Practitioner/AbrahamLaege">AbrahamLæge</a>
+               </td>
+               <td>
+<p>Eksempel på lægen Abraham fra akutsygeplejen</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-CenterForDiabetes.html"
+                     title="Organization/CenterForDiabetes">Center for Diabetes</a>
+               </td>
+               <td>
+<p>Center for Diabetes</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-CenterForDiabetesTeamDiabetes.html"
+                     title="Organization/CenterForDiabetesTeamDiabetes">Center for Diabetes Team Diabetes</a>
+               </td>
+               <td>
+<p>Center for Diabetes Team Diabetes</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-CenterForDiabetesTeamHjerte.html"
+                     title="Organization/CenterForDiabetesTeamHjerte">Center for Diabetes Team Hjerte</a>
+               </td>
+               <td>
+<p>Center for Diabetes Team Hjerte</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-CenterForDiabetesTeamKvalitet.html"
+                     title="Organization/CenterForDiabetesTeamKvalitet">Center for Diabetes Team Kvalitet</a>
+               </td>
+               <td>
+<p>Center for Diabetes Team Kvalitet</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-Confidential.html" title="Patient/Confidential">Example of a patient with confidential adress and name</a>
+               </td>
+               <td>
+<p>Example of a patient with confidential adress and name</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-HanneSocialraadgiver.html"
+                     title="Practitioner/HanneSocialraadgiver">HanneSocialrådgiver</a>
+               </td>
+               <td>
+<p>Eksempel på socialrådgiveren Hanne</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-b08997bb-4476-4dd0-84dd-2e297f809364.html"
+                     title="Organization/b08997bb-4476-4dd0-84dd-2e297f809364">MedCom Test Organization</a>
+               </td>
+               <td>
+<p>MedCom Test Organization with SOR id</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-john.html" title="Patient/john">Example of valid patient with multiple names</a>
+               </td>
+               <td>
+<p>Example of valid patient with multiple names</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-mogensen.html" title="Patient/mogensen">Example of valid patient with danish marital status</a>
+               </td>
+               <td>
+<p>Example of valid patient with danish marital status</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-ukendt.html" title="Patient/ukendt">Example of valid patient unknown identifier registry</a>
+               </td>
+               <td>
+<p>Example of valid patient unknown identifier registry. The patient is a ‘John Doe’ with an Identifier from an unofficial register</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.dk">HL7 Denmark</a>.  Package hl7.fhir.dk.core#1.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 19, 2022 14:34+0100">2022-07-19</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

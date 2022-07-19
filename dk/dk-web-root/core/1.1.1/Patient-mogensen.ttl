@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.dk/fhir/core/Patient/mogensen> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "mogensen"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient";
+       fhir:index 0;
+       fhir:link <http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Jan Mogensen (OFFICIAL)</b> male, DoB: 1964-12-11 ( id: 1112640001)</p></div>"
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.208.176.1.2" ];
+     fhir:Identifier.value [ fhir:value "1112640001" ]
+  ];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.family [ fhir:value "Mogensen" ];
+     fhir:HumanName.given [
+       fhir:value "Jan";
+       fhir:index 0
+     ];
+     fhir:HumanName.prefix [
+       fhir:value "Mr";
+       fhir:index 0
+     ]
+  ];
+  fhir:Patient.gender [ fhir:value "male"];
+  fhir:Patient.birthDate [ fhir:value "1964-12-11"^^xsd:date];
+  fhir:Patient.maritalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.dk/fhir/core/CodeSystem/dk-marital-status" ];
+       fhir:Coding.code [ fhir:value "P" ];
+       fhir:Coding.display [ fhir:value "Registreret partnerskab" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.dk/fhir/core/Patient/mogensen.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

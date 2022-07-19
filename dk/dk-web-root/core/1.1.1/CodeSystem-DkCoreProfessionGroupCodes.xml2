@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="DkCoreProfessionGroupCodes"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This code system http://hl7.dk/fhir/core/CodeSystem/DkCoreProfessionGroupCodes defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">C511<a name="DkCoreProfessionGroupCodes-C511"> </a></td><td>Ambulancebehandler</td></tr><tr><td style="white-space:nowrap">9495<a name="DkCoreProfessionGroupCodes-9495"> </a></td><td>Bandagist</td></tr><tr><td style="white-space:nowrap">B511<a name="DkCoreProfessionGroupCodes-B511"> </a></td><td>Behandlerfarmaceut</td></tr><tr><td style="white-space:nowrap">5159<a name="DkCoreProfessionGroupCodes-5159"> </a></td><td>Bioanalytiker</td></tr><tr><td style="white-space:nowrap">5153<a name="DkCoreProfessionGroupCodes-5153"> </a></td><td>Ergoterapeut</td></tr><tr><td style="white-space:nowrap">5155<a name="DkCoreProfessionGroupCodes-5155"> </a></td><td>Fodterapeut</td></tr><tr><td style="white-space:nowrap">5151<a name="DkCoreProfessionGroupCodes-5151"> </a></td><td>Fysioterapeut</td></tr><tr><td style="white-space:nowrap">5175<a name="DkCoreProfessionGroupCodes-5175"> </a></td><td>Jordemoder</td></tr><tr><td style="white-space:nowrap">5265<a name="DkCoreProfessionGroupCodes-5265"> </a></td><td>Kiropraktor</td></tr><tr><td style="white-space:nowrap">5451<a name="DkCoreProfessionGroupCodes-5451"> </a></td><td>Klinisk diætist</td></tr><tr><td style="white-space:nowrap">5432<a name="DkCoreProfessionGroupCodes-5432"> </a></td><td>Klinisk tandtekniker</td></tr><tr><td style="white-space:nowrap">5176a<a name="DkCoreProfessionGroupCodes-5176a"> </a></td><td>Kontaktlinseoptiker</td></tr><tr><td style="white-space:nowrap">7170<a name="DkCoreProfessionGroupCodes-7170"> </a></td><td>Læge</td></tr><tr><td style="white-space:nowrap">4498<a name="DkCoreProfessionGroupCodes-4498"> </a></td><td>Optiker</td></tr><tr><td style="white-space:nowrap">5176b<a name="DkCoreProfessionGroupCodes-5176b"> </a></td><td>Optometrist</td></tr><tr><td style="white-space:nowrap">A511<a name="DkCoreProfessionGroupCodes-A511"> </a></td><td>Osteopat</td></tr><tr><td style="white-space:nowrap">5158<a name="DkCoreProfessionGroupCodes-5158"> </a></td><td>Radiograf</td></tr><tr><td style="white-space:nowrap">5152<a name="DkCoreProfessionGroupCodes-5152"> </a></td><td>Social- og sundhedsassistent</td></tr><tr><td style="white-space:nowrap">5166<a name="DkCoreProfessionGroupCodes-5166"> </a></td><td>Sygeplejerske</td></tr><tr><td style="white-space:nowrap">5433<a name="DkCoreProfessionGroupCodes-5433"> </a></td><td>Tandlæge</td></tr><tr><td style="white-space:nowrap">5431<a name="DkCoreProfessionGroupCodes-5431"> </a></td><td>Tandplejer</td></tr></table></div>
+  </text>
+  <url value="http://hl7.dk/fhir/core/CodeSystem/DkCoreProfessionGroupCodes"/>
+  <version value="1.1.1"/>
+  <name value="DkCoreProfessionGroupCodes"/>
+  <title value="dk-profession-groups-codes"/>
+  <status value="active"/>
+  <date value="2022-07-19T14:34:29+01:00"/>
+  <publisher value="HL7 Denmark"/>
+  <contact>
+    <name value="HL7 Denmark"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.dk"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="jenskristianvilladsen@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="DK health ProfessionGroup codes as defined by https://www.retsinformation.dk/eli/lta/2019/731, and derived from http://autregwebservice.sst.dk/autregservice.asmx/GetAllProfessionGroups. Code (5176) was not uniqe, and have been converted to 5176a and 5176b"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="21"/>
+  <concept>
+    <code value="C511"/>
+    <display value="Ambulancebehandler"/>
+  </concept>
+  <concept>
+    <code value="9495"/>
+    <display value="Bandagist"/>
+  </concept>
+  <concept>
+    <code value="B511"/>
+    <display value="Behandlerfarmaceut"/>
+  </concept>
+  <concept>
+    <code value="5159"/>
+    <display value="Bioanalytiker"/>
+  </concept>
+  <concept>
+    <code value="5153"/>
+    <display value="Ergoterapeut"/>
+  </concept>
+  <concept>
+    <code value="5155"/>
+    <display value="Fodterapeut"/>
+  </concept>
+  <concept>
+    <code value="5151"/>
+    <display value="Fysioterapeut"/>
+  </concept>
+  <concept>
+    <code value="5175"/>
+    <display value="Jordemoder"/>
+  </concept>
+  <concept>
+    <code value="5265"/>
+    <display value="Kiropraktor"/>
+  </concept>
+  <concept>
+    <code value="5451"/>
+    <display value="Klinisk diætist"/>
+  </concept>
+  <concept>
+    <code value="5432"/>
+    <display value="Klinisk tandtekniker"/>
+  </concept>
+  <concept>
+    <code value="5176a"/>
+    <display value="Kontaktlinseoptiker"/>
+  </concept>
+  <concept>
+    <code value="7170"/>
+    <display value="Læge"/>
+  </concept>
+  <concept>
+    <code value="4498"/>
+    <display value="Optiker"/>
+  </concept>
+  <concept>
+    <code value="5176b"/>
+    <display value="Optometrist"/>
+  </concept>
+  <concept>
+    <code value="A511"/>
+    <display value="Osteopat"/>
+  </concept>
+  <concept>
+    <code value="5158"/>
+    <display value="Radiograf"/>
+  </concept>
+  <concept>
+    <code value="5152"/>
+    <display value="Social- og sundhedsassistent"/>
+  </concept>
+  <concept>
+    <code value="5166"/>
+    <display value="Sygeplejerske"/>
+  </concept>
+  <concept>
+    <code value="5433"/>
+    <display value="Tandlæge"/>
+  </concept>
+  <concept>
+    <code value="5431"/>
+    <display value="Tandplejer"/>
+  </concept>
+</CodeSystem>
