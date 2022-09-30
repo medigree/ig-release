@@ -3980,6 +3980,31 @@
       "canonical": "http://hl7belgium.org/profiles/fhir/core",
       "ci-build": "http://localhost",
       "editions": []
+    },
+    {
+      "name": "HL7 Denmark Belgium FHIR Implementation Guide - Core profiles",
+      "category": "Care Planning",
+      "npm-name": "dk.fhir.ig.kl.common.caresocial",
+      "description": "??",
+      "authority": "??",
+      "country": "??",
+      "history": "http://kl.dk/fhir/common/caresocial/history.html",
+      "language": [
+        "en"
+      ],
+      "canonical": "http://kl.dk/fhir/common/caresocial",
+      "ci-build": "http://build.fhir.org/ig/hl7dk/KL-dk",
+      "editions": [
+        {
+          "name": "Trial Use Ballot",
+          "ig-version": "0.7.0",
+          "package": "dk.fhir.ig.kl.common.caresocial#0.7.0",
+          "fhir-version": [
+            "4.0.1"
+          ],
+          "url": "http://kl.dk/fhir/common/caresocial/0.7.0"
+        }
+      ]
     }
   ]
 }
