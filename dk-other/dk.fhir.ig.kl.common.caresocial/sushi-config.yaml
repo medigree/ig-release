@@ -1,0 +1,49 @@
+# ╭────────────────────────────────────────────────────────────────────────────────────────────────╮
+# │  ACTION REQUIRED: REVIEW AND EDIT THIS FILE TO ENSURE IT ACCURATELY REFLECTS YOUR PROJECT!     │
+# │                                                                                                │
+# │  This file was generated from your existing project files and will be used for SUSHI           │
+# │  configuration from now on. You may delete your package.json as it is no longer needed.        │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+# ╭──────────────────────────────ImplementationGuide-caresocial.json───────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: dk.fhir.ig.kl.common.caresocial
+canonical: http://kl.dk/fhir/common/caresocial
+name: FKIImplementationGuide
+title: "Implementation Guide for fælleskommunal informationsmodel"
+description: Danish municipalities implementation guide for common informationmodel
+status: draft
+license: CC0-1.0
+date: 2020-12-02
+version: 0.7.0
+fhirVersion: 4.0.1
+copyrightYear: 2020+
+releaseLabel: CI Build
+
+publisher:
+  name: Kommunernes landsforening
+  url: http://kl.dk
+  email: kl@kl.dk
+
+jurisdiction: urn:iso:std:iso:3166#DNK "Denmark"
+
+dependencies:
+  hl7.fhir.dk.core:
+    uri: https://hl7.dk/fhir/core
+    version: 1.1.0
+
+parameters:
+  show-inherited-invariants: false
+
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To control the menu.xml using this config, uncomment and set the "menu" property.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# menu:
+#   IG Home: index.html
+#   Table of Contents: toc.html
+#   Artifacts Summary: artifacts.html
+#   Other Resources:
+#     "FHIR Spec ": new-tab external {{site.data.fhir.path}}index.html

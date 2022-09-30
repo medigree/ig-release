@@ -1,0 +1,16 @@
+﻿{
+  "package-id": "dk.fhir.ig.kl.common.caresocial",
+  "title": "Danish Municipality Information Model",
+  "canonical": "http://kl.dk/fhir/common/caresocial",
+  "introduction": "intro text",
+  "category": "Care Planning",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build",
+      "path": "http://build.fhir.org/ig/hl7dk/KL-dk/",
+      "status": "ci-build",
+      "current": true
+    }
+  ]
+}

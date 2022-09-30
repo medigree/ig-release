@@ -5,9 +5,9 @@
     <description>New publications by HL7Denmark></description>
     <link>http://hl7.dk/fhir/package-feed.xml</link>
     <generator>HL7, Inc FHIR Publication tooling</generator>
-    <lastBuildDate>Tue, 19 Jul 2022 02:37:04 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Sep 2022 12:25:20 GMT</lastBuildDate>
     <atom:link href="http://hl7.dk/fhir/package-feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Jul 2022 02:37:04</pubDate>
+    <pubDate>Thu, 22 Sep 2022 12:25:20</pubDate>
     <language>en></language>
     <ttl>600</ttl>
     <item>
@@ -18,7 +18,7 @@
       <dc:creator>HL7Denmark</dc:creator>
       <fhir:version>4.0.1</fhir:version>
       <fhir:kind>IG</fhir:kind>
-      <pubDate>Tue, 19 Jul 2022 12:00:00 GMT</pubDate>
+      <pubDate>Thu, 22 Sep 2022 12:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

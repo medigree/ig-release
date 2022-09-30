@@ -1,0 +1,1 @@
+java -jar publisher.jar -go-publish -source dk.fhir.ig.kl.common.caresocial -destination %CD%\web-root -registry ../ig-registry/fhir-ig-list.json -history ../ig-history
