@@ -3979,7 +3979,17 @@
       ],
       "canonical": "http://hl7belgium.org/profiles/fhir/core",
       "ci-build": "http://localhost",
-      "editions": []
+      "editions": [
+        {
+          "name": "Trial Use Ballot",
+          "ig-version": "0.0.1",
+          "package": "hl7.fhir.be.core#0.0.1",
+          "fhir-version": [
+            "4.0.1"
+          ],
+          "url": "http://hl7belgium.org/profiles/fhir/core/0.0.1"
+        }
+      ]
     },
     {
       "name": "HL7 Denmark Belgium FHIR Implementation Guide - Core profiles",
@@ -4003,6 +4013,31 @@
             "4.0.1"
           ],
           "url": "http://kl.dk/fhir/common/caresocial/0.7.0"
+        }
+      ]
+    },
+    {
+      "name": "IHE ITI MHD",
+      "category": "EHR Access",
+      "npm-name": "ihe.ITI.MHD",
+      "description": "??",
+      "authority": "??",
+      "country": "??",
+      "history": "https://profiles.ihe.net/ITI/MHD/history.html",
+      "language": [
+        "en"
+      ],
+      "canonical": "https://profiles.ihe.net/ITI/MHD",
+      "ci-build": "http://build.fhir.org/ig/IHE/ITI.MHD",
+      "editions": [
+        {
+          "name": "Trial Implementation",
+          "ig-version": "4.0.3",
+          "package": "ihe.ITI.MHD#4.0.3",
+          "fhir-version": [
+            "4.0.1"
+          ],
+          "url": "https://profiles.ihe.net/ITI/MHD/4.0.3"
         }
       ]
     }
