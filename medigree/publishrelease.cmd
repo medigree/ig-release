@@ -1,0 +1,1 @@
+java -jar publisher.jar -go-publish -source source -destination webroot -registry ../ig-registry/fhir-ig-list.json -history ../ig-history -milestone
