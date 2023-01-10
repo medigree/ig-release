@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:fhir="http://hl7.org/fhir/feed" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Medigree FHIR Packages</title>
+    <description>New Packages published by Medigree></description>
+    <link>http://medigree.net/fhir/package-feed.xml</link>
+    <generator>HL7, Inc FHIR Publication tooling</generator>
+    <lastBuildDate>Thu, 24 Nov 2022 08:47:57 +0100 GMT</lastBuildDate>
+    <atom:link href="http://medigree.net/fhir/package-feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 24 Nov 2022 08:47:57 +0100</pubDate>
+    <language>en</language>
+    <ttl>600</ttl>
+    <item>
+      <title>medigree.fhir.r5demo#1.0.0</title>
+      <description>Example IG for R5 content. (built Thu, Nov 24, 2022 20:47+0100+01:00)</description>
+      <link>http://medigree.net/fhir/r5demo/1.0.0/package.tgz</link>
+      <guid isPermaLink="true">http://medigree.net/fhir/r5demo/1.0.0/package.tgz</guid>
+      <dc:creator>Medigree</dc:creator>
+      <fhir:version>5.0.0-ballot</fhir:version>
+      <fhir:kind>IG</fhir:kind>
+      <pubDate>Thu, 24 Nov 2022 12:00:00 +0100 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
