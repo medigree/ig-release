@@ -1,0 +1,9 @@
+{
+  "website" : {
+    "style" : "fhir.layout",
+    "url" : "https://ohie.org/fhir",
+    "server" : "apache",
+    "org" : "WHO",
+    "layout":"openhie.fhir.[code]|https://ohie.org/fhir/[code]"
+  }
+}
