@@ -1,7 +1,7 @@
 {
   "website" : {
     "style" : "fhir.layout",
-    "url" : "http://ohie.net/fhir",
+    "url" : "http://ohie.org/fhir",
     "server" : "apache",
     "org" : "OpenHIE",
     "layout":"openhie.fhir.[code]|http://ohie.org/fhir/[code]"
