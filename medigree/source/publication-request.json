@@ -5,6 +5,7 @@
     "introduction" : "Just a demo",
     "version" : "1.0.0",
     "desc" : "First stable release",
+    "milestone" : true,    
     "path" : "http://medigree.net/fhir/r5demo/1.0.0",
     "ci-build": "https://build.fhir.org/ig/medigree/r5demo",    
     "first": true,
