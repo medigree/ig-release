@@ -1,0 +1,11 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd" lang="en">
+
+    This Implementation Guide contains the full set of specifications for general case reporting workflows. It has been developed to support case reporting as part of the public health response use case.
+
+    This Implementation Guide is intended to be supplemented by one or more <i>content</i> guides developed for specific health program areas which will define the details of the case report.  Examples of such content guides include:
+    <ul>
+      <li><a href="https://openhie.github.io/hiv-ig/index.html">HIV </a></li>
+      <li><a href="https://openhie.github.io/covid-ig/">Covid-19</a></li>
+    </ul>
+
+</div>  

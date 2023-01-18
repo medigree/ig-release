@@ -1,0 +1,35 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+  <p>
+    This implementation guide contains the full set of specifications for general case reporting workflows.  These workflows are designed for reporting system operating at a variety of FHIR <a href="#maturity">maturity levels. </a>
+    
+    There are three <a href="#actors">actors </a> (Case Report Submitter, Case Report Transformer, and Case Report Repository) involved in two case report transactions.
+  </p>
+
+  <figure>
+    {% include actors_transactions.svg %}
+    <figcaption>Actors and Transactions</figcaption>
+  </figure>
+
+
+<h4>Submit Case Report</h4><a name="transaction_1"></a> A case report is submitted as a FHIR questionnaire with the relevant data. This can be entered directly by a user, or can be the result of processing existing data - for example extracting data from existing records, like CSV exported data from legacy or existing systems.
+<h4>Store Case Report</h4><a name="transaction_2"></a> 
+
+
+
+  <h3>Transaction: Submit Case Report</h3><a name="transaction_1"></a>
+  <p>
+    A case report is submitted as a FHIR questionnaire with the relevant data. This can be entered directly by a user, or can be the result of processing existing data - for example extracting data from existing records, like CSV exported data from legacy or existing systems.
+    The Submit Case Report transaction is initiated by the Case Report Submitter, possibly based on periodically defined report time, when triggered by a sentinel event, or in batch when online. There are three options for the Submit Case Report transaction defined by the <a href="concepts.html#maturity">maturity level</a> of the Case Report Submitter.  The  Case Report Transformer has a set of <a href="expected_actions.html">expected actions</a> to take depending on the option
+    
+    
+    <h3>Transaction: Store Case Report</h3><a name="transaction_2"></a>
+    The FHIR resources for the case are exchanged as a Document Bundle. They can be derived from existing FHIR systems, or can be extracted by the Questionnaire used  in the Submit Case Report transaction. This provides the target data structure as FHIR resources for exchanging, reconciliation, etc.
+    The Store Case Report transaction is initiated by the Case Report Transfomer after processing a case report form received from a Case Report Submitter.  The Case Report Transformer sends a Transaction Bundle to the Case Report Repository which stores the resources for later user and analysis. 
+    
+  </p>
+
+
+  
+  
+</div>

@@ -1,0 +1,6 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+This specification contains an example questionnaire for demonstrating the first transaction.
+It also contains the extracted data from that questionnaire, as a FHIR Bundle, as the output of the extraction process of the Questionnaire.
+
+</div>

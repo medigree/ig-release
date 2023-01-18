@@ -1,0 +1,71 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+
+
+  <h3>Authentication and Audits</h3><a name="atna"/>
+  <p>
+    The Case Report Transformer should perform the following actions:
+    <ul>
+      <li>Record the transaction in the audit log using ATNA</li>
+    </ul>
+
+    The Case Report Transformer may perform any of the following actions:
+    <ul>
+      <li>Resolve local value sets into the expected value sets using a Concept Map, as defined by SVCM</li>
+      <li>Validate any codes used in the case report form</li>
+      <li>Resolve local identifiers for location using a canonical identifier, as defined by mCSD</li>
+      <li>Validate any location identifiers against a facility directory, as defined by mCSD</li>
+    </ul>
+  </p>
+
+  <h3>Transformation Options</h3><a name="transform"/>
+  <p>
+    
+    For Case Report Transform should be able perform three options for the Submit Case Report transaction.  These options are defined for differing <a href="concepts.html#maturity">maturity</a> levels of a Case Report Submitter.  These options have the following expected actions:
+    <dl>
+      <dt>FHIR Naive</dt>
+      <dd>
+	This Case Report Submitter submits a tabular data set, associated to a Questionnaire resource, to the Case Report Transformer as a CSV file.  The method of transmission is unspecified and a case Report Transformer may choose to accept other variants of tabular data (e.g. excel spreadsheet)..
+	The Case Report Transformer must:
+	<ol>
+	  <li>Retrieve a ConceptMap, using SVCM, which associates the column names in the tabular data to a Questionnaire item</li>
+	  <li>Receive a tabular data from a Case Report Submitter</li>
+	  <li>
+	    For each row of tabular data:
+	    <ol>
+	      <li>Map the data row into a QuestionnaireResponse using a ConceptMap to map column names of the tabular data into QuestionnaireItems (<b>Need Vlad's details</b>)</li>
+	      <li>Extract relevant resouces into a Composition resource into a QuestionnaireResponse using <a href="http://hl7.org/fhir/uv/sdc/extraction.html#definition-extract">Definition Based Extract</a> as defined within the corresponding Questionnaire resource (the equivalent of the $extract operation)</li>
+	      <li>Create a Provenance resource linking the QuestionnaireResponse to the extracted Composition resource</li>
+	    </ol>
+	  </li>
+	  <li>Convert the submitted tabular data into a Binary resource (<b>do we need?</b>)</li>
+	  <li>Create a Provenance resource linking the Binary resource (as an entity) to the Composition resources generated</li>
+	  <li>Submit the ?Binary?, QuestionnaireReponse, Composition and Provenance resources to the Case Report Submitter as a Transaction Bundle</li>
+	</ol>
+      </dd>
+
+      <dt>FHIR Aware</dt>
+      <dd>
+	In this transaction, the Case Report Submitter submits one or more a Case Report form as a QuestionnaireResponse resources to the Case Report Transformer.  The Case Report Submitter may submit this as a an individual QuestionnaireResponse resouce or as multiple QuestionnaireResponses resouces within a Transaction Bundle. The Case Report Transformer must:
+	<ol>
+	  <li>
+	    For each QuestionnaireResponse:
+	    <ol>
+	      <li>Extract relevant resouces into a Composition resource using <a href="http://hl7.org/fhir/uv/sdc/extraction.html#definition-extract">Definition Based Extract</a> as defined within the corresponding Questionnaire resource (the equivalent to the SDC $extract operation)</li>
+	      <li>Create a Provenance resource linking the QuestionnaireResponse to the extracted Composition resource</li>
+	    </ol>
+	  </li>
+	  <li>Submit the QuestionnaireResponse, Composition and Provenance resources to the Case Report Submitter as a ?Transaction Bundle?</li>
+	</ol>
+      </dd>
+
+      <dt>FHIR Native</dt>
+      <dd>In this transaction, the Case Report Submitter submits one or more  Case Report forms as a Composition resources to the Case Report Transformer.  The Case Report Submitter may submit this as a an individual Composition resource  or multiple Composition resources within a Transaction Bundle. The Case Report Transformer is not expected to modify the message received from the Case Report Submitter. The Case Report Transformer must:
+      <ol>
+	<li>Submit the Composition resources to the Case Report Submitter as a ?Transaction Bundle?</li>
+      </ol></dd>
+
+    </dl>
+    
+  </p>
+</div>

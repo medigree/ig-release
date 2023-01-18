@@ -1,0 +1,119 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd" lang="en">
+  <a name="scope">  </a>
+
+  <p>
+    This is the FHIR Implementation Guide for Case Reporting containing the specifications developed by the OpenHIE community. 
+  </p>
+
+
+  <blockquote class="stu-note">
+    <ul>
+      <li>      <strong>This implementation guide and set of artifacts are still undergoing development.</strong> </li>
+      <li>    This content is only for demonstration purposes only. </li>
+      <li>     Providing Feedback: Please submit any issues via the Feedback link next to the appropriate section of the implementation guide </li>
+    </ul>
+  </blockquote>
+  
+
+  <h3>Introduction</h3> <a name="intro"> </a>
+
+  <p>
+    This Implementation Guide contains the base specifications for general case reporting pipeline. It has been developed to support case reporting as part of the use cases like <a href="usecase_1.html">public health response</a>.
+  </p>
+  
+  <p>
+    This IG is a common architecture IG - it describes the architecture and workflows for case reporting. It does not provide any specific content requirements or constraints, because those would be purpose-specific and depending on several factors like the condition they are targeting.
+    This Implementation Guide is intended to be supplemented by one or more <a href="content_profiles.html">content profiles</a> guides developed for specific health program areas which will define the details of the case report.  Examples of such content guides include:
+    <ul>
+      <li><a href="https://openhie.github.io/hiv-ig/index.html">HIV </a></li>
+      <li><a href="https://openhie.github.io/covid-ig/">Covid-19</a></li>
+    </ul>
+  </p>
+
+  <p>
+    This Implementation Guide is underpinned by supporting <a href="references.html">guidelines, policies and recommendations</a>
+  </p>
+
+  <h3>Summary</h3> <a name="summary"> </a>
+
+  <p>
+    This Implementation Guide defines the standard interoperability mechanisms that can be used for different types of case reporting. It provides implementers the key architectural modules that can be implemented in their systems, to support a standard interoperability framework.
+  </p>
+
+  <p>
+    This Implementation Guide defines three <a href="actors.html">actors</a> involved in the submission of a case report into a case report repository - which can be done using individual forms, bulk data import, or direct interfaces. These actors engage in the <a href="transactions.html">transactions</a> to submit, transform and store case reports into a case report repository. This implementation guide describes the expectations for exchanging and transforming the data.
+    This Implementation Guide also provides the foundational specifications - profiles, value sets, behaviour requirements, etc. that are expected in implementations.    
+  </p>
+  <p>
+    Choosing from these actors and associated transactions, implementers can bootstrap their Case Reporting implementations, typically by creating (and usually enhancing) the reference content specifications - HIV, COVID-19, others.
+  </p>
+
+
+  <figure>
+    {% include actors_transactions.svg %}
+    <figcaption>Actors and Transactions</figcaption>
+  </figure>
+
+
+
+  <h3>Target audience for this Implementation Guide</h3> <a name="audience"> </a>
+  <p>
+    This Implementation Guide is targeted at the following typical audiences:
+    <ul>
+      <li> <b>SMEs, Health program managers and specialists, informaticists</b> who wish to consult the architecture for case reporting</li>
+      <li> <b>Healthcare IT analysts</b> who wish to design or integrate systems for case reporting, case surveillance </li>
+      <li> <b>Technical designers</b> who must implement such case surveillance and reporting systems and their interfaces</li>
+      <li> <b>Designers of purpose-specific guidance</b> who should use this base architecture specification to append the content for their purposes, e.g. HIV, TB, COVID-19, etc.</li>
+    </ul>
+  </p>  
+
+
+
+  <h3>About This Implementation Guide</h3> <a name="about"> </a>
+  <li>To navigate this specification, please consult the <a href="how-to-read.html">How to read</a> section</li>
+  
+  <p>
+    This Implementation Guide is broken into the following levels of <a href="http://hl7.org/fhir/uv/cpg/2019Sep/documentation-approach.html">knowledge representation</a>:
+    <ul>
+      <li><a href="index.html">Introduction</a> Contains references to the guidance, guidlines, policies and recommendations underpinning this Implementation Guide</li>
+      <li><a href="requirements.html">Business Requirements</a> Contains the requirements for this Implementation Guide including the definition of key concepts, user personas, use cases and workflows. It describes the functional models for data and interactions.
+      </li>
+      <li><a href="data_exchange.html">Data Models and Exchange</a> Contains the data exchange protocols defined in this Implementation Guide. It describes the approach to data exchange, and the technical implementation.</li>
+      <li><a href="deployment.html">Deployment Guidance</a> describes the implementation guidance - reference architectures and implementations, as well as testing or deployment possibilities.
+      Includes <a href="instant_openhie.html">Instant OpenHIE</a> Specifications relevant to this Implementation Guide and supporting guidance for adaptation in local environments.</li>
+    </ul>
+  </p>  
+
+
+
+  <h3>Intellectual Property Considerations</h3>  <a name="ip"> </a>
+  <p>
+    While this implementation guide and the underlying FHIR are licensed as public domain, this guide may include examples making use of terminologies such 
+    as LOINC, SNOMED CT and others which have more restrictive licensing requirements. Implementers should make themselves familiar with licensing and 
+    any other constraints of terminologies, questionnaires, and other components used as part of their implementation process. In some cases, 
+    licensing requirements may limit the systems that data captured using certain questionnaires may be shared with.
+  </p>
+
+  <h3>Disclaimer</h3>  <a name="disclaimer"> </a>
+  <p>
+    This specification is provided without warranty of completeness or consistency, and the official publication supersedes this draft.
+    No liability can be inferred from the use or misuse of this specification, or its consequences.
+  </p>
+
+
+
+
+
+  <h3>Credits and Acknowledgements</h3>  <a name="credits"> </a>
+  <p>
+    This specification is based on FHIR and the FHIR tooling ecosystem and community processes. 
+    It has been defined with the support and participation of the following institutions:
+  </p>
+
+
+
+
+
+</div>  
+
+

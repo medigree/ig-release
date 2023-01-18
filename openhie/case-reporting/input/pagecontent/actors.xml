@@ -1,0 +1,24 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+
+  
+ There are three actors defined in this implementation guide which are guide to respond to two <a href="transactions.html">transactions</a> 
+
+  <h3>Actor: Case Report Submitter</h3><a name="actor_1"/>
+   The Case Report Submitter is responsible for submitting <a href="concepts.html#case_report">case report data</a>. There are three options for the Submit Case Report transaction that a Case Reporter may use for submission of case reports depending on their purpose, nature, or maturity levels.
+
+  <ul>
+    <li>Form submission - using a <a href="https://www.hl7.org/fhir/questionnaire.html"> FHIR Questionnaire</a></li>
+    <li>Tabular data submission (e.g. a CSV format with a header row). This can be take by tools like mAtches</li>
+    <li>Direct export of <a href="https://www.hl7.org/fhir/documents.html">FHIR Document</a> from the EHR systems that have such a capability</li>
+  </ul>
+
+  Note that in the case of submission of tabular data, a <a href="https://www.hl7.org/fhir/conceptmap.html">ConceptMap</a> must be defined to map the names of the headers to the Questtionaire item.  
+
+  <h3>Actor: Case Report Transformer</h3><a name="actor_2"/>
+  The Case Report Transformer is reponsible to perform any necessary transformation of case reports received from a Case Report Submitter via the Submit Case Report transaction into the requisite Case Report form to be sent into the Case Report Repository via the Store Case Report  transaction.  The Case Report Transformer must be able to repond to all <a href="expected_actions.html">three options</a> for the Submit Case Report transaction. A Case Report Transformer should also be responsible for ensuring security and auditing according to the ATNA profile.
+  
+  <h3>Actor: Case Report Repository</h3><a name="actor_3"/>
+  The Case Report Repository is responsible for receiving case reports from the Case Report Transformer and storing those case reports for futher analysis and use in a data warehouse (generic FHIR server).  The specific use of the case reports in the Case Report Repository is beyond the scope of this implementation guide as it will depend on the specific disease area.
+  
+</div>

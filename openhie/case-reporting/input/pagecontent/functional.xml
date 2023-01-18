@@ -1,0 +1,19 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+
+  <b>to do:</b> add functional requirements
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Description</th>
+      <th>Required/Recommended</th>      
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+
+  </table>
+  
+</div>

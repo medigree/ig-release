@@ -1,0 +1,14 @@
+{
+  "package-id" : "openhie.fhir.casereporting",
+  "version" : "0.1.0",
+  "path" : "http://ohie.net/fhir/casereporting/0.1.0",
+  "status" : "ballot",
+  "sequence" : "STU1",
+  "first": true,
+  "milestone" : true,
+  "ci-build": "https://openhie.github.io/casereporting",
+  "desc" : "Openhie Case Reporting.",
+  "title" : "Openhie Case Reporting",
+  "category" : "Case Reporting",
+  "introduction" : "Openhie Case Reporting"
+}

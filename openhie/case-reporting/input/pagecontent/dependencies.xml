@@ -1,0 +1,34 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+  <h3>Dependencies</h3><a name="dependencies"> </a>
+  <p>
+    This Implementation Guide depends on the following standards and profiles:
+
+
+    <dl>
+      <dt><a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_SVCM.pdf">Sharing Value Sets and Concept Maos (SVCM)</a></dt>
+      <dd><i>FHIR Aware</i> and <i>FHIR Native</i> case reporting systems should use SVCM to synchronize value sets used for reporting (e.g. disaggregators/stratifiers) and to specify concept maps between local code systems and required reporting value sets.</dd>
+    </dl>
+
+    <dl>
+      <dt><a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf">Mobile Care Services Discovery (mCSD)</a></dt>
+      <dd><i>FHIR Aware</i> and <i>FHIR Native</i> case reporting systems should use mCSD to synchorinze location data  (e.g. health facility, site, community, distrct, region) use for reporting</dd>
+    </dl>
+
+    <dl>
+      <dt><a href="https://wiki.ihe.net/index.php/Audit_Trail_and_Node_Authentication">Audit Trail and Node Authentication (ATNA)</a></dt>
+      <dd>Used by the Case Report Transformer to  provide patient information confidentiality, data integrity and user accountability.   </dd>
+    </dl>
+    
+    <dl>
+      <dt><a href="http://hl7.org/fhir/uv/sdc/index.html">Structured Data Capture (SDC)</a></dt>
+      <dd>Under the FHIR-Aware option, a Case Report Transformer should use <a href="http://hl7.org/fhir/uv/sdc/extraction.html#definition-extract">Definition Based Extract</a>, defined in  Structured Data Capture, to transform a incoming case report Questionnaire resource into a Composition resource before submitting to the Case Report Repository.</dd>      
+    </dl>
+
+
+    <dl>
+      <dt>Data Analytics (forthcoming) </dt>
+      <dd>Recommended Implementation Guide for providing a platform for  business intelligence tools used for further data analysis and use of case report forms.</dd> 
+    </dl>
+  </p>
+</div>

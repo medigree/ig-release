@@ -1,0 +1,14 @@
+---
+#feedback:
+#  - active: true
+#    type: "googleform"   
+#    label: "Feedback"
+#    formUrl: https://docs.google.com/forms/d/e/1FAIpQLScgGmJKcCyHVpPeFLhv1M5d8NcGYRFijA85jlpkPqho9GUofQ/viewform?usp=pp_url
+#    dashboard: 
+#      label: Issues
+#      url: https://github.com/openhie/case-reporting/projects/1
+#    parameters:
+#    - fieldId: 1353807103
+#      variableName: pageTitle
+#    - fieldId: 247644557
+#      variableName: sectionName
