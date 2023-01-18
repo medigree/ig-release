@@ -1,7 +1,7 @@
 # SUSHI will use id as both id and packageId in the IG unless a
 # specific packageId is also provided in this file.
 id: openhie.fhir.casereporting
-canonical: https://ohie.org/fhir/casereporting
+canonical: http://ohie.org/fhir/casereporting
 #url: http://ohie.org/fhir/ImplementationGuide/openhie.fhir.casereporting
 name: OpenhieCaseReporting
 title: "OpenHIE Case Reporting"
