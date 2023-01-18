@@ -1,9 +1,9 @@
 {
   "website" : {
     "style" : "fhir.layout",
-    "url" : "http://hl7.org/guides/who",
+    "url" : "http://fhir.org/guides/who",
     "server" : "apache",
     "org" : "WHO",
-    "layout":"fhir.who.[code]|http://hl7.org/guides/who/[code]"
+    "layout":"fhir.who.[code]|http://fhir.org/guides/who/[code]"
   }
 }
