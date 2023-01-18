@@ -7,7 +7,7 @@
     "desc" : "First stable release",
     "milestone" : true,    
     "path" : "http://fhir.org/guides/who/ddcc/1.0.0",
-    "ci-build": "http://worldhealthorganization.github.io/ddcc",    
+    "ci-build": "https://worldhealthorganization.github.io/ddcc",    
     "first": true,
     "status" : "release",
     "sequence" : "Releases"
