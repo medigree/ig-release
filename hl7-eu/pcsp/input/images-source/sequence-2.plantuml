@@ -1,0 +1,4 @@
+@startuml
+"Local System A" -> "SurPass v2.0 Platform" : Treatment Summary (minimal data)
+"SurPass v2.0 Platform" -> "Local System B" : draft SCP
+@enduml

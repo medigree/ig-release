@@ -1,0 +1,8 @@
+{
+  "website" : {
+    "style" : "fhir.layout",
+    "url" : "http://hl7.eu/fhir/ig",
+    "server" : "apache",
+    "org" : "HL7 Europe"
+  }
+}

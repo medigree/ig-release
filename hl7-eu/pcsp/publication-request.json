@@ -1,0 +1,14 @@
+{
+  "package-id" : "hl7.eu.fhir.pcsp",
+  "version" : "0.1.0",
+  "path" : "http://hl7.eu/fhir/ig/pcsp/0.2.0",
+  "status" : "ballot",
+  "sequence" : "STU1",
+  "first": true,
+  "milestone" : true,
+  "ci-build": "https://build.fhir.org/ig/hl7-eu/pcsp",
+  "desc" : "This is the version released after the platform validation (Project M12).",
+  "title" : "PanCareSurPass Project HL7 FHIR Implementation Guide",
+  "category" : "Patient Summary",
+  "introduction" : "PanCareSurPass is an EU project aiming to conduct a robust assessment of the Cancer Survivorship Passport (SurPass)."
+}

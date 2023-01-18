@@ -1,0 +1,20 @@
+@startuml
+actor Clinician
+"Local System A" -> "SurPass v2.0 Platform" : Treatment Summary
+opt
+   "Clinician" -> "SurPass v2.0 Platform" : Complete and validate
+end
+"SurPass v2.0 Platform" -> "SurPass v2.0 Platform" : draft SCP
+opt
+   "Clinician" -> "SurPass v2.0 Platform" : Complete and validate
+end
+group HL7 FHIR SurPass
+"SurPass v2.0 Platform" -> "Local System B" : (draft) SurPass
+end
+group PDF SurPass (via HL7 FHIR API)
+"SurPass v2.0 Platform" -> "Local System B" : SurPass
+end
+group Only HL7 FHIR SCP
+"SurPass v2.0 Platform" -> "Local System B" : (draft) SCP
+end
+@enduml
