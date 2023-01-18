@@ -1,0 +1,28 @@
+@startuml
+title Transaction: Request DDCC:VS
+
+hide footbox
+
+!include ./style.iuml
+
+actor "Verifier" 
+Participant "DDCC:VS\nRegistry\nSerice" as DDCCReg
+Participant "DDCC:VS\nRepository\nSerice" as DDCCRepo
+
+autonumber 1.1.1
+
+Verifier -> DDCCReg: Request current Digital\nDDCC:VS with a given\nDDCC:VS identifier
+DDCCReg->DDCCReg: Search list of reserved\nidentifiers for the requested\nDDCC:VS identifier
+    alt DDCC:VS Folder Found
+    	DDCCReg->Verifier: Return DDCC:VS Folder
+	opt DDCC:VS Repository exists
+	  Verifier->DDCCRepo: Request DDCC:VS HL7 FHIR Document
+	  DDCCRepo->Verifier: Return DDCC FHIR Document
+	end
+    else DDCC:VS Folder Not Found
+     	 DDCCReg->Verifier: Return error condition
+    end
+
+@enduml
+
+

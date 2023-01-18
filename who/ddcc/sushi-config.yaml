@@ -1,0 +1,36 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: fhir.who.ddcc
+#canonical: http://worldhealthorganization.github.io/ddcc
+canonical: http://fhir.org/guides/who/ddcc
+name: DDCC
+status: draft
+version: 1.0.0
+fhirVersion: 4.0.1
+date: 2022-03-22
+# copyright:
+copyrightYear: 2021+
+releaseLabel: "CI Build"
+title: "WHO Digital Documentation of COVID-19 Certificates (DDCC)"
+description: "This WHO Digital Documentation of COVID-19 Certificates (DDCC) Implementation Guide details how to use Health Level 7 (HL7) Fast Healthcare Interoperability Resources (FHIR) for consistent digital representation of COVID-19 certificates and interoperability."
+license: CC0-1.0
+publisher:
+  name: WHO
+  url: http://who.int
+#   email:
+# contact:
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
+# experimental: true
+dependencies:
+  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.uv.ipa: 0.1.0
+  hl7.fhir.uv.sdc: 3.0.0
+  ihe.iti.mhd:
+    id: iheitimhd
+    uri: https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd
+    version: 4.2.0
+
+parameters:
+  special-url: [ http://worldhealthorganization.github.io/ddcc/DIVOC, https://ec.europa.eu/health/documents/community-register/html/, http://worldhealthorganization.github.io/ddcc/ICAOV1, http://id.who.int/icd11/mms]

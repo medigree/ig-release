@@ -1,0 +1,71 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd" lang="en">
+  <a name="scope">  </a>
+
+      
+  
+  <p>
+    This WHO Digital Documentation of COVID-19 Certificates (DDCC) Implementation Guide details how to use Health Level 7 (HL7) Fast Healthcare Interoperability Resources (FHIR) for consistent digital representation of COVID-19 certificates and interoperability.
+  </p>
+
+  <blockquote class="stu-note">
+    <ul>
+      <li>This version of the implementation guide is based on the current content at <a href="https://github.com/WorldHealthOrganization/ddcc">https://github.com/WorldHealthOrganization/ddcc</a></li>
+      <li><strong>This implementation guide and set of artifacts are still undergoing development.</strong></li>
+      <li>Content is for demonstration purposes only. </li>
+    </ul>
+  </blockquote>
+  
+
+  <h3>Summary</h3> <a name="summary"> </a>
+
+  <p>
+    This implementation guide contains a standards-compliant specifications for the DDCC: Vaccination Status and Test Result technical specifications and guidance documents. It explicitly encodes computer-interoperable logic, including data models, terminologies, and logic expressions, in a computable language to support implementation of vaccination and test result use cases by Member States.
+  </p>
+  
+  <p>
+    To facilitate implementation of effective and interoperable digital solutions:
+    <ul>
+      <li>The <a href="https://www.who.int/publications/i/item/WHO-2019-nCoV-Digital_certificates-vaccination-2021.1">DDCC: Vaccination Status (DDCC:VS) technical specifications and implementation guidance </a>was issued for vaccination certificates for the purposes of continuity of care and proof of vaccination.</li>
+      <li>The <a href="https://www.who.int/publications/i/item/WHO-2019-nCoV-Digital_certificates_diagnostic_test_results-2022.1">DDCC: Test Result (DDCC:TR) technical specifications and implementation guidance</a> is being issued for test result certificates that attests to: (a) the fact that an individual has been tested for SARS-CoV-2, and (b) the result of that SARS-CoV-2 diagnostic test.</li>
+    </ul>
+  </p>
+  
+  <p>
+    The DDCC documents contain overviews of high-level use cases for digital COVID-19 certificates, including: 
+        <ul>
+          <li>workflows;</li>
+          <li>core data elements mapped to standard code systems;</li>
+          <li>functional and non-functional requirements;</li>
+          <li>an overview of digitally signing and verifying a certificate with public key infrastructure (PKI) technology;</li>
+          <li>implementation guidance regarding ethical considerations, privacy and data protection principles;</li>
+          <li>national governance considerations;</li>
+          <li>and this linked FHIR Implementation Guide for the DDCC scope. </li>
+        </ul>
+  </p>
+  
+  <p>
+    Supporting guidance, recommendations, resources, and standards are included in the <a href="references.html">References</a> and <a href="dependencies.html">Dependencies</a>.
+   </p>
+
+  <h3>About this implementation guide</h3> <a name="about"> </a>
+  
+  <p>
+    This implementation guide is broken into the following levels of <a href="http://hl7.org/fhir/uv/cpg/2019Sep/documentation-approach.html">knowledge representation</a>:
+    <ul>
+      <li><a href="index.html">Home</a> Contains references to the guidance, guidelines, policies and recommendations underpinning this implementation guide.</li>
+      <li><a href="requirements.html">Business Requirements</a> Contains the requirements for this implementation guide including the definition of key concepts, use cases, and a data dictionary.
+      </li>
+      <li><a href="data_exchange.html">Data Models and Exchange</a> Contains the data models and data exchange protocols with actors and transactions defined.</li>
+      <li><a href="deployment.html">Deployment Guidance </a>
+      Contains relevant technical specifications and guidance, testing resources, reference implementation materials, and supporting guidance for adaptation to local contexts.</li>
+    </ul>
+  </p>  
+
+  <h3>Disclaimer</h3>  <a name="disclaimer"> </a>
+  <p>
+    The specification herewith documented is a demo working specification and may not be used for any implementation purposes. 
+    This draft is provided without warranty of completeness or consistency and the official publication supersedes this draft.
+    No liability can be inferred from the use or misuse of this specification or its consequences.
+  </p>
+  
+</div>  

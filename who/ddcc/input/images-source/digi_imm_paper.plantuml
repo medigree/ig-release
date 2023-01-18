@@ -1,0 +1,62 @@
+@startuml
+title Transaction: Digitize Vaccination Event (Paper First)
+
+hide footbox
+
+!include ./style.iuml
+
+actor "Subject of Care" as SOC
+actor "DDCC:VS Holder" as Holder
+actor "Vaccinator" as Vaxer
+actor "Data Entry Personnel" as DEP
+Participant "Paper\nRegister" as PaperReg
+Participant "Digital\nHealth\nSolution" as DHS
+Participant "DDCC:VS\nGeneration\nService" as CertGen
+Participant "DDCC:VS\nRegistry\nService" as DDCCReg
+Participant "DDCC:VS\nRepository\nService" as DDCCRepo
+
+autonumber 1.1.1
+
+   activate Holder
+   activate SOC
+   activate Vaxer
+
+   opt Subject of Care has a\nDDCC:VS paper card
+      Holder->Vaxer: Give Subject of Care's\nDDCC:VS paper card\nto Vaccinator
+   end
+   
+   Vaxer->SOC : Administer vaccination
+   Vaxer->Holder:  Record core data set data\non DDCC:VS paper card
+   Vaxer->PaperReg: Record vaccination\nevent in paper\nregister
+
+   deactivate Holder
+   deactivate SOC
+   deactivate Vaxer
+
+   activate DEP
+   PaperReg->DEP: Read row in\npaper register
+   DEP->DHS: Enter vaccination\nevent details
+   deactivate DEP
+   
+   DHS->CertGen: Send vaccination\nevent details
+   CertGen->CertGen: Generate DDCC:VS\nFHIR Document
+   
+   opt Generate 2D barcode
+     CertGen->CertGen: Generate 2D barcode
+     CertGen->CertGen: Add 2D barcode to\nFHIR Document
+   end
+   
+   CertGen->CertGen: Sign DDCC:VS\nFHIR Document
+   
+   opt Has DDCC:VS Registry
+	opt Has DDCC:VS Repository
+	  CertGen->DDCCRepo: Upload FHIR Document
+	end
+   	CertGen->DDCCReg: Upload FHIR Bundle
+   end
+   
+   CertGen->DHS: Return signed\nFHIR Document
+
+   DHS->DHS: Store signed FHIR\nDocument in\nSubject of Care's record
+   
+@enduml

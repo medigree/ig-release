@@ -1,0 +1,64 @@
+@startuml
+title  Digitize Vaccination Event (Online Digital)
+
+hide footbox
+
+!include ./style.iuml
+
+actor "Subject of Care" as SOC
+actor "DDCC Holder" as Holder
+actor "Vaccinator" as Vaxer
+actor "Data Entry Personnel" as DEP
+Participant "Digital\nHealth\nSolution" as DHS
+Participant "DDCC:VS\nGeneration\nService" as CertGen
+Participant "DDCC:VS\nRegistry\nService" as DDCCReg
+Participant "DDCC:VS\nRepository\nService" as DDCCRepo
+
+
+autonumber 1.1.1
+
+   activate Holder
+   activate SOC
+   activate Vaxer
+
+   opt Subject of Care has a\nDDCC:VS paper card
+      Holder->Vaxer: Give Subject of Care's\nDDCC:VS paper card\nto Vaccinator
+   end
+   
+    Vaxer->SOC : Administer vaccination
+
+    Vaxer->Holder:  Record core data set\ndata on DDCC:VS\npaper card
+    Vaxer->DHS: Enter vaccination\nevent details
+    DHS->CertGen: Send vaccination\nevent details
+    CertGen->CertGen: Generate DDCC:VS\nHL7 FHIR Document
+    
+    opt Generate 2D Barcode
+      CertGen->CertGen: Generate 2D Barcode
+      CertGen->CertGen: Add 2D Barcode to\nDDCC:VS FHIR Document
+    end
+   
+   CertGen->CertGen: Sign DDCC:VS\nFHIR Document
+    
+    opt Has DDCC:VS:VS Registry
+	 opt Has DDCC:VS:VS Repository
+	   CertGen->DDCCRepo: Upload DDCC:VS\nFHIR Document
+	 end
+   	 CertGen->DDCCReg: Upload DDCC:VS\nFHIR Bundle
+    end
+    
+    CertGen->DHS: Return signed\nDDCC:VS FHIR Document
+
+    DHS->DHS: Store signed DDCC:VS\nFHIR Document in\nSubect of Care's record
+
+    opt Can Print QR Stickers
+         Vaxer->Vaxer: Print QR code sticker\nfrom signed DDCC:VS\nFHIR Document
+ 	 Vaxer->Holder: Place QR code\nsticker on DDCC:VS
+    end	
+
+   deactivate Holder
+   deactivate SOC
+   deactivate Vaxer
+
+@enduml
+
+

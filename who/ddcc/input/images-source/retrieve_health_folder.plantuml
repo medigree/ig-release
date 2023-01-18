@@ -1,0 +1,23 @@
+@startuml
+title Transaction: Retrieve Health Folder
+
+hide footbox
+
+!include ./style.iuml
+
+Participant "Digital\nHealth\nSolution"  as DHS
+Participant "Verifier"
+Participant "DDCC:VS\nRegistry\nService" as DDCCReg
+
+autonumber 1.1.1
+
+alt Digital Health Solution
+    DHS->DDCCReg: Retrieve Health Folder Request
+    DDCCReg->DHS: Retrieve Health Folder Response
+else Verifier
+    Verifier->DDCCReg: Retrieve Health Folder Request
+    DDCCReg->Verifier: Retrieve Health Folder Response
+end
+
+@enduml
+

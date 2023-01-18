@@ -1,0 +1,17 @@
+@startuml
+title Transaction: Submit Health Event
+
+hide footbox
+
+!include ./style.iuml
+
+actor "Digital\nHealth\nSolution" as DHS
+Participant "DDCC:VS\nGeneration\nService"  as DDCCGen
+
+autonumber 1.1.1
+
+DHS->DDCCGen: Submit Health Event Request
+DDCCGen->DHS: Return Submit Health Event Response
+
+@enduml
+
