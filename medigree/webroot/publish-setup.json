@@ -5,9 +5,5 @@
     "server" : "apache",
     "org" : "Medigree",
     "layout":"medigree.fhir.[code]|http://medigree.net/fhir/[code]"
-  },
-  "feeds" : {
-    "package" : "package-feed.xml",
-    "publication" : "publication-feed.xml"
   }
 }
