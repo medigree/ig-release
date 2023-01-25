@@ -4,6 +4,6 @@
     "url" : "http://ohie.org/fhir",
     "server" : "apache",
     "org" : "OpenHIE",
-    "layout":"openhie.fhir.[code]|http://ohie.org/fhir/[code]"
+    "layout":{"id":"openhie.fhir.[code]","canonical":"http://ohie.org/fhir/[code]"}
   }
 }
