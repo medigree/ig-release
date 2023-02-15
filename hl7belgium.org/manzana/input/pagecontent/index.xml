@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd" lang="en">
+  <a name="scope">  </a>
+	<p>
+    This is our FHIR Implementation Guide. It contains the specifications developed by our community. 
+   </p>
+
+	<p> </p>
+  <h3>Content</h3> <a name="content"> </a>
+	<p/>
+
+<p>This publication contains the full set of specifications for Manzana. This is a web-based documentation system that contains the information about the project, namely:</p>
+<ul>
+<li><p>Functional overview (Use Cases and Logical Data Models / Care Sets)</p></li>
+<li><p>Technical Specification:</p>
+<ul>
+<li><p>Profiles</p></li>
+<li><p>Terminology (Code Systems, Value Sets)</p></li>
+</ul></li>
+<li><p>Testing artefacts – examples</p></li>
+</ul>
+<p></p>
+<p>This specification contains the artefacts produced for Manzana project. It inherits the <a href="http://hl7.org/fhir">official FHIR specifications (version 4.0.1)</a> and the <a href="https://ehealthplatformstandards.github.io/">Federal FHIR constraints specified by eHealth Belgium</a>.</p>
+<p>The conformance artefacts in this publication are also scheduled for official publication by HL7 Belgium.</p>
+<p>This specification contains all the necessary conformance artefacts as well as project-specific support resources like examples and test scripts, and thus provides, in one single package, the relevant functional overview, and the technical specification and cookbook, to allow implementers to develop and test their systems.</p>
+<!-- <p></p> -->
+
+<a name="navigation"> </a>
+<h3 id="navigation">Navigation</h3>
+<p>This implementation guide uses the FHIR web-based publication. This allows easy navigation between the Belgium-specific portion of the implementation guide an the resources, data types, value sets and other specification components leveraged from the FHIR core specification. This approach also allows implementers to easily navigate to the information needed to perform a task.</p>
+<p>The top menu allows quick navigation to the different sections, and a <a href="toc.html">Table of Contents</a> is provided with the entire content of this Implementation Guide. (Be aware that some pages have multiple tabs).</p>
+<p></p>
+
+<a name="ip"> </a>
+<h3>Intellectual Property Considerations</h3>
+<p>
+  While this implementation guide and the underlying FHIR are licensed as public domain, this guide includes examples making use of terminologies such 
+  as LOINC, SNOMED CT and others which have more restrictive licensing requirements. Implementers should make themselves familiar with licensing and 
+  any other constraints of terminologies, questionnaires, and other components used as part of their implementation process. In some cases, 
+  licensing requirements may limit the systems that data captured using certain questionnaires may be shared with.
+</p>
+<p></p>
+
+<a name="disclaimer"> </a>
+<h3>Disclaimer</h3>
+<p>
+  The specification herewith documented is a demo working specification, and may not be used for any implementation purposes. 
+  This draft is provided without warranty of completeness or consistency, and the official publication supersedes this draft.
+  No liability can be inferred from the use or misuse of this specification, or its consequences.
+</p>
+  
+</div>

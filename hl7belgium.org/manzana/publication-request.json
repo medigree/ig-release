@@ -1,0 +1,14 @@
+{
+  "package-id" : "hl7.fhir.be.manzana",
+  "version" : "1.0.0",
+  "path" : "http://hl7belgium.org/profiles/fhir/manzana/1.0.0",
+  "status" : "release",
+  "sequence" : "Releases",
+  "first": true,
+  "mode" : "milestone",
+  "ci-build": "http://build.fhir.org/ig/hl7-be/manzana",
+  "desc" : "Openhie Case Reporting.",
+  "title" : "Manzana Project FHIR Specifications",
+  "category" : "Patient Care",
+  "introduction" : "Manzana Project FHIR Specifications"
+}

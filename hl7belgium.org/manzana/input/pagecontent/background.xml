@@ -1,0 +1,28 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+
+  <h3>Introduction</h3>
+  <a name="introduction"></a>
+  <p>The continuous development and maturation of digital and artificial intelligence (AI) technologies allow for new solutions to health-related problems and diseases. Mobile devices to collect and process personal health data in near real-time are now widely available at low costs. Even more important, devices are connected to the Internet, which allows to easily data between end users (patients) and healthcare providers (pharmacies, doctors, hospitals, etc.) </p>
+
+  <p> Diabetes is one of the diseases whose course can be positively influenced particularly well by the patients themselves. It represents a major burden for Belgium with high morbidity, high portability and important costs for the healthcare budget. The prevalence of diabetes is increasing, and emerging technologies can facilitate its screening and initiate early care actions. Several digital health applications have been developed to help people observe and manage their diabetes. For example, health-related apps available on smartphones and other wireless devices support people with severe cases of diabetes who must react to data from blood glucose measurements to make lifestyle or medication adjustments. However, these measures may not be securely stored or are difficult to exchange with healthcare professionals securely.</p>
+
+  <h3>Project Background Information</h3>
+  <a name="background"></a>
+  <p>The Manzana project is part of City-Labs, which is a concept for new healthcare centers, the use of POCT in primary and integrated care, and for the development of digital applications for chronic diseases. Manzana targets two kinds of users: Patients and professionals. The goal of Manzana is to provide easy to use tools that can be used by Diabetes patients and people with an increase risk for Diabetes to </p>
+  <ol>
+    <li>Estimate their risk.</li>
+    <li>Monitor and track their blood sugar level and obtain predictions and recommendations.</li>
+    <li>Store measurements and results for point 1 and 2 and share with healthcare professionals following international standards.</li>
+  </ol>
+
+  <p>Currently, an important issue is the transfer of the measurement or screening results to the medical records in a structured way for following-up of the patients by clinical teams. Manzana is the pioneer project to develop the future interoperable applications connected to BruSafe+ / Abrumet that could be used for the screening and monitoring of other chronic diseases, so the similar needs will be treated in Wallonia.</p>
+
+  <h3>Idea of Manzana</h3>
+  <a name="idea"></a>
+  <p> The following graph explains the general idea of Manzana. The citizen wants to check the risk of Diabetes. They can download the Manzan application which is developed the first screening program based on the FINDRISK, and their survey result can be transferred to BruSafe+ / Abrumet.</p>
+  <a href="https://qxmd.com/calculate/calculator_236/findrisc-diabetes-risk-calculator"/>
+  <a href="https://brusafe.brussels/"/>
+  <img src="manzanadesign.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"/>
+
+</div>

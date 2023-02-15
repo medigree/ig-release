@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:fhir="http://hl7.org/fhir">
+   <canonical>http://hl7belgium.org/profiles/fhir/manzana</canonical>
+   <copyrightYear>2019+</copyrightYear>
+   <releaseLabel>CI Build</releaseLabel>
+   <id>hl7.fhir.be.manzana</id>
+   <url>http://hl7belgium.org/profiles/fhir/manzana/ImplementationGuide/hl7.fhir.be.manzana</url>
+   <version>1.0.0</version>
+   <name>ManzanaProjectIG</name>
+   <title>Manzana Project FHIR Specifications</title>
+   <status>active</status>
+   <experimental>false</experimental>
+   <publisher>HL7 Belgium</publisher>
+   <contact>
+      <telecom>
+         <system>url</system>
+         <value>http://www.hl7belgium.org</value>
+      </telecom>
+   </contact>
+   <description>A brief description of the Manzana project</description>
+   <jurisdiction>urn:iso:std:iso:3166#BE</jurisdiction>
+   <packageId>hl7.fhir.be.manzana</packageId>
+   <license>CC0-1.0</license>
+   <fhirVersion>4.0.1</fhirVersion>
+   <parameters>
+      <copyrightyear>2019+</copyrightyear>
+      <releaselabel>CI Build</releaselabel>
+      <find-other-resources>true</find-other-resources>
+      <path-resource>input\history</path-resource>
+      <path-binary>input\cql</path-binary>
+      <path-liquid>templates\liquid</path-liquid>
+   </parameters>
+   <pages>
+      <index.xml>
+         <title>MyIG Home Page</title>
+         <generation>html</generation>
+      </index.xml>
+      <downloads.xml>
+         <title>Useful Downloads</title>
+         <generation>html</generation>
+      </downloads.xml>
+      <changes.xml>
+         <title>IG Change History</title>
+         <generation>html</generation>
+      </changes.xml>
+   </pages>
+   <dependencies>
+      <hl7.fhir.be.core-clinical>
+         <uri>https://www.ehealth.fgov.be/standards/fhir/core-clinical</uri>
+         <version>1.0.0</version>
+      </hl7.fhir.be.core-clinical>
+      <hl7.fhir.be.core>
+         <uri>https://www.ehealth.fgov.be/standards/fhir/core</uri>
+         <version>2.0.0</version>
+      </hl7.fhir.be.core>
+   </dependencies>
+   <resources>
+      <StructureDefinition--model-findRisc-scoreResult>
+         <name>Logical model - FINDRISC screening Score result</name>
+         <description>Manzana FINDRISC Score result</description>
+         <groupingId>logicalModel</groupingId>
+      </StructureDefinition--model-findRisc-scoreResult>
+      <StructureDefinition--model-findRisc-screeningResponse>
+         <name>Logical model - FINDRISC Screening response</name>
+         <description>Manzana FINDRISC screening response</description>
+         <groupingId>logicalModel</groupingId>
+      </StructureDefinition--model-findRisc-screeningResponse>
+      <CodeSystem--cs-findRisc-screening-age>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC screening Age</name>
+         <description>FINDRISC Screening question about the patient's age</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-age>
+      <CodeSystem--cs-findRisc-screening-bmi>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC Screening BMI</name>
+         <description>FINDRISC Screening question about the patient's BMI</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-bmi>
+      <CodeSystem--cs-findRisc-screening-consumeVegFrBa>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC Screening daily consume of vegetables, fruits and barries</name>
+         <description>FINDRISC Screening question about the patient consumes daily the vegetables, fruits an barries</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-consumeVegFrBa>
+      <CodeSystem--cs-findRisc-screening-familyHistoryDiabetes>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC screening family history diabetes</name>
+         <description>FINDRISC screening about the patient family history of having diabetes</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-familyHistoryDiabetes>
+      <CodeSystem--cs-findRisc-screening-hyperglycemia>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC screening hyperglycemia</name>
+         <description>FINDRISC screening question whether the patient has history of hyperglycemia</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-hyperglycemia>
+      <CodeSystem--cs-findRisc-screening-physicalActivity>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC screening physical activity</name>
+         <description>FINDRISC screening question about the physical activity of the patient</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-physicalActivity>
+      <CodeSystem--cs-findRisc-screening-waistCircumference>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC screening waist circumference</name>
+         <description>FINDRISC screening question about the patient's waist circumference</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-waistCircumference>
+      <CodeSystem--cs-findRisc-screening-medicationHBP>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>CodeSystem - FINDRISC screening medication for high blood pressure</name>
+         <description>FINDRISC screening question whether the patient has taken the medication for high blood pressure</description>
+         <groupingId>codeSystem</groupingId>
+      </CodeSystem--cs-findRisc-screening-medicationHBP>
+      <ValueSet--vs-findRisc-screening-age>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC Screening Age</name>
+         <description>FINDRISC Screening question about the patient's age</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-age>
+      <ValueSet--vs-findRisc-screening-bmi>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC Screening BMI</name>
+         <description>FINDRISC Screening question about the patient's BMI</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-bmi>
+      <ValueSet--vs-findRisc-screening-consumeVegFrBa>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC Screening daily consume of vegetable, fruits and barries</name>
+         <description>FINDRISC Screening question about the patient consumes daily the vegetables, fruits an barries</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-consumeVegFrBa>
+      <ValueSet--vs-findRisc-screening-familyHistoryDiabetes>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC screening family history diabetes</name>
+         <description>FINDRISC screening about the patient family history of having diabetes</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-familyHistoryDiabetes>
+      <ValueSet--vs-findRisc-screening-hyperglycemia>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC screening hyperglycemia</name>
+         <description>FINDRISC screening question whether the patient has history of hyperglycemia</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-hyperglycemia>
+      <ValueSet--vs-findRisc-screening-medicationHBP>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC screening medication for high blood pressure</name>
+         <description>FINDRISC screening question whether the patient has taken the medication for high blood pressure</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-medicationHBP>
+      <ValueSet--vs-findRisc-screening-physicalActivity>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC screening physical activity</name>
+         <description>FINDRISC screening question about the physical activity of the patient</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-physicalActivity>
+      <ValueSet--vs-findRisc-screening-waistCircumference>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>ValueSet - FINDRISC screening waist circumference</name>
+         <description>FINDRISC screening question about the patient's waist circumference</description>
+         <groupingId>valueSet</groupingId>
+      </ValueSet--vs-findRisc-screening-waistCircumference>
+      <Questionnaire--rs-findRisc-questionnaire>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>Questionnaire - FINDRISC screening questionnaire instance</name>
+         <description>The questionnaire instance for FINDRISC screening</description>
+         <groupingId>questionnaire</groupingId>
+      </Questionnaire--rs-findRisc-questionnaire>
+      <Patient--rs-findRisc-patient>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>Example - FINDRISC Test Patient</name>
+         <exampleBoolean>true</exampleBoolean>
+         <description>Test Patient</description>
+         <groupingId>examples</groupingId>
+      </Patient--rs-findRisc-patient>
+      <Practitioner--rs-findRisc-pharmacist>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>Example - FINDRISC Test pharmacist</name>
+         <exampleBoolean>true</exampleBoolean>
+         <description>Test pharmacist</description>
+         <groupingId>examples</groupingId>
+      </Practitioner--rs-findRisc-pharmacist>
+      <QuestionnaireResponse--example-findRisc-screeningResponse-patient-author>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>Example - FINDRISC patient screening response</name>
+         <exampleBoolean>true</exampleBoolean>
+         <description>FINDRISC screening response (QuestionnaireResponse) with a patient as author</description>
+         <groupingId>examples</groupingId>
+      </QuestionnaireResponse--example-findRisc-screeningResponse-patient-author>
+      <QuestionnaireResponse--example-findRisc-screeningResponse>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>Example - FINDRISC screening response</name>
+         <exampleBoolean>true</exampleBoolean>
+         <description>FINDRISC screening response (QuestionnaireResponse)</description>
+         <groupingId>examples</groupingId>
+      </QuestionnaireResponse--example-findRisc-screeningResponse>
+      <Observation--example-findRisc-screeningScoreResult>
+         <fhirVersion>4.0.1</fhirVersion>
+         <name>Example - FINDRISC screening score result</name>
+         <exampleBoolean>true</exampleBoolean>
+         <description>FINDRISC screening score result</description>
+         <groupingId>examples</groupingId>
+      </Observation--example-findRisc-screeningScoreResult>
+   </resources>
+   <groups>
+      <logicalModel>
+         <name>Logical Model</name>
+         <description>A logical model is a expression of a set of content in a FHIR ready style that helps implementers understand the content is a single package.</description>
+      </logicalModel>
+      <codeSystem>
+         <name>Code System</name>
+         <description>The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.</description>
+      </codeSystem>
+      <extensibility>
+         <name>Extensibility</name>
+         <description>Extensibility is a fundamental part of the design of this specification. Every element in a resource can have extension child elements to represent additional information that is not part of the basic definition of the resource.</description>
+      </extensibility>
+      <valueSet>
+         <name>Value set</name>
+         <description>Value sets use CodeSystem resources by referring to them via their canonical reference.</description>
+      </valueSet>
+      <questionnaire>
+         <name>Questionnaire of the Finnish Diabetes Risk Score</name>
+         <description>A Questionnaire is an organized collection of questions intended to solicit information from patients, providers or other individuals involved in the healthcare domain.</description>
+      </questionnaire>
+      <examples>
+         <name>Example: Example Instances</name>
+         <description>Example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</description>
+      </examples>
+   </groups>
+</root>

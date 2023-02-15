@@ -1,0 +1,62 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.hl7.org/fhir/fhir-single.xsd">
+  <h3>Stakeholders</h3>
+  <a name="stakeholders"></a>
+  <ol>
+    <li>City-labs project for the use of POCT in primary and integrated care.</li>
+    <li>City-labs project for the development of digital applications for chronic diseases.</li>
+    <li>Future interoperable applications connected to Brusafe+ / Abrumet that could be used for the screening and monitoring of other chronic diseases.</li>
+    <li>Similar needs will be treated in Wallonia</li>
+  </ol>
+
+  <h3>Project and Scope</h3>
+  <a name="projectscope"></a>
+  <p>Diabetes screening programs need multidisciplinary teams and emerging technologies. Digital applications can facilitate citizen / patient empowerment and information. Manzana is such an application. It provides tools for the screening of diabetes risk and for recording of blood sugar measurements.Screening and measurement results are transmitted to the patient's health record at BruSafe+ where the patient can share them with their health care providers. Data provided by the patient is transferred to their electronic health record through BruSafe+ / Abrumet through structured date following the FHIR standard. A pilot phase will be set to validate the process, model, multidisciplinary actions and tranfer of data. A second phase will target the general transfer to the community.
+  </p>
+
+  <h3>Use Cases</h3>
+  <a name="usecase"></a>
+  <ol>
+    <li>Propose a care plan: a multidisciplinary healthcare team proposes a digital companion for diabetes screening and junction to care pathway.</li>
+    <li>Update a care plan: a patient with a high risk of diabetes can do a POCT measurement of glucose of HbA1c when the risk is high</li>
+    <li>Update a care plan: the risk estimation and POCT measurements are transferred to patient records through Abrumet</li>
+    <li>Close a care plan: a general practitioner can advise the patients with a high risk based on the digital risk score and POCT values</li>
+  </ol>
+  <h3>Requirement Specs</h3>
+  <a name="requirementspecs"></a>
+  <p>
+    Our research objectives of Manzana project:
+    <ol>
+      <li>Support the diagnosis and management of chronic diseases. We focus to create the gap between patients, physicians, and laboratories by creating additional junctions.</li>
+      <li>Positively influence lifestyle behavior of patients with daily monitoring and patient-specific empowerment.</li>
+      <li>E-Health should become a key driver for chronic disease management.</li>
+      <li>Promote high quality standards for the use of POCT</li>
+      <li>Stimulate interoperability and data exchange by using FHIR (Fast Healthcare interoperability Resource) specialized for Belgium.</li>
+    </ol>
+    <p>We are committed to developing interconnectivity between Manzana and the federal network. To realize the objective, Manzana used the REST API provided by Abrumet. This API provides basic operations to exchange data in a secure and privacy-respecting way.
+
+    The interoperability on data level is achieved by following the FHIR standard. The FHIR standard by HL7 defines an architecture based on resources consisting of data elements describing healthcare concepts. We defined the FHIR resources necessary for the Manzana application in Belgium based on the FHIR standard: Patient, Observation, Questionnaire Response. We use standard terminologies and codes (LOINC, SNOMED) to identify medical information. You can find the defined resources for Belgium in 'Specifications/Artifact Index'.
+    </p>
+  </p>
+  <h3>Manzana Features</h3>
+  <a name="features"></a>
+  <ol>
+    <li>Authentication with Abrumet</li>
+    <li>Screening programm FINDRISK</li>
+    <ol>
+      <li>Check risk of diabetes</li>
+      <li>Send test result to BruSafe+</li>
+      <li>Request test history</li>
+    </ol>
+    <ol>
+      <li>Measurement of Diabetes</li>
+      <li>Read measurement data from device connected via NFC</li>
+      <li>Send measurement data to BruSafe+</li>
+      <li>Request meaurement history</li>
+    </ol>
+  </ol>
+  <h3>Solution Overview</h3>
+  <a name="solutionoverview"></a>
+  <p>The following graph shows the communication between Manzana and BruSafe+/Abrumet:</p>
+  <img src="manzanaabrumet.png" style="display: block; margin-left: 60px; margin-right: auto; width: 70%;"/>
+</div>

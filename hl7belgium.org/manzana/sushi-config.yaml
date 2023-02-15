@@ -1,0 +1,247 @@
+
+  canonical: 'http://hl7belgium.org/profiles/fhir/manzana'
+  copyrightYear: 2019+
+  releaseLabel: CI Build
+  id: hl7.fhir.be.manzana
+  url: >-
+    http://hl7belgium.org/profiles/fhir/manzana/ImplementationGuide/hl7.fhir.be.manzana
+  version: 1.0.0
+  name: ManzanaProjectIG
+  title: Manzana Project FHIR Specifications
+  status: active
+  experimental: 'false'
+  publisher: HL7 Belgium
+  contact:
+    telecom:
+      system: url
+      value: 'http://www.hl7belgium.org'
+  description: The Manzana Project provides a standard mechanism to collect blood glucose readings through a connected app and scoring of diabetes via a questionnaire
+  jurisdiction: 'urn:iso:std:iso:3166#BE'
+  packageId: hl7.fhir.be.manzana
+  license: CC0-1.0
+  fhirVersion: 4.0.1
+  parameters:
+    copyrightyear: 2019+
+    releaselabel: CI Build
+    find-other-resources: 'true'
+    path-resource: input\history
+    path-binary: input\cql
+    path-liquid: templates\liquid
+    shownav: 'true'
+    apply-contact: 'true'
+    apply-jurisdiction: 'true'
+    apply-publisher: 'true'
+    apply-version: 'true'
+  pages:
+    index.xml:
+      title: MyIG Home Page
+      generation: html
+    downloads.xml:
+      title: Useful Downloads
+      generation: html
+    changes.xml:
+      title: IG Change History
+      generation: html
+    functionaloverview.md:
+      title: Guidance
+    background.xml:
+      title: Background
+    functionalDescription.xml:
+      title: Description
+  dependencies:
+    hl7.fhir.be.core-clinical:
+      uri: 'https://www.ehealth.fgov.be/standards/fhir/core-clinical'
+      version: 1.0.0
+    hl7.fhir.be.core:
+      uri: 'https://www.ehealth.fgov.be/standards/fhir/core'
+      version: 2.0.0
+  resources:
+    StructureDefinition/model-findRisc-scoreResult:
+      name: Logical model - FINDRISC screening Score result
+      description: Manzana FINDRISC Score result
+      groupingId: logicalModel
+    StructureDefinition/model-findRisc-screeningResponse:
+      name: Logical model - FINDRISC Screening response
+      description: Manzana FINDRISC screening response
+      groupingId: logicalModel
+    CodeSystem/cs-findRisc-screening-age:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC screening Age
+      description: FINDRISC Screening question about the patient's age
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-bmi:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC Screening BMI
+      description: FINDRISC Screening question about the patient's BMI
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-consumeVegFrBa:
+      fhirVersion: 4.0.1
+      name: >-
+        CodeSystem - FINDRISC Screening daily consume of vegetables, fruits and
+        barries
+      description: >-
+        FINDRISC Screening question about the patient consumes daily the
+        vegetables, fruits an barries
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-familyHistoryDiabetes:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC screening family history diabetes
+      description: FINDRISC screening about the patient family history of having diabetes
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-hyperglycemia:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC screening hyperglycemia
+      description: >-
+        FINDRISC screening question whether the patient has history of
+        hyperglycemia
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-physicalActivity:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC screening physical activity
+      description: FINDRISC screening question about the physical activity of the patient
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-waistCircumference:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC screening waist circumference
+      description: FINDRISC screening question about the patient's waist circumference
+      groupingId: codeSystem
+    CodeSystem/cs-findRisc-screening-medicationHBP:
+      fhirVersion: 4.0.1
+      name: CodeSystem - FINDRISC screening medication for high blood pressure
+      description: >-
+        FINDRISC screening question whether the patient has taken the medication
+        for high blood pressure
+      groupingId: codeSystem
+    ValueSet/vs-findRisc-screening-age:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC Screening Age
+      description: FINDRISC Screening question about the patient's age
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-bmi:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC Screening BMI
+      description: FINDRISC Screening question about the patient's BMI
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-consumeVegFrBa:
+      fhirVersion: 4.0.1
+      name: >-
+        ValueSet - FINDRISC Screening daily consume of vegetable, fruits and
+        barries
+      description: >-
+        FINDRISC Screening question about the patient consumes daily the
+        vegetables, fruits an barries
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-familyHistoryDiabetes:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC screening family history diabetes
+      description: FINDRISC screening about the patient family history of having diabetes
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-hyperglycemia:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC screening hyperglycemia
+      description: >-
+        FINDRISC screening question whether the patient has history of
+        hyperglycemia
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-medicationHBP:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC screening medication for high blood pressure
+      description: >-
+        FINDRISC screening question whether the patient has taken the medication
+        for high blood pressure
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-physicalActivity:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC screening physical activity
+      description: FINDRISC screening question about the physical activity of the patient
+      groupingId: valueSet
+    ValueSet/vs-findRisc-screening-waistCircumference:
+      fhirVersion: 4.0.1
+      name: ValueSet - FINDRISC screening waist circumference
+      description: FINDRISC screening question about the patient's waist circumference
+      groupingId: valueSet
+    Questionnaire/rs-findRisc-questionnaire:
+      fhirVersion: 4.0.1
+      name: Questionnaire - FINDRISC screening questionnaire instance
+      description: The questionnaire instance for FINDRISC screening
+      groupingId: questionnaire
+    Patient/rs-findRisc-patient:
+      fhirVersion: 4.0.1
+      name: Example - FINDRISC Test Patient
+      exampleBoolean: 'true'
+      description: Test Patient
+      groupingId: examples
+    Practitioner/rs-findRisc-pharmacist:
+      fhirVersion: 4.0.1
+      name: Example - FINDRISC Test pharmacist
+      exampleBoolean: 'true'
+      description: Test pharmacist
+      groupingId: examples
+    QuestionnaireResponse/example-findRisc-screeningResponse-patient-author:
+      fhirVersion: 4.0.1
+      name: Example - FINDRISC patient screening response
+      exampleBoolean: 'true'
+      description: >-
+        FINDRISC screening response (QuestionnaireResponse) with a patient as
+        author
+      groupingId: examples
+    QuestionnaireResponse/example-findRisc-screeningResponse:
+      fhirVersion: 4.0.1
+      name: Example - FINDRISC screening response
+      exampleBoolean: 'true'
+      description: FINDRISC screening response (QuestionnaireResponse)
+      groupingId: examples
+    Observation/example-findRisc-screeningScoreResult:
+      fhirVersion: 4.0.1
+      name: Example - FINDRISC screening score result
+      exampleBoolean: 'true'
+      description: FINDRISC screening score result
+      groupingId: examples
+  groups:
+    logicalModel:
+      name: Logical Model
+      description: >-
+        A logical model is a expression of a set of content in a FHIR ready
+        style that helps implementers understand the content is a single
+        package.
+    codeSystem:
+      name: Code System
+      description: >-
+        The CodeSystem resource is used to declare the existence of and describe
+        a code system or code system supplement and its key properties, and
+        optionally define a part or all of its content.
+    extensibility:
+      name: Extensibility
+      description: >-
+        Extensibility is a fundamental part of the design of this specification.
+        Every element in a resource can have extension child elements to
+        represent additional information that is not part of the basic
+        definition of the resource.
+    valueSet:
+      name: Value set
+      description: >-
+        Value sets use CodeSystem resources by referring to them via their
+        canonical reference.
+    questionnaire:
+      name: Questionnaire of the Finnish Diabetes Risk Score
+      description: >-
+        A Questionnaire is an organized collection of questions intended to
+        solicit information from patients, providers or other individuals
+        involved in the healthcare domain.
+    examples:
+      name: 'Example: Example Instances'
+      description: >-
+        Example instances that show what data produced and consumed by systems
+        conforming with this implementation guide might look like.
+  menu:
+    Home: index.html
+    Guidance: 
+      Overview: functionaloverview.html
+      Description: functionalDescription.html
+    Artifacts:
+      Profiles: artifacts.html#2
+      Extensions: artifacts.html#3
+      Value Sets: artifacts.html#4
+    Downloads: downloads.html
+    Changes: changes.html
+    History: 'http://hl7belgium.org/profiles/fhir/manzana/history.html'

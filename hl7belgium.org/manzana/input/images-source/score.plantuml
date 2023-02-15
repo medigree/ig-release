@@ -1,0 +1,138 @@
+@startuml
+'skinparam linetype polyline
+hide circle
+hide stereotype
+
+skinparam class<<AS>> {
+ BorderColor DarkRed
+ BackgroundColor MistyRose
+ HeaderBackgroundColor #f09090
+}
+skinparam class<<MD>> {
+ BorderColor DarkSlateGray
+ BackgroundColor WhiteSmoke
+ HeaderBackgroundColor #909090
+}
+skinparam class<<FL>> {
+ BorderColor #b07050
+ BackgroundColor BUSINESS
+ HeaderBackgroundColor #f2f295
+}
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+skinparam class<<TL>> {
+ BorderColor DarkGreen
+ BackgroundColor PHYSICAL
+ HeaderBackgroundColor LimeGreen
+}
+
+
+package "Risk Score" as RiskScore {
+
+package "Patient Questionnaire" as PatQuest {
+  class "**Questionnaire**" as quest<<AS>> {
+|_ recordDate
+|_ recorder
+|_ patient
+|_ screeningName
+|_ age
+|_ bmi
+|_ waistCircumference
+|_ physicalActivity
+|_ nutrition
+|_ bp_medication
+|_ glycemyOrHbA1c
+|_ familyHistory
+--
+  Questionnaire
+  }
+  class "**QuestionnaireResponse**" as questr<<FL>> {
+|_ recordDate
+|_ recorder
+|_ patient
+|_ screeningName
+|_ age
+|_ bmi
+|_ waistCircumference
+|_ physicalActivity
+|_ nutrition
+|_ bp_medication
+|_ glycemyOrHbA1c
+|_ familyHistory
+--
+  QuestionnaireResponse
+  }
+
+
+  class "**Score Result**" as score<<FL>> {
+|_ patient
+|_ status
+|_ scoreType
+|_ ScoreValue
+--
+  Observation
+  }
+
+}
+
+
+  package  "**Calculated**" as calc<<FL>> {
+  class "**  Operation  **" as operation<<FL>> {
+--
+  Operation
+  }
+
+
+
+
+  class "**  Glucose Measurement  **" as glucose<<FL>> {
+--
+  Observation
+  }
+  class "**  Meal Intake  **" as meal<<FL>> {
+--
+  Observation
+  }
+  class "**  Insulin Administration  **" as insulin<<FL>> {
+--
+  MedicationAdministration
+  }
+
+  class "**  Body Measurement  **" as bodym<<FL>> {
+--
+  Observation
+  }
+ 
+}
+  quest -right- questr : "                     "
+  questr -right- score : "                   "
+  
+  quest -down[hidden]- bodym : "               "
+
+  operation -up- score
+  operation -down- meal
+
+  bodym - operation: "                                                                                      "
+  operation - insulin
+  operation - glucose
+
+
+  bodym -down[hidden]- glucose :  "            "
+  glucose -right[hidden]- insulin :  "                 "
+  insulin -right[hidden]- meal:  "                   "
+
+
+
+
+'  bodym -left[hidden] glucose
+  
+
+  
+  
+  
+}
+
+@enduml
