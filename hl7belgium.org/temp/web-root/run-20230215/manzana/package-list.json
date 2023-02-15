@@ -1,0 +1,15 @@
+﻿{
+  "list" : [
+    {
+      "version" : "current",
+      "path" : "http://build.fhir.org/ig/hl7-be/manzana",
+      "status" : "ci-build",
+      "sequence" : "ci-build"
+    }
+  ],
+  "package-id" : "hl7.fhir.be.manzana",
+  "canonical" : "http://hl7belgium.org/profiles/fhir/manzana",
+  "title" : "Manzana Project FHIR Specifications",
+  "category" : "Patient Care",
+  "introduction" : "Manzana Project FHIR Specifications"
+}

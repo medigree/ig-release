@@ -1,0 +1,8 @@
+{
+  "website" : {
+    "style" : "fhir.layout",
+    "url" : "http://hl7belgium.org/profiles/fhir",
+    "server" : "apache",
+    "org" : "HL7 Belgium"
+  }
+}
