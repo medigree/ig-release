@@ -10,12 +10,15 @@
   title: Manzana Project FHIR Specifications
   status: active
   experimental: 'false'
-  publisher: HL7 Belgium
+  publisher: 
+    name: HL7 Belgium
+    url: https://hl7belgium.org
+
   contact:
     telecom:
       system: url
       value: 'http://www.hl7belgium.org'
-  description: The Manzana Project provides a standard mechanism to collect blood glucose readings through a connected app and scoring of diabetes via a questionnaire
+  description: "The Manzana project is part of City-Labs, which is a concept for new healthcare centers, the use of POCT in primary and integrated care, and for the development of digital applications for chronic diseases. Manzana targets two kinds of users - Patients and professionals. The goal of Manzana is to provide easy to use tools that can be used by Diabetes patients and people with an increase risk for Diabetes" 
   jurisdiction: 'urn:iso:std:iso:3166#BE'
   packageId: hl7.fhir.be.manzana
   license: CC0-1.0
@@ -46,7 +49,7 @@
       title: Guidance
     background.xml:
       title: Background
-    functionalDescription.xml:
+    functionaldescription.xml:
       title: Description
   dependencies:
     hl7.fhir.be.core-clinical:
@@ -202,14 +205,12 @@
       name: Logical Model
       description: >-
         A logical model is a expression of a set of content in a FHIR ready
-        style that helps implementers understand the content is a single
-        package.
+        style that helps implementers understand the data structures.
     codeSystem:
       name: Code System
       description: >-
         The CodeSystem resource is used to declare the existence of and describe
-        a code system or code system supplement and its key properties, and
-        optionally define a part or all of its content.
+        the full or partial content of a code system or code system supplement.
     extensibility:
       name: Extensibility
       description: >-
@@ -220,16 +221,15 @@
     valueSet:
       name: Value set
       description: >-
-        Value sets use CodeSystem resources by referring to them via their
-        canonical reference.
+        Value sets contain specific sets of codes for a given purpose. ValueSets use the codes in Code System.
     questionnaire:
-      name: Questionnaire of the Finnish Diabetes Risk Score
+      name: Questionnaire
       description: >-
         A Questionnaire is an organized collection of questions intended to
         solicit information from patients, providers or other individuals
         involved in the healthcare domain.
     examples:
-      name: 'Example: Example Instances'
+      name: 'Example Instances'
       description: >-
         Example instances that show what data produced and consumed by systems
         conforming with this implementation guide might look like.
@@ -237,8 +237,10 @@
     Home: index.html
     Guidance: 
       Overview: functionaloverview.html
-      Description: functionalDescription.html
+      Description: functionaldescription.html
     Artifacts:
+      Artifact Index: artifacts.html
+      Logical Models: artifacts.html#1
       Profiles: artifacts.html#2
       Extensions: artifacts.html#3
       Value Sets: artifacts.html#4

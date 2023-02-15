@@ -8,6 +8,7 @@ Description: "This is the logical model of the screening response."
 * ^publisher = "HL7 Belgium"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://example.com"
+//* ^type = "http://hl7belgium.org/profiles/fhir/StructureDefinition/model-findRisc-screeningResponse"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#BE
 * recordDate 1..1 http://hl7.org/fhir/StructureDefinition/dateTime "The Date the answers were gathered" "The Date the answers were gathered"
 * recorder 1..1 Reference(https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner) "Person who received the answers to the questions in the QuestionnaireResponse and recorded in the system." "Person who received the answers to the questions in the QuestionnaireResponse (Reference)"

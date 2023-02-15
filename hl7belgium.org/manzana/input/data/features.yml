@@ -1,15 +1,24 @@
 ---
+# feedback:
+#   - active: true
+#     type: "googleform"   
+#     label: "Feedback"   
+#     formUrl: https://docs.google.com/forms/d/e/1FAIpQLSeHtfxdrs29CtgUFI-HYlAJZ8BktQqCAcb32MYR0Bcbna3odg/viewform?usp=pp_url
+#     dashboard: 
+#       url: https://github.com/hl7-be/manzana-ig/projects/1
+#       label: "Issues"
+#     parameters:
+#     - name: "'entry.1353807103'"
+#       value: encodeURIComponent($(document).attr('title'))
+#     - name: "'entry.247644557'"
+#       value: document.getElementById(id).textContent
+
 feedback:
   - active: true
-    type: "googleform"   
-    label: "Feedback"   
-    formUrl: https://docs.google.com/forms/d/e/1FAIpQLSeHtfxdrs29CtgUFI-HYlAJZ8BktQqCAcb32MYR0Bcbna3odg/viewform?usp=pp_url
-    dashboard: 
-      url: https://github.com/hl7-be/manzana-ig/projects/1
-      label: "Issues"
-    parameters:
-    - name: "'entry.1353807103'"
-      value: encodeURIComponent($(document).attr('title'))
-    - name: "'entry.247644557'"
-      value: document.getElementById(id).textContent
-
+    dashboard:
+      label: Submit New Issue
+      url: https://github.com/hl7-be/manzana/issues/new
+  - active: true
+    dashboard:
+      label: View Issues
+      url: https://github.com/hl7-be/manzana/issues

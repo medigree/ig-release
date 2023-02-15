@@ -10,6 +10,8 @@ Description: "Manzana findRisc screening question family history diabetes"
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * ^count = 3
 * #no "No family history" "No family history of diabetes"
 * #no ^designation[0].language = #en-GB

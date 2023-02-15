@@ -1,6 +1,6 @@
 
 
-The Manzana project is based on the FHIR R4 specification and Belgian profiles.  
+The Manzana project is based on the FHIR R4 specification  and Belgian profiles.  
 The diagram below shows the different data entities and elements that are relevant to this project, including the FHIR resources that contain the data.
 <div>
 {% include score.svg %}

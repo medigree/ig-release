@@ -10,6 +10,8 @@ Description: "Manzana findRisc screening question patient BMI"
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * ^count = 3
 * #0-24 "The patient BMI is between 0 and 24" "Patient BMI between 0 and 24 (24 inclusive)"
 * #0-24 ^designation[0].language = #en-GB

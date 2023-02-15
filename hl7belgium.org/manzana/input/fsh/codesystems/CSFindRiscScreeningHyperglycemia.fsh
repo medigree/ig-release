@@ -10,6 +10,8 @@ Description: "Manzana findRisc screening question hyperglycemia"
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * ^count = 2
 * #Y "Yes" "Yes"
 * #Y ^designation[0].language = #en-GB

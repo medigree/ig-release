@@ -6,7 +6,7 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-scoreresult"
 * status = #final
 * category = https://www.ehealth.fgov.be/standards/fhir/core-clinical/CodeSystem/be-cs-score-category#risk
-* code = $sct#763117005 "FINDRISC score result"
+* code = $sct#763117005 "FINDRISC (Finnish Diabetes Risk Score) score"
 * code.text = "23.5"
 * subject = Reference(rs-findRisc-patient)
 * effectivePeriod.start = "2020-10-06T13:28:17.239+02:00"

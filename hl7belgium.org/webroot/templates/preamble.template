@@ -2,10 +2,13 @@
  <div id="segment-header" class="segment">  <!-- segment-header -->
   <div class="container">  <!-- container -->
    <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="https://hl7.org/fhir/assets-hist/images/fhir-logo-www.png"/></a>
-<div>
-<a id="hl7-logo" no-external="true" href="http://www.hl7.org">
-     <img alt="visit the hl7 website" src="https://hl7.org/fhir/assets-hist/images/hl7-logo.png"/>
-    </a>
+   <div>
+   <a id="hl7-logo" no-external="true" href="https://hl7belgium.org">
+      <img height="65" alt="HL7 Belgium" src="assets/images/hl7be-logo-header.png"/>
+   </a>
+   </div>
+   <div id="fhir-nav">
+   <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
    </div>
    <div id="ig-status" style="font-size:24px;padding-top: 20px;">
 <b id="ig-title">[%title%]</b>

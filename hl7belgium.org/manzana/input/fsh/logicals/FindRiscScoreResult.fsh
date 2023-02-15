@@ -8,7 +8,7 @@ Description: "This is the logical model of the patient's score results calculate
 * ^publisher = "HL7 Belgium"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://example.com"
-* ^type = "FindRiscScoreResult"
+//* ^type = "http://hl7belgium.org/profiles/fhir/StructureDefinition/model-findRisc-scoreResult"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#BE
 * recordDate 1..1 http://hl7.org/fhir/StructureDefinition/dateTime "The date when the score result is recorded" "The date when the score result is recorded"
 * evaluationDate 1..1 http://hl7.org/fhir/StructureDefinition/dateTime "The date of the evaluation" "The date of the evaluation"

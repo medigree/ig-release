@@ -9,7 +9,11 @@ Description: "Manzana findRisc screening question physical activity"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
+* ^experimental = false
+* ^caseSensitive = true
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * ^count = 2
 * #more-4-hours "Physical activity for more than 4 hours per week" "Physical activity time more than 4 hours per week"
 * #more-4-hours ^designation[0].language = #en-GB

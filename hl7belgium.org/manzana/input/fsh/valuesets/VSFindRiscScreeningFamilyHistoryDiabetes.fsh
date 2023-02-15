@@ -9,4 +9,5 @@ Description: "Manzana Finnish Diabetes screening question family history diabete
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
+* ^experimental = false
 * include codes from system CSFindRiscScreeningFamilyHistoryDiabetes

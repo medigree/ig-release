@@ -7,8 +7,8 @@
   "first": true,
   "mode" : "milestone",
   "ci-build": "http://build.fhir.org/ig/hl7-be/manzana",
-  "desc" : "Openhie Case Reporting.",
+  "desc" : "The Manzana project is part of City-Labs, which is a concept for new healthcare centers, the use of POCT in primary and integrated care, and for the development of digital applications for chronic diseases. Manzana targets two kinds of users - Patients and professionals. The goal of Manzana is to provide easy to use tools that can be used by Diabetes patients and people with an increased risk for Diabetes.",
   "title" : "Manzana Project FHIR Specifications",
-  "category" : "Patient Care",
-  "introduction" : "Manzana Project FHIR Specifications"
+  "category" : "HL7 Belgium",
+  "introduction" : "HL7 FHIR IG for Manazana (Abrumet)"
 }

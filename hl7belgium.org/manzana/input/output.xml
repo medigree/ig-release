@@ -206,7 +206,7 @@
    <groups>
       <logicalModel>
          <name>Logical Model</name>
-         <description>A logical model is a expression of a set of content in a FHIR ready style that helps implementers understand the content is a single package.</description>
+         <description>A logical model is a expression of a set of content in a FHIR ready style that helps implementers understand the data structure.</description>
       </logicalModel>
       <codeSystem>
          <name>Code System</name>
@@ -218,10 +218,10 @@
       </extensibility>
       <valueSet>
          <name>Value set</name>
-         <description>Value sets use CodeSystem resources by referring to them via their canonical reference.</description>
+         <description>Value sets contain specific sets of codes for a given purpose. ValueSets use the codes in Code System.</description>
       </valueSet>
       <questionnaire>
-         <name>Questionnaire of the Finnish Diabetes Risk Score</name>
+         <name>Questionnaire</name>
          <description>A Questionnaire is an organized collection of questions intended to solicit information from patients, providers or other individuals involved in the healthcare domain.</description>
       </questionnaire>
       <examples>

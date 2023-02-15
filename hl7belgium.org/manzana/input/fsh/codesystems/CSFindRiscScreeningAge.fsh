@@ -10,6 +10,8 @@ Description: "Manzana findRisc screening question patient age"
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * ^count = 4
 * #0-44 "The patient age is between 0 and 44 years" "Patient age between 0 and 44 years (44 inclusive)"
 * #0-44 ^designation[0].language = #en-GB

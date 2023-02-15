@@ -10,6 +10,8 @@ Description: "Manzana findRisc screening question daily consumption of vegetable
 * ^contact.telecom.value = "http://example.com"
 * ^jurisdiction = $m49.htm#056
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * ^count = 2
 * #more-5-times "More than 5 times per day of daily consumption of vegetables, fruits and berries" "More than 5 times per day of daily consumption of vegetables, fruits and berries"
 * #more-5-times ^designation[0].language = #en-GB
