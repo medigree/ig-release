@@ -1,0 +1,14 @@
+{
+    "package-id" : "openmrs.fhir.core",
+    "title" : "OpenMRS", 
+    "category" : "something",
+    "introduction" : "OpenMRS FHIR2 module core specifications",
+    "version" : "0.1.0",
+    "desc" : "First stable release",
+    "mode" : "milestone",    
+    "path" : "http://fhir.openmrs.org/core/0.1.0",
+    "ci-build": "https://openmrs.github.io/openmrs-contrib-fhir2-ig",    
+    "first": true,
+    "status" : "release",
+    "sequence" : "Releases"
+  }
