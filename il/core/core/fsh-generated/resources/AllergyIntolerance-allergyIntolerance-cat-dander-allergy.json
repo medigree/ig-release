@@ -1,0 +1,89 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "allergyIntolerance-cat-dander-allergy",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-allergy-intolerance"
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cat Dander Allergy</div>",
+    "status": "generated"
+  },
+  "patient": {
+    "reference": "Patient/patient-with-israeli-id"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "code": "confirmed",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
+      }
+    ]
+  },
+  "type": "allergy",
+  "criticality": "low",
+  "code": {
+    "coding": [
+      {
+        "code": "232346004",
+        "system": "http://snomed.info/sct",
+        "display": "Allergy to cat dander"
+      }
+    ]
+  },
+  "category": [
+    "biologic"
+  ],
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "code": "260152009",
+            "system": "http://snomed.info/sct",
+            "display": "Cat dander (substance)"
+          }
+        ]
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "code": "271807003",
+              "system": "http://snomed.info/sct",
+              "display": "Eruption of skin (disorder)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "418290006",
+              "system": "http://snomed.info/sct",
+              "display": "Itching (finding)"
+            }
+          ]
+        }
+      ],
+      "severity": "mild",
+      "exposureRoute": {
+        "coding": [
+          {
+            "code": "6064005",
+            "system": "http://snomed.info/sct",
+            "display": "Topical route (qualifier value)"
+          }
+        ]
+      }
+    }
+  ]
+}

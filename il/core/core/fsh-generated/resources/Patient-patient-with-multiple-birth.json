@@ -1,0 +1,128 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-with-multiple-birth",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "103",
+            "system": "http://fhir.health.gov.il/cs/paying-entity-moh",
+            "display": "קופת חולים מכבי"
+          }
+        ]
+      }
+    }
+  ],
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 182468.59
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 670131.38
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "home",
+      "type": "physical",
+      "text": "הירקון 1א' דירה 4 תל אביב",
+      "line": [
+        "הירקון 1א"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "הירקון"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "1"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+              "valueString": "א'"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
+              "valueString": "4"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+              "valueString": "1446"
+            }
+          ]
+        }
+      ],
+      "city": "תל אביב",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "5000",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "postalCode": "6964101",
+      "district": "תל אביב",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">שמואלה לוי</div>",
+    "status": "generated"
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.il/identifier/il-national-id",
+      "value": "000000018"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "family": "לוי",
+      "given": [
+        "שמואלה"
+      ],
+      "text": "שמואלה לוי"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "055555555",
+      "use": "home"
+    },
+    {
+      "system": "email",
+      "value": "Israel@example.com"
+    }
+  ],
+  "gender": "female",
+  "multipleBirthInteger": 2,
+  "birthDate": "2003-04-17",
+  "deceasedBoolean": false
+}

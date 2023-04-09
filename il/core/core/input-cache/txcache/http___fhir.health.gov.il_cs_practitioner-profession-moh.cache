@@ -1,0 +1,134 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "concept" : [{
+        "code" : "101",
+        "display" : "אח/ות מוסמכ/ת"
+      },
+      {
+        "code" : "102",
+        "display" : "אח/ות מעשי/ת"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:b3f6e7d8-e16f-402e-9e3c-c3391eb3e8c1",
+    "timestamp" : "2023-04-09T08:21:47.448Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://fhir.health.gov.il/cs/practitioner-profession-moh|0.11.0"
+    }],
+    "contains" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "מקצוע האח/ות מוסמכ/ת שייך לתחום הסיעוד לו קיימים ערכי מומחיות Expertise"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "code" : "101",
+      "display" : "אח/ות מוסמכ/ת"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "מקצוע האח/ות מעשי/ת שייך לתחום הסיעוד ללא מומחיות או התמחות"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "code" : "102",
+      "display" : "אח/ות מעשי/ת"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "concept" : [{
+        "code" : "101",
+        "display" : "אח/ות מוסמכ/ת"
+      },
+      {
+        "code" : "102",
+        "display" : "אח/ות מעשי/ת"
+      },
+      {
+        "code" : "103",
+        "display" : "אח/ות"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:0300cfa0-714c-4f97-bd27-8c722156b58a",
+    "timestamp" : "2023-04-09T08:21:47.855Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://fhir.health.gov.il/cs/practitioner-profession-moh|0.11.0"
+    }],
+    "contains" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "מקצוע האח/ות מוסמכ/ת שייך לתחום הסיעוד לו קיימים ערכי מומחיות Expertise"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "code" : "101",
+      "display" : "אח/ות מוסמכ/ת"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "מקצוע האח/ות מעשי/ת שייך לתחום הסיעוד ללא מומחיות או התמחות"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "code" : "102",
+      "display" : "אח/ות מעשי/ת"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "מקצוע אח/ות שייך לתחום הסיעוד ללא מומחיות או התמחות"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+      "code" : "103",
+      "display" : "אח/ות"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

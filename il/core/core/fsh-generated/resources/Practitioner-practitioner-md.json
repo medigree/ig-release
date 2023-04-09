@@ -1,0 +1,81 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-md",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://practitioners.health.gov.il/Practitioners",
+      "value": "1-22947"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">רופאת משפחה</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": [
+    {
+      "prefix": [
+        "דר'"
+      ],
+      "family": "גרינפלד",
+      "given": [
+        "דיאנה"
+      ],
+      "text": "דר' גרינפלד דיאנה"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "04-6421420",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "DG@example.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1979-04-30",
+  "qualification": [
+    {
+      "identifier": [
+        {
+          "system": "http://practitioners.health.gov.il/practitioner-certificate",
+          "value": "1-22947",
+          "period": {
+            "start": "2012-09-06"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "2",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "רישיון קבוע"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "1",
+                "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                "display": "רפואה"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

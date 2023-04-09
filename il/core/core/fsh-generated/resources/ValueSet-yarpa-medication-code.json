@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "YarpaMedicationCode",
+  "id": "yarpa-medication-code",
+  "title": "Yarpa Medication Code",
+  "description": "Codes for medications according to 'Yarpa' catalogue",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/yarpa-medication-code",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://yarpa.co.il/catalog"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "resourceType": "Practitioner",
+  "id": "anesthesiologist-with-expertise",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://practitioners.health.gov.il/Practitioners",
+      "value": "1-1234"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">anesthesiologist with expertise</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": [
+    {
+      "prefix": [
+        "דר'"
+      ],
+      "family": "ברקוביץ",
+      "given": [
+        "ליאת"
+      ],
+      "text": "דר' ליאת ברקוביץ"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "04-6421420",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "DG@example.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1977-04-01",
+  "qualification": [
+    {
+      "identifier": [
+        {
+          "system": "http://practitioners.health.gov.il/practitioner-certificate",
+          "value": "1-1234",
+          "period": {
+            "start": "2012-09-06"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "2",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "רישיון קבוע"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "1",
+                "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                "display": "רפואה"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+          "value": "123445"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "5",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת מומחה"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "21",
+                "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+                "display": "הרדמה"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

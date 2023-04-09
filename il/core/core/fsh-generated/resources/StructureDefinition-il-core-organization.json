@@ -1,0 +1,285 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-organization",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-organization",
+  "version": "0.11.0",
+  "name": "ILCoreOrganization",
+  "title": "ILCore Organization Profile",
+  "status": "draft",
+  "date": "2021-03-21",
+  "publisher": "Ministry of Health of Israel",
+  "description": "Israel Core proposed constraints and extensions on the Organization Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "short": "ILCore Organization Profile",
+        "definition": "The Organization Profile is based upon the core FHIR Organization Resource",
+        "constraint": [
+          {
+            "key": "il-organization-identifier",
+            "severity": "error",
+            "human": "If not sub-organization (i.e - partOf), there SHALL be an identifier",
+            "expression": "partOf.empty() implies identifier.exists()",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+          }
+        ]
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Organization.identifier.system",
+        "path": "Organization.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier.value",
+        "path": "Organization.identifier.value",
+        "short": "The value that is unique within the system.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:moh-inst-symbol",
+        "path": "Organization.identifier",
+        "sliceName": "moh-inst-symbol",
+        "short": "MoH institute sympbol number",
+        "definition": "Institute symbol number as issued by Israeli Ministry of Health (MoH). MoH portal - http://institutions.health.gov.il/Institutions",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:moh-inst-symbol.system",
+        "path": "Organization.identifier.system",
+        "fixedUri": "http://institutions.health.gov.il/Institutions"
+      },
+      {
+        "id": "Organization.identifier:moh-inst-symbol.value",
+        "path": "Organization.identifier.value",
+        "short": "An MoH institute license number"
+      },
+      {
+        "id": "Organization.identifier:legal-entity",
+        "path": "Organization.identifier",
+        "sliceName": "legal-entity",
+        "short": "Israeli legal entity identifier (Hebrew -  ח.פ., מספר עמותה וכו)",
+        "definition": "Unique identifier (9 digit unchangeable number) issued by Israeli legal authorities for Leagl entities of any organization, such as goverment institutes, ottoman assoc., non-profit organizations, private companies",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:legal-entity.system",
+        "path": "Organization.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/legal-entity"
+      },
+      {
+        "id": "Organization.identifier:legal-entity.value",
+        "path": "Organization.identifier.value",
+        "short": "Israeli legal entity Identifier",
+        "constraint": [
+          {
+            "key": "nine-digits-chk",
+            "severity": "error",
+            "human": "All legal entities must have a 9 digit identifier",
+            "expression": "matches('[0-9]{9}')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+          }
+        ]
+      },
+      {
+        "id": "Organization.identifier:moe-inst",
+        "path": "Organization.identifier",
+        "sliceName": "moe-inst",
+        "short": "MoE institute symbol",
+        "definition": "Institute symbol as issued by Israeli Ministry of Education (MoE). MoE portal - https://apps.education.gov.il/imsnet/itur.aspx",
+        "min": 0,
+        "max": "1",
+        "mustSupport": false
+      },
+      {
+        "id": "Organization.identifier:moe-inst.system",
+        "path": "Organization.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/moe-institute-symbol"
+      },
+      {
+        "id": "Organization.identifier:moe-inst.value",
+        "path": "Organization.identifier.value",
+        "short": "An MoE institute symbol"
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/organization-type"
+        }
+      },
+      {
+        "id": "Organization.type:moh-institute-type",
+        "path": "Organization.type",
+        "sliceName": "moh-institute-type",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "76",
+                  "system": "http://fhir.health.gov.il/cs/institution-type-moh",
+                  "display": "משרדי ממשלה"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/institution-type-moh"
+        }
+      },
+      {
+        "id": "Organization.type:moh-department-type",
+        "path": "Organization.type",
+        "sliceName": "moh-department-type",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "10000",
+                  "system": "http://fhir.health.gov.il/cs/department-type-moh",
+                  "display": "אשפוז - פנימית"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/department-type-moh"
+        }
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.telecom.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.telecom.value",
+        "path": "Organization.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.telecom.use",
+        "path": "Organization.telecom.use",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-address"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

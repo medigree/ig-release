@@ -1,0 +1,27 @@
+{
+  "resourceType": "Procedure",
+  "id": "partial-parotidectomy",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-procedure"
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Partial Parotidectomy</div>",
+    "status": "generated"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "11150009",
+        "display": "Partial parotidectomy"
+      }
+    ]
+  },
+  "performedDateTime": "2020-02-07",
+  "subject": {
+    "reference": "Patient/patient-with-israeli-id"
+  }
+}

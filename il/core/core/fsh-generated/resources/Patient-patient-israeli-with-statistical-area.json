@@ -1,0 +1,134 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-israeli-with-statistical-area",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "101",
+            "system": "http://fhir.health.gov.il/cs/paying-entity-moh",
+            "display": "קופת חולים כללית"
+          }
+        ]
+      }
+    }
+  ],
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 182468.59
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 670131.38
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        },
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
+          "valueIdentifier": {
+            "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
+            "value": "24000007"
+          }
+        }
+      ],
+      "use": "home",
+      "type": "physical",
+      "text": "סעדון אליהו 4 א' אור יהודה",
+      "line": [
+        "סעדון אליהו 4 א'"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "סעדון אליהו"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "4"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+              "valueString": "א'"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
+              "valueString": "4"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+              "valueString": "1446"
+            }
+          ]
+        }
+      ],
+      "city": "אור יהודה",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2400",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "postalCode": "6039725",
+      "district": "אור יהודה",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Patient with statistical area</div>",
+    "status": "generated"
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.il/identifier/il-national-id",
+      "value": "000000018"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "family": "בן ברוך",
+      "given": [
+        "יעלה"
+      ],
+      "text": "יעלה בן ברוך"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "052467910",
+      "use": "home"
+    },
+    {
+      "system": "email",
+      "value": "Israel@example.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "2003-04-17",
+  "deceasedBoolean": false
+}

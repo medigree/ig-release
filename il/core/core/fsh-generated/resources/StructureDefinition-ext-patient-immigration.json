@@ -1,0 +1,290 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-patient-immigration",
+  "url": "http://fhir.health.gov.il/StructureDefinition/ext-patient-immigration",
+  "version": "0.11.0",
+  "name": "PatientImmigration",
+  "title": "Ext: Patient Immigration",
+  "status": "draft",
+  "description": "Extension: Immigration information for patient - for the purpose of this extension - immigration is an international movement of a person to a destination country in order to settle as permanent resident",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Ext: Patient Immigration",
+        "definition": "Extension: Immigration information for patient - for the purpose of this extension - immigration is an international movement of a person to a destination country in order to settle as permanent resident",
+        "comment": "In case of an Aliyah (A jew immigrating to Israel), the destination should be 'IL' (Israel)"
+      },
+      {
+        "id": "Extension.extension:origin",
+        "path": "Extension.extension",
+        "sliceName": "origin",
+        "short": "Country code of origin",
+        "definition": "Country code corresponding to origin country of patient.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:origin.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:origin.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "origin"
+      },
+      {
+        "id": "Extension.extension:origin.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:origin.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "US",
+                  "system": "urn:iso:std:iso:3166",
+                  "display": "United States of America"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        }
+      },
+      {
+        "id": "Extension.extension:destination",
+        "path": "Extension.extension",
+        "sliceName": "destination",
+        "short": "Country code of destination",
+        "definition": "Country code corresponding to destination country of patient. When missing, destination country is assumed to be Israel",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:destination.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:destination.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "destination"
+      },
+      {
+        "id": "Extension.extension:destination.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:destination.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "IL",
+                  "system": "urn:iso:std:iso:3166",
+                  "display": "Israel"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        }
+      },
+      {
+        "id": "Extension.extension:date",
+        "path": "Extension.extension",
+        "sliceName": "date",
+        "short": "Date of immigration",
+        "definition": "Date of immigration.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:date.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:date.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "date"
+      },
+      {
+        "id": "Extension.extension:date.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:date.valueDate",
+        "path": "Extension.extension.valueDate",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "valueDateTime": "2022-01-01",
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:status",
+        "path": "Extension.extension",
+        "sliceName": "status",
+        "short": "Immigration status code",
+        "definition": "Immigration status according to LOINC answer-list LL5005-5 [https://loinc.org/LL5005-5]",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:status.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:status.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "status"
+      },
+      {
+        "id": "Extension.extension:status.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:status.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA29155-1",
+                  "system": "http://loinc.org",
+                  "display": "Naturalized citizen"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://loinc.org/vs/LL5005-5"
+        }
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://fhir.health.gov.il/StructureDefinition/ext-patient-immigration"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

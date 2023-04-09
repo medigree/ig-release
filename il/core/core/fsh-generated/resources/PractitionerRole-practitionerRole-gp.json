@@ -1,0 +1,39 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "practitionerRole-gp",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role"
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">רופאת משפחה</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "practitioner": {
+    "reference": "Practitioner/practitioner-md"
+  },
+  "location": [
+    {
+      "reference": "Location/location-hospital-unit"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "04-6421420",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "DG@example.com"
+    }
+  ],
+  "availableTime": [
+    {
+      "availableStartTime": "09:00:00",
+      "availableEndTime": "17:00:00"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-recorded-time",
+  "url": "http://fhir.health.gov.il/StructureDefinition/ext-recorded-time",
+  "version": "0.11.0",
+  "name": "RecordedTime",
+  "title": "Ext: Recorded Time",
+  "status": "draft",
+  "description": "Extension: The time in whitch an event was recorded",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "MedicationRequest"
+    },
+    {
+      "type": "element",
+      "expression": "MedicationAdministration"
+    },
+    {
+      "type": "element",
+      "expression": "MedicationDispense"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Ext: Recorded Time",
+        "definition": "Extension: The time in whitch an event was recorded"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://fhir.health.gov.il/StructureDefinition/ext-recorded-time"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "time"
+          }
+        ]
+      }
+    ]
+  }
+}

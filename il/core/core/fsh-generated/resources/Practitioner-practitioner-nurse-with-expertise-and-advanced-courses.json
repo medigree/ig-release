@@ -1,0 +1,182 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-nurse-with-expertise-and-advanced-courses",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://practitioners.health.gov.il/Nurses",
+      "value": "207927",
+      "period": {
+        "start": "2012-09-06"
+      }
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">אחות מוסמכת עם מומחיות וקורס על בסיסי</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": [
+    {
+      "prefix": [
+        "גב'"
+      ],
+      "family": "אייזקס",
+      "given": [
+        "אביב"
+      ],
+      "text": "אביב אייזקס"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "02-5334295",
+      "use": "work"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1987-04-30",
+  "qualification": [
+    {
+      "identifier": [
+        {
+          "system": "http://practitioners.health.gov.il/Nurses",
+          "value": "207927",
+          "period": {
+            "start": "2012-09-06"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "26",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת רישום"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "101",
+                "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                "display": "אח/ות מוסמכ/ת"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/nurse-expertise",
+          "value": "108-0030",
+          "period": {
+            "start": "2021-05-05"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "5",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת מומחיות"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "108",
+                "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+                "display": "פגים"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/nurse-advanced-course",
+          "value": "65-207927",
+          "period": {
+            "start": "1900-01-01"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "110",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת רישום קורס ע ב"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "65",
+                "system": "http://fhir.health.gov.il/cs/practitioner-advanced-course-moh",
+                "display": "הדרכה קלינית"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/nurse-advanced-course",
+          "value": "71-207927",
+          "period": {
+            "start": "1900-01-01"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "110",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת רישום קורס ע ב"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "71",
+                "system": "http://fhir.health.gov.il/cs/practitioner-advanced-course-moh",
+                "display": "טיפול נמרץ פגים"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

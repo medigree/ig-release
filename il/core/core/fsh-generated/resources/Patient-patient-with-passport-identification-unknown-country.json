@@ -1,0 +1,144 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-with-passport-identification-unknown-country",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "PPN",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+          }
+        ]
+      },
+      "value": "8876543",
+      "_system": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "101",
+            "system": "http://fhir.health.gov.il/cs/paying-entity-moh",
+            "display": "קופת חולים כללית"
+          }
+        ]
+      }
+    }
+  ],
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 182468.59
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 670131.38
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        },
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
+          "valueIdentifier": {
+            "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
+            "value": "40000733"
+          }
+        }
+      ],
+      "text": "חניתה 20 חיפה",
+      "line": [
+        "חניתה 20"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "חניתה"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "20"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
+              "valueString": "4"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+              "valueString": "272"
+            }
+          ]
+        }
+      ],
+      "city": "חיפה",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "4000",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "postalCode": "3244010",
+      "district": "חיפה",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Patient with foreign passport- unknown-country</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": [
+    {
+      "family": "Smith",
+      "given": [
+        "David",
+        "John"
+      ],
+      "text": "David John Smith"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+4423456789",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "johnsmith@example.com"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1994-03-22",
+  "deceasedBoolean": false
+}

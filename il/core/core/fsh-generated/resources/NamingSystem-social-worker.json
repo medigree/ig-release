@@ -1,0 +1,39 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "social-worker",
+  "name": "Israeli Ministry of Labor, Social Affairs and Social Services social-worker license",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2022-12-08",
+  "publisher": "Israeli Ministry of Labor, Social Affairs and Social Services",
+  "responsible": "Israeli MoLSA",
+  "type": {
+    "coding": [
+      {
+        "code": "AC",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display": "Accreditation/Certification Identifier"
+      }
+    ],
+    "text": "Social-worker number"
+  },
+  "description": "Identifies Licensed social worker practitioners according to Israeli MoLSA",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "IL",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "usage": "Should include and a sequence number. I.e., \\<social-worker-certificate-number\\>",
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "http://fhir.health.gov.il/identifier/molsa-socialworker-lic",
+      "preferred": true
+    }
+  ]
+}

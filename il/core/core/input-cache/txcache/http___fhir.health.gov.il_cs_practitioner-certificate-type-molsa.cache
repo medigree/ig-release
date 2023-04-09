@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa",
+      "concept" : [{
+        "code" : "SW",
+        "display" : "רשיון עבודה סוציאלית"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:4b1e6fd0-d7a8-41b8-b0f9-d835d9b7fd01",
+    "timestamp" : "2023-04-09T08:21:46.526Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa|0.11.0"
+    }],
+    "contains" : [{
+      "system" : "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa",
+      "code" : "SW",
+      "display" : "רשיון עבודה סוציאלית"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

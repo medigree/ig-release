@@ -1,0 +1,142 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-nurse",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://practitioners.health.gov.il/Nurses",
+      "value": "7962",
+      "period": {
+        "start": "1991-10-14"
+      }
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">אחות מוסמכת ללא מומחיות עם קורסים על בסיסיים</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": [
+    {
+      "prefix": [
+        "גב'"
+      ],
+      "family": "לוזון",
+      "given": [
+        "אביבה"
+      ],
+      "text": "אביבה לוזון"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "02-5334295",
+      "use": "work"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1965-11-30",
+  "qualification": [
+    {
+      "identifier": [
+        {
+          "system": "http://practitioners.health.gov.il/Nurses",
+          "value": "7962",
+          "period": {
+            "start": "1991-10-14"
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "26",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת רישום"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "101",
+                "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                "display": "אח/ות מוסמכ/ת"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/nurse-expertise",
+          "value": "102-12070"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "5",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת מומחה"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "102",
+                "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+                "display": "סוכרת"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/nurse-advanced-course",
+          "value": "19-7962"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "110",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת רישום קורס ע ב"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "19",
+                "system": "http://fhir.health.gov.il/cs/practitioner-advanced-course-moh",
+                "display": "נפרולוגיה"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

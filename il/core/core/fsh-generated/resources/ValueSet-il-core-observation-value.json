@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreObservationValue",
+  "id": "il-core-observation-value",
+  "title": "IL Core Observation Value Codes",
+  "description": "A list of value codes for observations for the IL Core \n\nNote: The entire LOINC code system is included in this ValueSet although it should only include LOINC Answers - LOINC codes that start with 'LA'. Since there is no computable way to define a ValueSet according to the code's prefix, we rely on an invariant to enforce this rule.",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-observation-value",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct"
+      },
+      {
+        "system": "http://loinc.org"
+      }
+    ]
+  }
+}

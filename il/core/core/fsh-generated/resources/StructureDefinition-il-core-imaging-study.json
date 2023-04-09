@@ -1,0 +1,193 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-imaging-study",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-imaging-study",
+  "version": "0.11.0",
+  "name": "ILCoreImagingStudy",
+  "title": "ILCore ImagingStudy Profile",
+  "status": "draft",
+  "date": "2021-05-02",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the ImagingStudy Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "dicom",
+      "uri": "http://nema.org/dicom",
+      "name": "DICOM Tag Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ImagingStudy",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ImagingStudy",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ImagingStudy",
+        "path": "ImagingStudy",
+        "short": "Israel Core ImagingStudy Profile",
+        "definition": "Definitions for the profile-ImagingStudy resource profile."
+      },
+      {
+        "id": "ImagingStudy.subject",
+        "path": "ImagingStudy.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.encounter",
+        "path": "ImagingStudy.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.basedOn",
+        "path": "ImagingStudy.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/CarePlan",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-service-request",
+              "http://hl7.org/fhir/StructureDefinition/Appointment",
+              "http://hl7.org/fhir/StructureDefinition/AppointmentResponse",
+              "http://hl7.org/fhir/StructureDefinition/Task"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.referrer",
+        "path": "ImagingStudy.referrer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.interpreter",
+        "path": "ImagingStudy.interpreter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.procedureReference",
+        "path": "ImagingStudy.procedureReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.location",
+        "path": "ImagingStudy.location",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-location"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.reasonReference",
+        "path": "ImagingStudy.reasonReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-media",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-diagnostic-report",
+              "http://hl7.org/fhir/StructureDefinition/DocumentReference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.series.specimen",
+        "path": "ImagingStudy.series.specimen",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.series.performer.actor",
+        "path": "ImagingStudy.series.performer.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization",
+              "http://hl7.org/fhir/StructureDefinition/CareTeam",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

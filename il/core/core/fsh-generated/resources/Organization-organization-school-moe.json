@@ -1,0 +1,71 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-school-moe",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.il/identifier/moe-institute-symbol",
+      "value": "440172",
+      "use": "official"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "type": "physical",
+      "text": "אזר 43 כפר סבא",
+      "line": [
+        "אזר 43"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "אזר"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "43"
+            }
+          ]
+        }
+      ],
+      "city": "כפר סבא",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "6900",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "postalCode": "4410601",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">תיכון כצנלסון</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": "תיכון כצנלסון",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "09-7433376",
+      "use": "work"
+    }
+  ]
+}

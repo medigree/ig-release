@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ICD9ILDiagnoses",
+  "id": "icd9il-diagnoses",
+  "title": "ICD9 IL Diagnoses",
+  "description": "codes of diagnoses from ICD9-IL",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/icd9il-diagnoses",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.health.gov.il/cs/icd9il",
+        "filter": [
+          {
+            "property": "type",
+            "op": "=",
+            "value": "diagnosis"
+          }
+        ]
+      }
+    ]
+  }
+}

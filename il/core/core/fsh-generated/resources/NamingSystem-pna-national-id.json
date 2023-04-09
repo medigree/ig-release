@@ -1,0 +1,48 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "pna-national-id",
+  "name": "Palestinian National Identifier - Individual",
+  "status": "active",
+  "kind": "identifier",
+  "date": "2021-07-28",
+  "publisher": "Israeli Ministry of Health",
+  "responsible": "Israeli Ministry of Interior",
+  "type": {
+    "coding": [
+      {
+        "code": "NI",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "display": "National unique individual identifier"
+      }
+    ],
+    "text": "Palestinian Person Identifier"
+  },
+  "description": "Palestinian Identifier number. A nine-digit number",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "IL",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "usage": "Used for identifying palestinian patients, practitioners and relatedPersons",
+  "uniqueId": [
+    {
+      "type": "uri",
+      "value": "http://fhir.health.gov.il/identifier/pna-national-id",
+      "preferred": true
+    },
+    {
+      "type": "uri",
+      "value": "http://fhir.health.org.il/identifier/pna-national-id",
+      "comment": "This value was mistakenly set in the first drafts of ILCore",
+      "preferred": false,
+      "period": {
+        "end": "2021-07-11"
+      }
+    }
+  ]
+}

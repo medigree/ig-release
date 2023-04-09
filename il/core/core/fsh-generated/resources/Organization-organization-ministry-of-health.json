@@ -1,0 +1,82 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-ministry-of-health",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.il/identifier/legal-entity",
+      "value": "500100904",
+      "use": "official"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "type": "physical",
+      "text": "ירמיהו 39 ירושלים",
+      "line": [
+        "ירמיהו 39"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "ירמיהו"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "39"
+            }
+          ]
+        }
+      ],
+      "city": "ירושלים",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "3000",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "postalCode": "9446724",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">משרד הבריאות</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": "משרד הבריאות",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "08-6241010",
+      "use": "work"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "76",
+          "system": "http://fhir.health.gov.il/cs/institution-type-moh",
+          "display": "משרדי ממשלה"
+        }
+      ]
+    }
+  ]
+}

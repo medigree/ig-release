@@ -1,0 +1,640 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PractitionerProfessionMoH",
+  "id": "practitioner-profession-moh",
+  "title": "קוד מקצוע לעוסק בבריאות",
+  "description": "קוד מקצוע לעוסק בבריאות לפי רישוי משרד הבריאות",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+  "concept": [
+    {
+      "code": "-888",
+      "display": "לא ידוע",
+      "definition": "ערך ברירת מחדל במקרה שהמידע שמגיע הוא NULL",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "deprecated"
+        }
+      ]
+    },
+    {
+      "code": "-999",
+      "display": "לא קיים",
+      "definition": "ערך ברירת מחדל במקרה שערך המקצוע איננו רלוונטי או לא קיים מאחר ולא מדובר במקצוע רפואי",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "deprecated"
+        }
+      ]
+    },
+    {
+      "code": "1",
+      "display": "רפואה",
+      "definition": "מקצוע הרפואה לו קיימים גם ערכי מומחיות Expertise",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "display": "רפואת שיניים",
+      "definition": "מקצוע רפואת השינייים לו קיימים גם ערכי מומחיות Expertise",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "display": "רוקחים",
+      "definition": "מקצוע הרוקחות לו קיימים גם ערכי התמחות Specialist (אך לא מומחיות Expertise)",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "display": "עוזרי רוקחים",
+      "definition": "מקצוע עוזר רוקח ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "display": "מיילדת",
+      "definition": "מקצוע המיילדת שייך לתחום הסיעוד ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "6",
+      "display": "שיננית",
+      "definition": "מקצוע השיננית שייך לתחום רפואת השניים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "7",
+      "display": "טכנאי שיניים-מעשי",
+      "definition": "מקצוע טכנאי שיניים מעשי שייך לתחום רפואת השיניים (מופרד ממקצוע טכנאי שיניים) וללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "8",
+      "display": "אופטומטריה",
+      "definition": "מקצוע האופטומטריה ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "9",
+      "display": "אורטופטיסט",
+      "definition": "מקצוע האורטופטיסט שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "10",
+      "display": "פיזיותרפיה",
+      "definition": "מקצוע הפיזיותרפיה שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "11",
+      "display": "דיאטן תזונאי",
+      "definition": "מקצוע הדיאטן תזונאי שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "12",
+      "display": "כירופרקטיקה",
+      "definition": "מקצוע הכירופרקטיקה שייך לתחום הפר\"א וללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "13",
+      "display": "קלינאי-תיקשורת",
+      "definition": "מקצוע הקלינאי-תיקשורת שייך לתחום הפר\"א לו קיימים גם ערכי התמחות Specialist",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "14",
+      "display": "מרפא בעיסוק",
+      "definition": "מקצוע מרפא בעיסוק שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "15",
+      "display": "ריפוי ביצירה והבעה",
+      "definition": "מקצוע הריפוי ביצירה והבעה שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "16",
+      "display": "טכנאי-הנשמה (רספירטורי טרפיסט)",
+      "definition": "מקצוע הטכנאי-הנשמה (רספירטורי טרפיסט) ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "17",
+      "display": "עובד מעבדה רפואית",
+      "definition": "מקצוע עובד מעבדה רפואית לו קיימים ערכי התמחות Specialist",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "18",
+      "display": "טכנולוגים אלקטרו פיסיולוגים",
+      "definition": "מקצוע הטכנולוגים אלקטרו פיסיולוגים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "19",
+      "display": "רנטגנאים",
+      "definition": "מקצוע הרנטגנאים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "20",
+      "display": "טכנולוגים ברפואה גרעינית",
+      "definition": "מקצוע הטכנולוגים ברפואה גרעינית ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "21",
+      "display": "טכנאי אולטרה-סאונד",
+      "definition": "מקצוע הטכנולוגים ברפואה גרעינית ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "22",
+      "display": "אורטוטיסטים - פרוטוטיסטים",
+      "definition": "מקצוע האורטוטיסטים - פרוטוטיסטים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "23",
+      "display": "כירופודיסטים",
+      "definition": "מקצוע הכירופודיסטים שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "24",
+      "display": "פודיאטריסטים",
+      "definition": "מקצוע הפודיאטריסטים שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "25",
+      "display": "סייעת",
+      "definition": "מקצוע הסייעת שייך לתחום השיניים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "26",
+      "display": "אקופונקטורה",
+      "definition": "מקצוע האקופונקטורה שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "27",
+      "display": "פסיכולוג",
+      "definition": "מקצוע הפסיכולוג שייך לתחום בריאות הנפש לו קיימים ערכי מומחיות Expertise וכמו כן ערכי התמחות Specialist",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "29",
+      "display": "קרימינולוגיה קלינית",
+      "definition": "מקצוע הקרימינולוגיה קלינית שייך לתחום בריאות הנפש ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "30",
+      "display": "גנטיקה קלינית- יעוץ גנטי",
+      "definition": "מקצוע הגנטיקה קלינית- יעוץ גנטי לו קיימים ערכי מומחיות Expertise",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "31",
+      "display": "עובד מעבדה רפואית בכיר",
+      "definition": "מקצוע העובד מעבדה רפואית בכיר מופרד מעובד מעבדה אחר לו קיימים ערכי התמחות Specialist",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "32",
+      "display": "מרפא שיניים",
+      "definition": "מקצוע מרפא שיניים שייך לתחום רפואת השיניים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "33",
+      "display": "עובד מעבדה רפואי אקדמאי",
+      "definition": "מקצוע העובד מעבדה רפואי אקדמאי (מופרד מעובד מעבדה אחר) ולו קיימים התמחות Specialist",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "34",
+      "display": "פיזיותרפיסט אקדמאי",
+      "definition": "מקצוע הפיזיותרפיסט אקדמאי שייך לתחום הפר\"א (מופרד מפיזיותרפיה) ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "35",
+      "display": "מפעיל מכונות לב ריאה",
+      "definition": "מקצוע המפעיל מכונות לב ריאה ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "36",
+      "display": "פרוסטטיקה אורטוטיקה והנעלה",
+      "definition": "מקצוע פרוסטטיקה אורטוטיקה והנעלה ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "37",
+      "display": "אוסטאופתיה",
+      "definition": "מקצוע האוסטאופתיה שייך לתחום הפר\"א ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "38",
+      "display": "טכנאי שיניים-מוסמך",
+      "definition": "מקצוע הטכנאי שיניים-מוסמך שייך לתחום רפאת השיניים (מופרד מטכנאי שיניים אחר) ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "39",
+      "display": "טכנאי שיניים-אומן",
+      "definition": "מקצוע טכנאי שיניים-אומן שייך לתחום רפאת השיניים (מופרד מטכנאי שיניים אחר) ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "40",
+      "display": "טכנאי שיניים-מומחה",
+      "definition": "מקצוע טכנאי שיניים-מומחה שייך לתחום רפאת השיניים (מופרד מטכנאי שיניים אחר) ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "41",
+      "display": "עוזרי רופאים",
+      "definition": "מקצוע עוזרי רופאים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "42",
+      "display": "סוכן תיירות מרפא",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "43",
+      "display": "פודיאטר מנתח",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "44",
+      "display": "חברת תיירות מרפא",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "45",
+      "display": "עבודה סוציאלית",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "97",
+      "display": "אחר",
+      "definition": "אחר",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "101",
+      "display": "אח/ות מוסמכ/ת",
+      "definition": "מקצוע האח/ות מוסמכ/ת שייך לתחום הסיעוד לו קיימים ערכי מומחיות Expertise",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "102",
+      "display": "אח/ות מעשי/ת",
+      "definition": "מקצוע האח/ות מעשי/ת שייך לתחום הסיעוד ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "103",
+      "display": "אח/ות",
+      "definition": "מקצוע אח/ות שייך לתחום הסיעוד ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "109",
+      "display": "מעשי היתר זמני",
+      "definition": "מקצוע האח/ות מעשי./- היתר זמני שייך לתחום הסיעוד ללא מומחיות או התמחות ומהווה רישוי זמני בלבד של אח/ות מעשי/ת",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "110",
+      "display": "כח עזר",
+      "definition": "מקצוע הכח עזר ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "115",
+      "display": "טכנאי ח. ניתוח",
+      "definition": "מקצוע הטכנאי חדר ניתוח ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "116",
+      "display": "מכשירן חדר ניתוח",
+      "definition": "מקצוע המכשירן חדר ניתוח ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "117",
+      "display": "מטפלת",
+      "definition": "מקצוע המטפל שייך לתחום הסיעוד ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "118",
+      "display": "טכנאי שיניים",
+      "definition": "מקצוע הטכנאי שינייםשייך לתחום רפואת השיניים ללא מומחיות או התמחות",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    },
+    {
+      "code": "133",
+      "display": "מעשי מוגבל",
+      "definition": "מקצוע מעשי מוגבל שייך לתחום הסיעוד ללא מומחיות או התמחות מהווה רישוי מוגבל של אח/ות מעשי/ת",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "active"
+        }
+      ]
+    }
+  ],
+  "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-profession-moh",
+  "caseSensitive": false,
+  "experimental": false,
+  "count": 57
+}

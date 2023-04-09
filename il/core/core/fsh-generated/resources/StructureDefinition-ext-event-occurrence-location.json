@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-event-occurrence-location",
+  "url": "http://fhir.health.gov.il/StructureDefinition/ext-event-occurrence-location",
+  "version": "0.11.0",
+  "name": "EventOccurrenceLocation",
+  "title": "Ext: Event Occurrence Location",
+  "status": "draft",
+  "description": "Extension: Location in which an event occurred",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Condition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Ext: Event Occurrence Location",
+        "definition": "Extension: Location in which an event occurred"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://fhir.health.gov.il/StructureDefinition/ext-event-occurrence-location"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-address"
+            ]
+          },
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-location"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

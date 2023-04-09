@@ -1,0 +1,68 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreObservationCode",
+  "id": "il-core-observation-code",
+  "title": "IL Core Observation Codes",
+  "description": "A list of code codes for observations for the IL Core",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-observation-code",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "363787002"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "386053000"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "404684003"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "413350009"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "272379006"
+          }
+        ]
+      }
+    ]
+  }
+}

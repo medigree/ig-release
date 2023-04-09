@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ReasonNotDone",
+  "id": "reason-not-done",
+  "title": "statusReason codes for Immunization profile",
+  "description": "Codes from SNOMED CT describing reasons for Immnization not taking place, for statusCode",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/reason-not-done",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "281399006",
+            "display": "Did not attend"
+          },
+          {
+            "code": "213257006",
+            "display": "Generally unwell"
+          },
+          {
+            "code": "310376006",
+            "display": "Immunisation consent not given"
+          },
+          {
+            "code": "266758009",
+            "display": "Immunisation contraindicated"
+          },
+          {
+            "code": "365861007",
+            "display": "Finding of immune status"
+          },
+          {
+            "code": "182856006",
+            "display": "Drug not available - out of stock"
+          },
+          {
+            "code": "871879005",
+            "display": "Vaccination hesitancy by parent"
+          },
+          {
+            "code": "871868000",
+            "display": "Vaccination hesitancy by patient"
+          }
+        ]
+      }
+    ]
+  }
+}

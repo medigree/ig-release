@@ -1,0 +1,91 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreAllergyIntoleranceCode",
+  "id": "il-core-allergy-intolerance-code",
+  "title": "IL Core Allergy Intolerance Code",
+  "description": "A list of codes for Allergy Intolerance for the IL Core",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-allergy-intolerance-code",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://hl7.org/fhir/ValueSet/substance-code"
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "418038007"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "716186003"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm"
+      },
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/icd9-cm-diagnoses"
+        ]
+      },
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/icd9il-diagnoses"
+        ]
+      },
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/il-core-substance"
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "416098002"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "414285001"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "426232007"
+          }
+        ]
+      }
+    ]
+  }
+}

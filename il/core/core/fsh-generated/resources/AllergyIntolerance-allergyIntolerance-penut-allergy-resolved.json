@@ -1,0 +1,103 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "allergyIntolerance-penut-allergy-resolved",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-allergy-intolerance"
+    ]
+  },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "endDate",
+          "valueDateTime": "2020-01-01"
+        },
+        {
+          "url": "reasonEnded",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "63098009",
+                "system": "http://snomed.info/sct",
+                "display": "Clinical immunologist (occupation)"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://fhir.health.gov.il/StructureDefinition/ext-allergy-intolerance-end"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Penut Allergy</div>",
+    "status": "generated"
+  },
+  "patient": {
+    "reference": "Patient/patient-israeli-with-two-identifiers"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "resolved",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "code": "confirmed",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
+      }
+    ]
+  },
+  "type": "allergy",
+  "criticality": "high",
+  "code": {
+    "coding": [
+      {
+        "code": "91935009",
+        "system": "http://snomed.info/sct",
+        "display": "Allergy to peanuts"
+      }
+    ]
+  },
+  "category": [
+    "food"
+  ],
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "code": "417889008",
+            "system": "http://snomed.info/sct",
+            "display": "Arachis oil (substance)"
+          }
+        ]
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "code": "39579001",
+              "system": "http://snomed.info/sct",
+              "display": "Anaphylaxis (disorder)"
+            }
+          ]
+        }
+      ],
+      "severity": "severe",
+      "exposureRoute": {
+        "coding": [
+          {
+            "code": "26643006",
+            "system": "http://snomed.info/sct",
+            "display": "Oral route"
+          }
+        ]
+      }
+    }
+  ]
+}

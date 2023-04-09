@@ -1,0 +1,13 @@
+{
+  "package-id" : "1",
+  "version" : "0.0.1",
+  "path" : "http://fhir.health.gov.il",
+  "mode" : "milestone",
+  "status" : "draft",
+  "sequence" : "draft-1",
+  "title" : "IL-Core IG",
+  "ci-build" : "http://fhir.health.gov.il",
+  "first": "true",
+  "category": "National Base",
+  "introduction": "This is the implementation guide (IG) for the Israeli FHIR Core"
+}

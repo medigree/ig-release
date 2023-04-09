@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreUnitsOfMeasure",
+  "id": "il-core-units-of-measure",
+  "title": "IL Core Units Of Measure Codes",
+  "description": "A list of codes for Units Of Measure for the IL Core, including UCUM and SNOMED-CT units",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-units-of-measure",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "descendent-of",
+            "value": "408102007"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "descendent-of",
+            "value": "732935002"
+          }
+        ]
+      },
+      {
+        "system": "http://unitsofmeasure.org"
+      }
+    ]
+  }
+}

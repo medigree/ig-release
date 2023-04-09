@@ -1,0 +1,148 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-document-reference",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-document-reference",
+  "version": "0.11.0",
+  "name": "ILCoreDocumentReference",
+  "title": "ILCore DocumentReference Profile",
+  "status": "draft",
+  "date": "2022-07-13",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the DocumentReference Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "fhircomposition",
+      "uri": "http://hl7.org/fhir/composition",
+      "name": "FHIR Composition"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "xds",
+      "uri": "http://ihe.net/xds",
+      "name": "XDS metadata equivalent"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "DocumentReference",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DocumentReference",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DocumentReference",
+        "path": "DocumentReference",
+        "short": "ILCore DocumentReference Profile",
+        "definition": "Definitions for the profile-DocumentReference resource profile."
+      },
+      {
+        "id": "DocumentReference.subject",
+        "path": "DocumentReference.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.author",
+        "path": "DocumentReference.author",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.authenticator",
+        "path": "DocumentReference.authenticator",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.relatesTo.target",
+        "path": "DocumentReference.relatesTo.target",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-document-reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.context.encounter",
+        "path": "DocumentReference.context.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter",
+              "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.context.sourcePatientInfo",
+        "path": "DocumentReference.context.sourcePatientInfo",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

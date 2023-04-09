@@ -1,0 +1,287 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-related-person",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+  "version": "0.11.0",
+  "name": "ILCoreRelatedPerson",
+  "title": "ILCore RelatedPerson Profile",
+  "status": "draft",
+  "date": "2021-05-02",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the RelatedPerson Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "RelatedPerson",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "RelatedPerson",
+        "path": "RelatedPerson",
+        "short": "ILCoreRelatedPerson Profile",
+        "definition": "Definitions for the profile-RelatedPerson resource profile."
+      },
+      {
+        "id": "RelatedPerson.extension",
+        "path": "RelatedPerson.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "RelatedPerson.extension:parentName",
+        "path": "RelatedPerson.extension",
+        "sliceName": "parentName",
+        "short": "Extension: The name of the parent",
+        "definition": "Specifies the entire parent name as it should be displayed e.g. on an application UI.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-administrative-parent-name"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.identifier",
+        "path": "RelatedPerson.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "RelatedPerson.identifier.system",
+        "path": "RelatedPerson.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.identifier.value",
+        "path": "RelatedPerson.identifier.value",
+        "short": "The value that is unique within the system.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.identifier.assigner",
+        "path": "RelatedPerson.identifier.assigner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.identifier:il-id",
+        "path": "RelatedPerson.identifier",
+        "sliceName": "il-id",
+        "short": "Israeli National Identifier",
+        "definition": "Israeli ID number (9 digit unchangeable number, including leading zeros and includes a control digit), including temporarily identification numbers assigned by Israeli National Insurance",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.identifier:il-id.system",
+        "path": "RelatedPerson.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/il-national-id"
+      },
+      {
+        "id": "RelatedPerson.identifier:il-id.value",
+        "path": "RelatedPerson.identifier.value",
+        "short": "An Israeli ID number",
+        "example": [
+          {
+            "label": "Valid Example",
+            "valueString": "000000018"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "il-id-chk",
+            "severity": "error",
+            "human": "Israeli ID must be 9-digits with a correct check-digit at the end.",
+            "expression": "matches('[0-9]{9}') and\r\nsubstring(8,1).toInteger()=\r\n(10-((substring(0,1).toInteger() +\r\nsubstring(1,1).toInteger()*2 mod 10 +\r\nsubstring(1,1).toInteger()*2 div 10 +\r\nsubstring(2,1).toInteger() +\r\nsubstring(3,1).toInteger()*2 mod 10 +\r\nsubstring(3,1).toInteger()*2 div 10 +\r\nsubstring(4,1).toInteger() +\r\nsubstring(5,1).toInteger()*2 mod 10 +\r\nsubstring(5,1).toInteger()*2 div 10 +\r\nsubstring(6,1).toInteger() +\r\nsubstring(7,1).toInteger()*2 mod 10 +\r\nsubstring(7,1).toInteger()*2 div 10) mod 10)) mod 10",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.identifier:pna-id",
+        "path": "RelatedPerson.identifier",
+        "sliceName": "pna-id",
+        "short": "Palestinian National Identifier",
+        "definition": "Palestinian ID number",
+        "min": 0,
+        "max": "1",
+        "mustSupport": false
+      },
+      {
+        "id": "RelatedPerson.identifier:pna-id.system",
+        "path": "RelatedPerson.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/pna-national-id"
+      },
+      {
+        "id": "RelatedPerson.identifier:pna-id.value",
+        "path": "RelatedPerson.identifier.value",
+        "short": "A Palestininan ID number",
+        "example": [
+          {
+            "label": "Valid Example",
+            "valueString": "000000018"
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.identifier:ppn",
+        "path": "RelatedPerson.identifier",
+        "sliceName": "ppn",
+        "short": "Passport Number",
+        "definition": "Passport number",
+        "min": 0,
+        "max": "*",
+        "mustSupport": false
+      },
+      {
+        "id": "RelatedPerson.identifier:ppn.type",
+        "path": "RelatedPerson.identifier.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "PPN",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+            }
+          ]
+        }
+      },
+      {
+        "id": "RelatedPerson.identifier:ppn.system",
+        "path": "RelatedPerson.identifier.system",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/passport-uri"
+        }
+      },
+      {
+        "id": "RelatedPerson.identifier:ppn.value",
+        "path": "RelatedPerson.identifier.value",
+        "short": "Passport Number"
+      },
+      {
+        "id": "RelatedPerson.identifier:enc",
+        "path": "RelatedPerson.identifier",
+        "sliceName": "enc",
+        "short": "Person's Identifier - MoH encrypted",
+        "definition": "The person’s identifier after applying MoH’s standard primary encryption algorithm",
+        "min": 0,
+        "max": "*",
+        "mustSupport": false
+      },
+      {
+        "id": "RelatedPerson.identifier:enc.system",
+        "path": "RelatedPerson.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/encrypted-id-primary-moh"
+      },
+      {
+        "id": "RelatedPerson.identifier:enc.value",
+        "path": "RelatedPerson.identifier.value",
+        "short": "An encrypted identifier",
+        "example": [
+          {
+            "label": "Valid Example",
+            "valueString": "000000018"
+          }
+        ]
+      },
+      {
+        "id": "RelatedPerson.active",
+        "path": "RelatedPerson.active",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.patient",
+        "path": "RelatedPerson.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.relationship",
+        "path": "RelatedPerson.relationship",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/patient-relationship-type"
+        }
+      },
+      {
+        "id": "RelatedPerson.name",
+        "path": "RelatedPerson.name",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.telecom",
+        "path": "RelatedPerson.telecom",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.address",
+        "path": "RelatedPerson.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-address"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

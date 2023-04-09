@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "IsraelHMO",
+  "id": "israel-hmo",
+  "title": "Israeli Health Management Organization (קופת חולים)",
+  "description": "A code classifying Health Management Organizations",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/israel-hmo",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.health.gov.il/cs/paying-entity-moh",
+        "concept": [
+          {
+            "code": "101",
+            "display": "קופת חולים כללית"
+          },
+          {
+            "code": "102",
+            "display": "קופת חולים לאומית"
+          },
+          {
+            "code": "103",
+            "display": "קופת חולים מכבי"
+          },
+          {
+            "code": "104",
+            "display": "קופת חולים מאוחדת"
+          },
+          {
+            "code": "401",
+            "display": "צה\"ל"
+          },
+          {
+            "code": "402",
+            "display": "משרד הבטחון"
+          },
+          {
+            "code": "480",
+            "display": "רשות פלסטינאית"
+          },
+          {
+            "code": "405",
+            "display": "שירות בתי הסוהר"
+          }
+        ]
+      }
+    ]
+  }
+}

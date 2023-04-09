@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreProcedureReason",
+  "id": "il-core-procedure-reason",
+  "title": "IL Core procedure Reason",
+  "description": "A list of codes for procedure reasons for the IL Core",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-procedure-reason",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/il-core-procedure-code"
+        ]
+      },
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/il-core-condition-code"
+        ]
+      }
+    ]
+  }
+}

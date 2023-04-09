@@ -1,0 +1,68 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ImmunizationBodySite",
+  "id": "immunization-body-site",
+  "title": "Immunization Observation Body Site list",
+  "description": "All codes from SNOMED CT describing body sites for Immunization Observation",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/immunization-body-site",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "279549004",
+            "display": "Nasal cavity structure"
+          },
+          {
+            "code": "46862004",
+            "display": "Structure of buttock"
+          },
+          {
+            "code": "723979003",
+            "display": "Structure of left buttock"
+          },
+          {
+            "code": "61396006",
+            "display": "Structure of left thigh"
+          },
+          {
+            "code": "368208006",
+            "display": "Structure of left upper arm"
+          },
+          {
+            "code": "74262004",
+            "display": "Structure of oral cavity"
+          },
+          {
+            "code": "723980000",
+            "display": "Structure of right buttock"
+          },
+          {
+            "code": "11207009",
+            "display": "Structure of right thigh"
+          },
+          {
+            "code": "368209003",
+            "display": "Structure of right upper arm"
+          },
+          {
+            "code": "69695003",
+            "display": "Structure of stomach"
+          },
+          {
+            "code": "68367000",
+            "display": "Structure of thigh"
+          },
+          {
+            "code": "40983000",
+            "display": "Structure of upper extremity between shoulder and elbow"
+          }
+        ]
+      }
+    ]
+  }
+}

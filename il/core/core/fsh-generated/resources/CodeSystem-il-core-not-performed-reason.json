@@ -1,0 +1,37 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ILCoreNotPerformedReason",
+  "id": "il-core-not-performed-reason",
+  "title": "IL Core Not Perfomed Reasons",
+  "description": "A list of codes for reasons an observation was not made",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/cs/il-core-not-performed-reason",
+  "concept": [
+    {
+      "code": "not-performed-medical-reason",
+      "display": "not performed medical reason",
+      "definition": "The value is not available because the observation procedure was not performed due to Medical Reason"
+    },
+    {
+      "code": "not-performed-administrative-reason",
+      "display": "not performed administrative reason",
+      "definition": "The value is not available because the observation procedure was not performed due to Administrative Reason, e.g., observation cannot be measured because of a remote visit (telemedicine), absent practitioner (patient need EKG but no technician available), etc."
+    },
+    {
+      "code": "not-performed-equipment-reason",
+      "display": "not performed equipment reason",
+      "definition": "The value is not available because the observation procedure was not performed due to Equipment Reason, e.g., EKG malfunction, blood pressure monitor out of batteries, autoscope only available in adult size and the patient is two years old, etc"
+    },
+    {
+      "code": "not-performed-patient-reason",
+      "display": "not performed patient reason",
+      "definition": "The value is not available because the observation procedure was not performed due to Patient Reason e.g., patient refused to do the test, patient didn’t come etc."
+    }
+  ],
+  "caseSensitive": false,
+  "experimental": false,
+  "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-not-performed-reason",
+  "count": 4
+}
