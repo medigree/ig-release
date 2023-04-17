@@ -1,1 +1,5 @@
-publisher.jar
+output/
+input-cache
+temp
+template
+fsh-generated
