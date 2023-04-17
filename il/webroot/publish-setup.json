@@ -4,6 +4,9 @@
     "url" : "http://fhir.health.gov.il",
     "server" : "apache",
     "org" : "IL Core",
-    "layout":{"id":"health.fhir.core","canonical":"http://fhir.health.gov.il/core"}
+    "layout": {
+      "id":"health.gov.il.fhir.[code]",
+      "canonical":"http://fhir.health.gov.il/[code]"
+    }
   }
 }
