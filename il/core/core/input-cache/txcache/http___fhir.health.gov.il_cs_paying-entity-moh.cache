@@ -1,0 +1,139 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "concept" : [{
+        "code" : "101",
+        "display" : "קופת חולים כללית"
+      },
+      {
+        "code" : "102",
+        "display" : "קופת חולים לאומית"
+      },
+      {
+        "code" : "103",
+        "display" : "קופת חולים מכבי"
+      },
+      {
+        "code" : "104",
+        "display" : "קופת חולים מאוחדת"
+      },
+      {
+        "code" : "401",
+        "display" : "צה\"ל"
+      },
+      {
+        "code" : "402",
+        "display" : "משרד הבטחון"
+      },
+      {
+        "code" : "480",
+        "display" : "רשות פלסטינאית"
+      },
+      {
+        "code" : "405",
+        "display" : "שירות בתי הסוהר"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "language" : "en",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:1002961f-09e0-421e-8219-6ffba9aacb38",
+    "timestamp" : "2023-04-09T08:21:41.042Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueUri" : "http://fhir.health.gov.il/cs/paying-entity-moh|0.11.0"
+    }],
+    "contains" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך קופת חולים כללית מתאים למקרה בו הגורם המשלם הוא קופת חולים כללית (לא מדובר בשיוך לקופה)"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "101",
+      "display" : "קופת חולים כללית"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך קופת חולים לאומית מתאים למקרה בו הגורם המשלם הוא קופת חולים לאומית (לא מדובר בשיוך לקופה)"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "102",
+      "display" : "קופת חולים לאומית"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך קופת חולים מכבי מתאים למקרה בו הגורם המשלם הוא קופת חולים מכבי (לא מדובר בשיוך לקופה)"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "103",
+      "display" : "קופת חולים מכבי"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך קופת חולים מאוחדת מתאים למקרה בו הגורם המשלם הוא קופת חולים מאוחדת (לא מדובר בשיוך לקופה)"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "104",
+      "display" : "קופת חולים מאוחדת"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך צה\"ל מתאים למקרה בו הגורם המשלם הוא צה\"ל (לא מדובר בשיוך אליו כקופה חמישת)"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "401",
+      "display" : "צה\"ל"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך משרד הבטחון מתאים למקרה בו הגורם המשלם הוא משרד הביטחון"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "402",
+      "display" : "משרד הבטחון"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך רשות פלסטינאית מתאים למקרה בו הגורם המשלם הוא הרשות הפלסטינאית"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "480",
+      "display" : "רשות פלסטינאית"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+        "valueString" : "הערך שירותי בתי הסוהר  מתאים למקרה בו הגורם המשלם הוא"
+      }],
+      "system" : "http://fhir.health.gov.il/cs/paying-entity-moh",
+      "code" : "405",
+      "display" : "שירות בתי הסוהר"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

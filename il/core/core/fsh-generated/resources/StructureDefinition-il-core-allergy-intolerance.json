@@ -1,0 +1,284 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-allergy-intolerance",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-allergy-intolerance",
+  "version": "0.11.0",
+  "name": "ILCoreAllergyIntolerance",
+  "title": "ILCore AllergyIntolerance Profile",
+  "status": "draft",
+  "date": "2022-08-15",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the AllergyIntolerance Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "AllergyIntolerance",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "AllergyIntolerance",
+        "path": "AllergyIntolerance",
+        "short": "ILCore AllergyIntolerance Profile",
+        "definition": "Definitions for the profile-AllergyIntolerance resource profile."
+      },
+      {
+        "id": "AllergyIntolerance.extension",
+        "path": "AllergyIntolerance.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.extension:AllergyIntoleranceEnd",
+        "path": "AllergyIntolerance.extension",
+        "sliceName": "AllergyIntoleranceEnd",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-allergy-intolerance-end"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus",
+        "path": "AllergyIntolerance.clinicalStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus",
+        "path": "AllergyIntolerance.verificationStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code",
+        "path": "AllergyIntolerance.code",
+        "min": 1,
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "1003755004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Allergy to Hevea brasiliensis latex protein (finding)"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "element-sct",
+            "severity": "warning",
+            "human": "Element.coding SHOULD contain a SNOMED-CT code. Other code systems included in the ValueSet are for historical purposes only",
+            "expression": "coding.where(system='http://snomed.info/sct' and code.exists()).exists()",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-allergy-intolerance"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-allergy-intolerance-code"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.code.coding.system",
+        "path": "AllergyIntolerance.code.coding.system",
+        "min": 1
+      },
+      {
+        "id": "AllergyIntolerance.code.coding.code",
+        "path": "AllergyIntolerance.code.coding.code",
+        "min": 1
+      },
+      {
+        "id": "AllergyIntolerance.patient",
+        "path": "AllergyIntolerance.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.encounter",
+        "path": "AllergyIntolerance.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.recorder",
+        "path": "AllergyIntolerance.recorder",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.asserter",
+        "path": "AllergyIntolerance.asserter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.reaction.extension",
+        "path": "AllergyIntolerance.reaction.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.reaction.extension:duration",
+        "path": "AllergyIntolerance.reaction.extension",
+        "sliceName": "duration",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-reaction-duration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.reaction.substance",
+        "path": "AllergyIntolerance.reaction.substance",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "387458008",
+                  "system": "http://snomed.info/sct",
+                  "display": "Aspirin (substance)"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-substance"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation",
+        "path": "AllergyIntolerance.reaction.manifestation",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "60862001",
+                  "system": "http://snomed.info/sct",
+                  "display": "Tinnitus (finding)"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "element-sct",
+            "severity": "warning",
+            "human": "Element.coding SHOULD contain a SNOMED-CT code. Other code systems included in the ValueSet are for historical purposes only",
+            "expression": "coding.where(system='http://snomed.info/sct' and code.exists()).exists()",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-allergy-intolerance"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-manifestation"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.reaction.exposureRoute",
+        "path": "AllergyIntolerance.reaction.exposureRoute",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "26643006",
+                  "system": "http://snomed.info/sct",
+                  "display": "Oral route (qualifier value)"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-route-code"
+        }
+      }
+    ]
+  }
+}

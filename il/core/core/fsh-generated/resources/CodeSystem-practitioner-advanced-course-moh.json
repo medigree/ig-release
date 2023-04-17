@@ -1,0 +1,204 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PractitionerAdvancedCourseMoH",
+  "id": "practitioner-advanced-course-moh",
+  "title": "Ministry of Health practitioner advanced courses codes",
+  "description": "Codes for practitioner advanced courses according to Israeli MoH",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/cs/practitioner-advanced-course-moh",
+  "concept": [
+    {
+      "code": "5",
+      "display": "מיילדות"
+    },
+    {
+      "code": "7",
+      "display": "בריאות הציבור"
+    },
+    {
+      "code": "8",
+      "display": "פסיכיאטריה"
+    },
+    {
+      "code": "9",
+      "display": "סיעוד בבריאות תעסוקתית"
+    },
+    {
+      "code": "16",
+      "display": "טיפול נמרץ משולב (כללי)"
+    },
+    {
+      "code": "18",
+      "display": "אונקולוגיה"
+    },
+    {
+      "code": "19",
+      "display": "נפרולוגיה"
+    },
+    {
+      "code": "56",
+      "display": "סיעוד התלמיד כהכנה לברצ\"ב"
+    },
+    {
+      "code": "62",
+      "display": "קביעת מעמד - מעשיות"
+    },
+    {
+      "code": "65",
+      "display": "הדרכה קלינית"
+    },
+    {
+      "code": "67",
+      "display": "רפואה דחופה"
+    },
+    {
+      "code": "68",
+      "display": "שיקום"
+    },
+    {
+      "code": "70",
+      "display": "מניעת זיהומים"
+    },
+    {
+      "code": "71",
+      "display": "טיפול נמרץ פגים"
+    },
+    {
+      "code": "72",
+      "display": "טיפול נמרץ ילדים"
+    },
+    {
+      "code": "73",
+      "display": "רפואה ראשונית"
+    },
+    {
+      "code": "75",
+      "display": "רפואה מונעת"
+    },
+    {
+      "code": "76",
+      "display": "סוכרת"
+    },
+    {
+      "code": "77",
+      "display": "ניהול הטיפול באי ספיקת לב"
+    },
+    {
+      "code": "100",
+      "display": "חדר ניתוח"
+    },
+    {
+      "code": "106",
+      "display": "גריאטריה"
+    },
+    {
+      "code": "107",
+      "display": "יועצת הנקה"
+    },
+    {
+      "code": "108",
+      "display": "מדיניות ומינהל בסיעוד"
+    },
+    {
+      "code": "109",
+      "display": "רישום מרשמי המשך על ידי אחות"
+    },
+    {
+      "code": "110",
+      "display": "פסיכותרפיה"
+    },
+    {
+      "code": "111",
+      "display": "פסיכותרפיה בשיטת CBT"
+    },
+    {
+      "code": "112",
+      "display": "מבחן ממיין"
+    },
+    {
+      "code": "113",
+      "display": "ייעוץ לפעילות גופנית"
+    },
+    {
+      "code": "114",
+      "display": "ייעוץ שינה"
+    },
+    {
+      "code": "115",
+      "display": "טיפול בפצעים וסטומה"
+    },
+    {
+      "code": "116",
+      "display": "גסטרואנטרולוגיה"
+    },
+    {
+      "code": "117",
+      "display": "שבץ מוחי"
+    },
+    {
+      "code": "118",
+      "display": "אי ספיקת לב"
+    },
+    {
+      "code": "119",
+      "display": "פוריות"
+    },
+    {
+      "code": "120",
+      "display": "רפואה ראשונית ורישום מרשמי המשך"
+    },
+    {
+      "code": "1001",
+      "display": "מומחיות סוכרת"
+    },
+    {
+      "code": "1002",
+      "display": "מומחיות גריאטריה"
+    },
+    {
+      "code": "1003",
+      "display": "מומחיות טיפול תומך"
+    },
+    {
+      "code": "1005",
+      "display": "רפואה ראשונית צבאית-רפואה ראשונית"
+    },
+    {
+      "code": "1006",
+      "display": "מודולת השלמה בייעוץ הנקה"
+    },
+    {
+      "code": "1007",
+      "display": "מודולת השלמה בשבץ מוחי"
+    },
+    {
+      "code": "1008",
+      "display": "חטיבה משותפת אקוטית מבוגרים"
+    },
+    {
+      "code": "1009",
+      "display": "חטיבה משותפת אקוטית ילדים"
+    },
+    {
+      "code": "1010",
+      "display": "חטיבה משותפת אקוטית כרונית"
+    },
+    {
+      "code": "1011",
+      "display": "חטיבה משותפת כרונית"
+    },
+    {
+      "code": "1012",
+      "display": "מניעה וקידום בריאות וייעוץ הנקה"
+    },
+    {
+      "code": "1014",
+      "display": "רפואה ראשונית צבאית - רפואה ראשונית ורישום מרשמי המשך"
+    }
+  ],
+  "caseSensitive": false,
+  "experimental": false,
+  "count": 47
+}

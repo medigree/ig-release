@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreAllergyIntoleranceEndReason",
+  "id": "il-core-allergy-intolerance-end-reason",
+  "title": "IL Core Condition End Reason",
+  "description": "A list of codes for End Reasons of Allergy Intolerance for the IL Core",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-allergy-intolerance-end-reason",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "63098009",
+            "display": "Clinical immunologist (occupation)"
+          },
+          {
+            "code": "165009005",
+            "display": "Allergy testing - no reaction (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

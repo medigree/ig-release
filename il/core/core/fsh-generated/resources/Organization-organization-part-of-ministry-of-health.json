@@ -1,0 +1,67 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-part-of-ministry-of-health",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+    ]
+  },
+  "address": [
+    {
+      "use": "work",
+      "type": "physical",
+      "text": "ירמיהו 39 ירושלים",
+      "line": [
+        "ירמיהו 39"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "ירמיהו"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "39"
+            }
+          ]
+        }
+      ],
+      "city": "ירושלים",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "3000",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "postalCode": "9446724",
+      "country": "IL"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">מכון מחקר</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": "מכון מחקר בתוך משרד הבריאות",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "08-6241011",
+      "use": "work"
+    }
+  ],
+  "partOf": {
+    "reference": "Organization/organization-ministry-of-health"
+  }
+}

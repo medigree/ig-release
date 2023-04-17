@@ -1,0 +1,89 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "allergyIntolerance-latex-allergy",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-allergy-intolerance"
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Latex Allergy</div>",
+    "status": "generated"
+  },
+  "patient": {
+    "reference": "Patient/patient-with-israeli-id"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "code": "confirmed",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
+      }
+    ]
+  },
+  "type": "allergy",
+  "criticality": "low",
+  "code": {
+    "coding": [
+      {
+        "code": "1003755004",
+        "system": "http://snomed.info/sct",
+        "display": "Allergy to Hevea brasiliensis latex protein (finding)"
+      }
+    ]
+  },
+  "category": [
+    "biologic"
+  ],
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "code": "111088007",
+            "system": "http://snomed.info/sct",
+            "display": "Latex (substance)"
+          }
+        ]
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "code": "271807003",
+              "system": "http://snomed.info/sct",
+              "display": "Eruption of skin (disorder)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "418290006",
+              "system": "http://snomed.info/sct",
+              "display": "Itching (finding)"
+            }
+          ]
+        }
+      ],
+      "severity": "mild",
+      "exposureRoute": {
+        "coding": [
+          {
+            "code": "6064005",
+            "system": "http://snomed.info/sct",
+            "display": "Topical route (qualifier value)"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "HebrewDateMonth",
+  "id": "hebrew-date-month",
+  "title": "Hebrew Date Month",
+  "description": "Codes for Hebrew date months",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/cs/hebrew-date-month",
+  "concept": [
+    {
+      "code": "1",
+      "display": "תשרי"
+    },
+    {
+      "code": "2",
+      "display": "חשון"
+    },
+    {
+      "code": "3",
+      "display": "כסלו"
+    },
+    {
+      "code": "4",
+      "display": "טבת"
+    },
+    {
+      "code": "5",
+      "display": "שבט"
+    },
+    {
+      "code": "6",
+      "display": "אדר"
+    },
+    {
+      "code": "7",
+      "display": "ניסן"
+    },
+    {
+      "code": "8",
+      "display": "אייר"
+    },
+    {
+      "code": "9",
+      "display": "סיון"
+    },
+    {
+      "code": "10",
+      "display": "תמוז"
+    },
+    {
+      "code": "11",
+      "display": "אב"
+    },
+    {
+      "code": "12",
+      "display": "אלול"
+    },
+    {
+      "code": "13",
+      "display": "אדר א'"
+    },
+    {
+      "code": "14",
+      "display": "אדר ב'"
+    }
+  ],
+  "valueSet": "http://fhir.health.gov.il/ValueSet/hebrew-date-month",
+  "caseSensitive": false,
+  "experimental": false,
+  "count": 14
+}

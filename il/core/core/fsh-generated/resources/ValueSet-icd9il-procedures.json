@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ICD9ILProcedures",
+  "id": "icd9il-procedures",
+  "title": "ICD9 IL Procedures",
+  "description": "codes of procedures from ICD9-IL",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/icd9il-procedures",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.health.gov.il/cs/icd9il",
+        "filter": [
+          {
+            "property": "type",
+            "op": "=",
+            "value": "procedure"
+          }
+        ]
+      }
+    ]
+  }
+}

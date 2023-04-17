@@ -1,0 +1,71 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreManifestation",
+  "id": "il-core-manifestation",
+  "title": "IL Core Condition Codes",
+  "description": "A list of codes for intolerance manifestation for the IL Core",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-manifestation",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "404684003"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "241929008"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "312850006"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "49755003"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm"
+      },
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/icd9-cm-diagnoses"
+        ]
+      },
+      {
+        "valueSet": [
+          "http://fhir.health.gov.il/ValueSet/icd9il-diagnoses"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-group",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-group",
+  "version": "0.11.0",
+  "name": "ILCoreGroup",
+  "title": "ILCore Group Profile",
+  "status": "draft",
+  "date": "2022-02-07",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the Group Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Group",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Group",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Group",
+        "path": "Group",
+        "short": "ILCore Group Profile",
+        "definition": "Definitions for the profile-Group resource profile."
+      },
+      {
+        "id": "Group.managingEntity",
+        "path": "Group.managingEntity",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Group.member.entity",
+        "path": "Group.member.entity",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-medication",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group",
+              "http://hl7.org/fhir/StructureDefinition/Substance"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

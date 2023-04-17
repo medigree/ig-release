@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ILCoreParentNameRole",
+  "id": "il-core-parent-name-role",
+  "title": "The role of the parent (father/mother) whose name is recorded",
+  "description": "This set of codes is used to mark a parent name as a father or mother’s name. Should only be used by systems that explicitly differentiate between the two.",
+  "version": "0.11.0",
+  "url": "http://fhir.health.gov.il/ValueSet/il-core-parent-name-role",
+  "language": "en-US",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "concept": [
+          {
+            "code": "FTH",
+            "display": "father"
+          },
+          {
+            "code": "MTH",
+            "display": "mother"
+          }
+        ]
+      }
+    ]
+  }
+}

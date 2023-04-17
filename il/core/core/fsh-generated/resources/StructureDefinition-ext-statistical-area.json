@@ -1,0 +1,92 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-statistical-area",
+  "language": "en-US",
+  "url": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area",
+  "version": "0.11.0",
+  "name": "StatisticalArea",
+  "title": "Ext: Statistical Area",
+  "status": "draft",
+  "description": "Extension: Statistical Area. A concatination of the city symbol + 4-digit statistical area code in settelment. Full CBS number conatins two parts: City symbol + statistical number. E.g.: Jerusalem (3000) 113 area produces -> 3000113",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Address"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Ext: Statistical Area",
+        "definition": "Extension: Statistical Area. A concatination of the city symbol + 4-digit statistical area code in settelment. Full CBS number conatins two parts: City symbol + statistical number. E.g.: Jerusalem (3000) 113 area produces -> 3000113"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://fhir.health.gov.il/StructureDefinition/ext-statistical-area"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.valueIdentifier",
+        "path": "Extension.valueIdentifier",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueIdentifier": {
+              "system": "http://fhir.health.gov.il/identifier/cbs-statistical-area",
+              "value": "40000733"
+            },
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Extension.valueIdentifier.system",
+        "path": "Extension.valueIdentifier.system",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/statistical-area-uri"
+        }
+      }
+    ]
+  }
+}

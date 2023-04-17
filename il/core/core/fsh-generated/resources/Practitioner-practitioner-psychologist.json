@@ -1,0 +1,109 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-psychologist",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://practitioners.health.gov.il/Practitioners",
+      "value": "27-1234"
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">psychologist with an instructor certificate</div>",
+    "status": "generated"
+  },
+  "active": true,
+  "name": [
+    {
+      "prefix": [
+        "גב'"
+      ],
+      "family": "לוין",
+      "given": [
+        "שרי"
+      ],
+      "text": "גב' שרי לוין"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "04-44442254",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "DG@example.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1980-06-22",
+  "qualification": [
+    {
+      "identifier": [
+        {
+          "system": "http://practitioners.health.gov.il/practitioner-certificate",
+          "value": "27-1234"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "2",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "רשיון קבוע"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "27",
+                "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                "display": "פסיכולוג"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "identifier": [
+        {
+          "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+          "value": "123445"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "5",
+            "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh",
+            "display": "תעודת מומחה"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "21",
+                "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+                "display": "הרדמה"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

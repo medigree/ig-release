@@ -1,0 +1,113 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-coverage-eligibility-response",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-coverage-eligibility-response",
+  "version": "0.11.0",
+  "name": "ILCoreCoverageEligibilityResponse",
+  "title": "ILCore CoverageEligibilityResponse Profile",
+  "status": "draft",
+  "date": "2021-05-02",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the CoverageEligibilityResponse Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "cdanetv4",
+      "uri": "http://www.cda-adc.ca/en/services/cdanet/",
+      "name": "Canadian Dental Association eclaims standard"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CoverageEligibilityResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CoverageEligibilityResponse",
+        "path": "CoverageEligibilityResponse",
+        "short": "ILCore CoverageEligibilityResponse Profile",
+        "definition": "Definitions for the profile-CoverageEligibilityResponse resource profile."
+      },
+      {
+        "id": "CoverageEligibilityResponse.patient",
+        "path": "CoverageEligibilityResponse.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CoverageEligibilityResponse.requestor",
+        "path": "CoverageEligibilityResponse.requestor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CoverageEligibilityResponse.request",
+        "path": "CoverageEligibilityResponse.request",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-coverage-eligibility-request"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurer",
+        "path": "CoverageEligibilityResponse.insurer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CoverageEligibilityResponse.insurance.item.provider",
+        "path": "CoverageEligibilityResponse.insurance.item.provider",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

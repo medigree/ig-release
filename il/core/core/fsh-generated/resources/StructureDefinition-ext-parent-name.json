@@ -1,0 +1,92 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-parent-name",
+  "url": "http://fhir.health.gov.il/StructureDefinition/ext-parent-name",
+  "version": "0.11.0",
+  "name": "ParentName",
+  "title": "Ext: Name of parent",
+  "status": "retired",
+  "description": "Extension: The name of a parent. NOTE: This extension is now DEPRECATED (ststus: retired) and has been replaced with AdminParentName",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    },
+    {
+      "type": "element",
+      "expression": "Practitioner"
+    },
+    {
+      "type": "element",
+      "expression": "RelatedPerson"
+    },
+    {
+      "type": "element",
+      "expression": "Person"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Ext: Name of parent",
+        "definition": "Extension: The name of a parent. NOTE: This extension is now DEPRECATED (ststus: retired) and has been replaced with AdminParentName"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://fhir.health.gov.il/StructureDefinition/ext-parent-name"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.valueString",
+        "path": "Extension.valueString",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueString": "משה",
+            "label": "Valid Example"
+          }
+        ]
+      }
+    ]
+  }
+}

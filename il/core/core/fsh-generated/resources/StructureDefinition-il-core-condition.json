@@ -1,0 +1,215 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-condition",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-condition",
+  "version": "0.11.0",
+  "name": "ILCoreCondition",
+  "title": "ILCore Condition Profile",
+  "status": "draft",
+  "date": "2022-02-07",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the Condition Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition",
+        "path": "Condition",
+        "short": "ILCore Condition Profile",
+        "definition": "Definitions for the profile-Condition resource profile."
+      },
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus",
+        "path": "Condition.verificationStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "min": 1,
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "encounter-diagnosis",
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                  "display": "Encounter Diagnosis"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-condition-category"
+        }
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "min": 1,
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "39065001",
+                  "system": "http://snomed.info/sct",
+                  "display": "Burn of ear"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "il-condition-sct",
+            "severity": "warning",
+            "human": "Condition.code.coding SHOULD contain a SNOMED-CT code. Other code systems included in the ValueSet are for historical purposes only",
+            "expression": "coding.where(system='http://snomed.info/sct' and code.exists()).exists()",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-condition"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-condition-code"
+        }
+      },
+      {
+        "id": "Condition.bodySite",
+        "path": "Condition.bodySite",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "49521004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Left external ear structure"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.recorder",
+        "path": "Condition.recorder",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.asserter",
+        "path": "Condition.asserter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner-role",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-patient",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-related-person"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.stage.assessment",
+        "path": "Condition.stage.assessment",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-diagnostic-report",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-observation"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

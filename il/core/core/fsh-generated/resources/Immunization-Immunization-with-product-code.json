@@ -1,0 +1,43 @@
+{
+  "resourceType": "Immunization",
+  "id": "Immunization-with-product-code",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-immunization"
+    ]
+  },
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Immunization with a Product code and SNOMED code</div>",
+    "status": "generated"
+  },
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://www.whocc.no/atc",
+        "code": "J07BE01",
+        "display": "mumps, live attenuated"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "871738001",
+        "display": "Live attenuated mumps vaccine"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/patient-with-israeli-id"
+  },
+  "occurrenceDateTime": "2021-02-28",
+  "primarySource": true,
+  "lotNumber": "12345",
+  "site": {
+    "coding": [
+      {
+        "code": "368208006",
+        "system": "http://snomed.info/sct",
+        "display": "Left upper arm structure (body structure)"
+      }
+    ]
+  }
+}

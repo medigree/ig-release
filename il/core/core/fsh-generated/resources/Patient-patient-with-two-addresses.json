@@ -1,0 +1,197 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-with-two-addresses",
+  "meta": {
+    "profile": [
+      "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "103",
+            "system": "http://fhir.health.gov.il/cs/paying-entity-moh",
+            "display": "קופת חולים מכבי"
+          }
+        ]
+      }
+    }
+  ],
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "longitude",
+              "valueDecimal": 182468.59
+            },
+            {
+              "url": "latitude",
+              "valueDecimal": 670131.38
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "home",
+      "type": "physical",
+      "text": "פרג 7ב' דירה 3 גדרה",
+      "city": "גדרה",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2660",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "line": [
+        "פרג 7'",
+        "כניסה ב'",
+        "דירה 3'"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "פרג"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "7"
+            }
+          ]
+        },
+        null,
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
+              "valueString": "3"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox",
+              "valueString": "1446"
+            }
+          ]
+        }
+      ],
+      "postalCode": "6964101",
+      "district": "גדרה",
+      "country": "IL"
+    },
+    {
+      "use": "home",
+      "type": "postal",
+      "text": "ת\"ד 1446 גדרה",
+      "postalCode": "6964000",
+      "city": "גדרה",
+      "_city": {
+        "extension": [
+          {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-city-code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2550",
+                  "system": "http://fhir.health.gov.il/cs/city-symbol"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">רונן חרזי</div>",
+    "status": "generated"
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.il/identifier/il-national-id",
+      "value": "000000018"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "family": "חרזי",
+      "given": [
+        "רונן"
+      ],
+      "text": "רונן חרזי"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "050545411",
+      "use": "home"
+    },
+    {
+      "system": "email",
+      "value": "Ronen.h@example.com"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1958-01-01",
+  "_birthDate": {
+    "extension": [
+      {
+        "url": "http://fhir.health.gov.il/StructureDefinition/ext-hebrew-date",
+        "extension": [
+          {
+            "url": "display",
+            "valueString": "ט' בטבת ה'תשי\"ח"
+          },
+          {
+            "url": "day",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://fhir.health.gov.il/cs/hebrew-date-day",
+                  "code": "9",
+                  "display": "ט'"
+                }
+              ]
+            }
+          },
+          {
+            "url": "month",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "4",
+                  "system": "http://fhir.health.gov.il/cs/hebrew-date-month",
+                  "display": "טבת"
+                }
+              ]
+            }
+          },
+          {
+            "url": "year",
+            "valueString": "ה'תשי\"ח"
+          }
+        ]
+      }
+    ]
+  },
+  "deceasedBoolean": false
+}

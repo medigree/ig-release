@@ -1,0 +1,170 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-allergy-intolerance-end",
+  "language": "en-US",
+  "url": "http://fhir.health.gov.il/StructureDefinition/ext-allergy-intolerance-end",
+  "version": "0.11.0",
+  "name": "AllergyIntoleranceEnd",
+  "title": "Ext: Allergy Intolerance End",
+  "status": "draft",
+  "date": "2022-08-15",
+  "description": "Supports the date when the allergy or intolerance was no longer valid, and/or, the reason why the allergy or intolerance is no longer valid.",
+  "purpose": "This extension extends the AllergyIntolerance resource to support the exchange of information describing the date when the allergy or intolerance was no longer valid, and/or, the reason why the allergy or intolerance is no longer valid, which is currently not supported by the FHIR standard.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "AllergyIntolerance"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Ext: Allergy Intolerance End",
+        "definition": "Supports the date when the allergy or intolerance was no longer valid, and/or, the reason why the allergy or intolerance is no longer valid."
+      },
+      {
+        "id": "Extension.extension:endDate",
+        "path": "Extension.extension",
+        "sliceName": "endDate",
+        "short": "The date the allergy or intolerance was recorded as no longer valid",
+        "definition": "The date the allergy or intolerance was recorded as no longer valid.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:endDate.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:endDate.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "endDate"
+      },
+      {
+        "id": "Extension.extension:endDate.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "The date the allergy was recorded as no longer valid",
+        "definition": "The date the allergy was recorded as no longer valid.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:endDate.valueDateTime",
+        "path": "Extension.extension.valueDateTime",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "valueDateTime": "2022-01-01",
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:reasonEnded",
+        "path": "Extension.extension",
+        "sliceName": "reasonEnded",
+        "short": "The reason why the allergy or intolerance has been resolved",
+        "definition": "The reason why the allergy or intolerance has been resolved.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:reasonEnded.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:reasonEnded.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "reasonEnded"
+      },
+      {
+        "id": "Extension.extension:reasonEnded.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "The reason why the allergy or intolerance has been resolved",
+        "definition": "The reason why the allergy or intolerance has been resolved.",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:reasonEnded.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "165009005",
+                  "system": "http://snomed.info/sct",
+                  "display": "Allergy testing - no reaction (finding)"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/il-core-allergy-intolerance-end-reason"
+        }
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://fhir.health.gov.il/StructureDefinition/ext-allergy-intolerance-end"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

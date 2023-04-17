@@ -1,0 +1,126 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-location",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-location",
+  "version": "0.11.0",
+  "name": "ILCoreLocation",
+  "title": "ILCore Location Profile",
+  "status": "draft",
+  "date": "2021-03-21",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the Location Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Location",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Location",
+        "path": "Location",
+        "short": "Israel Core Location Profile",
+        "definition": "The Location Profile is based upon the core FHIR Location Resource",
+        "constraint": [
+          {
+            "key": "il-location-mode",
+            "severity": "error",
+            "human": "If Location.mode = 'instance', Location.position or Location.address SHALL have a value",
+            "expression": "mode='instance' implies address.exists() or position.exists()",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-location"
+          }
+        ]
+      },
+      {
+        "id": "Location.status",
+        "path": "Location.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Location.name",
+        "path": "Location.name",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Location.telecom.system",
+        "path": "Location.telecom.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Location.telecom.value",
+        "path": "Location.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Location.telecom.use",
+        "path": "Location.telecom.use",
+        "mustSupport": true
+      },
+      {
+        "id": "Location.address",
+        "path": "Location.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-address"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Location.address.extension:geolocation",
+        "path": "Location.address.extension",
+        "sliceName": "geolocation",
+        "max": "0"
+      },
+      {
+        "id": "Location.managingOrganization",
+        "path": "Location.managingOrganization",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Location.partOf",
+        "path": "Location.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-location"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

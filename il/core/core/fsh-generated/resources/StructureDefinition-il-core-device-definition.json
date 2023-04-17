@@ -1,0 +1,78 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-device-definition",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-device-definition",
+  "version": "0.11.0",
+  "name": "ILCoreDeviceDefinition",
+  "title": "ILCore DeviceDefinition Profile",
+  "status": "draft",
+  "date": "2021-05-02",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the DeviceDefinition Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "DeviceDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DeviceDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DeviceDefinition",
+        "path": "DeviceDefinition",
+        "short": "ILCore DeviceDefinition Profile",
+        "definition": "Definitions for the profile-DeviceDefinition resource profile."
+      },
+      {
+        "id": "DeviceDefinition.manufacturerReference",
+        "path": "DeviceDefinition.manufacturerReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DeviceDefinition.owner",
+        "path": "DeviceDefinition.owner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DeviceDefinition.parentDevice",
+        "path": "DeviceDefinition.parentDevice",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-device-definition"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

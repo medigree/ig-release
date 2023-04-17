@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-plan-definition",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-plan-definition",
+  "version": "0.11.0",
+  "name": "ILCorePlanDefinition",
+  "title": "ILCore PlanDefinition Profile",
+  "status": "draft",
+  "date": "2022-07-13",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the PlanDefinition Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "PlanDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PlanDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PlanDefinition",
+        "path": "PlanDefinition",
+        "short": "ILCore PlanDefinition Profile",
+        "definition": "Definitions for the profile-PlanDefinition resource profile."
+      },
+      {
+        "id": "PlanDefinition.subjectReference",
+        "path": "PlanDefinition.subjectReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-group"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PlanDefinition.action.definitionCanonical",
+        "path": "PlanDefinition.action.definitionCanonical",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ActivityDefinition",
+              "http://fhir.health.gov.il/StructureDefinition/il-core-plan-definition",
+              "http://hl7.org/fhir/StructureDefinition/Questionnaire"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

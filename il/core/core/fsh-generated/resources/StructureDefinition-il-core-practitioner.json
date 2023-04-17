@@ -1,0 +1,1731 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "il-core-practitioner",
+  "url": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner",
+  "version": "0.11.0",
+  "name": "ILCorePractitioner",
+  "title": "ILCore Practitioner Profile",
+  "status": "draft",
+  "date": "2021-03-04",
+  "publisher": "Israeli Ministry of Health",
+  "description": "Israel Core proposed constraints and extensions on the Practitioner Resource",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner",
+        "path": "Practitioner",
+        "short": "ILCore Practitioner Profile",
+        "definition": "Definitions for the profile-practitioner resource profile."
+      },
+      {
+        "id": "Practitioner.identifier",
+        "path": "Practitioner.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier.system",
+        "path": "Practitioner.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier.value",
+        "path": "Practitioner.identifier.value",
+        "short": "The value that is unique within the system.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier.assigner",
+        "path": "Practitioner.identifier.assigner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.identifier:prac-lic",
+        "path": "Practitioner.identifier",
+        "sliceName": "prac-lic",
+        "short": "Israeli Ministry of Health practitioner license",
+        "definition": "Israeli Ministry of Health medical practitioner license. [MoH practitioner portal](https://practitioners.health.gov.il/Practitioners)\n\n<mark>Note:</mark> Should include the profession-code, a dash (-) and a sequence number. I.e., \\<profession-code\\>-\\<profession-certificate-number\\> where profession-code is a value of <a href=\"https://simplifier.net/ilcore/practitioner-profession-moh-duplicate-2\">PractitionerProfessionMoH</a>",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueString": "1-12345",
+            "label": "valid Israeli Pracitioner Licence number example"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:prac-lic.system",
+        "path": "Practitioner.identifier.system",
+        "fixedUri": "http://practitioners.health.gov.il/Practitioners"
+      },
+      {
+        "id": "Practitioner.identifier:prac-lic.value",
+        "path": "Practitioner.identifier.value",
+        "short": "Israeli Ministry of Health Practitioner License",
+        "example": [
+          {
+            "label": "General",
+            "valueString": "1-12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-dash",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL have a number, followed by a hyphen (\"-\") and followed by another number",
+            "expression": "matches('^[0-9]+(-[0-9]+)$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.identifier:nurse-lic",
+        "path": "Practitioner.identifier",
+        "sliceName": "nurse-lic",
+        "short": "Israeli MoH Nurse license",
+        "definition": "Israeli MoH Nurse license. MoH practitioner portal -  [https://practitioners.health.gov.il/Nurses](https://practitioners.health.gov.il/Nurses)",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueString": "11111",
+            "label": "valid Israeli Nurse registration number example"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:nurse-lic.system",
+        "path": "Practitioner.identifier.system",
+        "fixedUri": "http://practitioners.health.gov.il/Nurses"
+      },
+      {
+        "id": "Practitioner.identifier:nurse-lic.value",
+        "path": "Practitioner.identifier.value",
+        "short": "MoH Nurse License",
+        "example": [
+          {
+            "label": "General",
+            "valueString": "11111"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-digits",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL be a number with digits only",
+            "expression": "matches('^[0-9]*$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.identifier:molsa-sw-lic",
+        "path": "Practitioner.identifier",
+        "sliceName": "molsa-sw-lic",
+        "short": "Israeli Ministry of Welfare and Social Affairs socal-worker's license",
+        "definition": "Israeli Ministry of Welfare and Social Affairs socal-worker's license. [MOLSA social-worker's registry](https://data.gov.il/dataset/social-workers-registration)",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueString": "99999",
+            "label": "General"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:molsa-sw-lic.system",
+        "path": "Practitioner.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/molsa-socialworker-lic"
+      },
+      {
+        "id": "Practitioner.identifier:molsa-sw-lic.value",
+        "path": "Practitioner.identifier.value",
+        "short": "Israeli Ministry of Welfare and Social Affairs socal-worker's License",
+        "example": [
+          {
+            "label": "valid Israeli SW Licence example",
+            "valueString": "99999"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.identifier:il-id",
+        "path": "Practitioner.identifier",
+        "sliceName": "il-id",
+        "short": "Israeli National Identifier",
+        "definition": "Israeli ID number (9 digit unchangeable number, including leading zeros and includes a control digit), including temporarily identification numbers assigned by Israeli National Insurance",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueString": "000000018",
+            "label": "Valid Israli ID number example"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier:il-id.system",
+        "path": "Practitioner.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/il-national-id"
+      },
+      {
+        "id": "Practitioner.identifier:il-id.value",
+        "path": "Practitioner.identifier.value",
+        "short": "An Israeli ID number",
+        "constraint": [
+          {
+            "key": "il-id-chk",
+            "severity": "error",
+            "human": "Israeli ID must be 9-digits with a correct check-digit at the end.",
+            "expression": "matches('[0-9]{9}') and\r\nsubstring(8,1).toInteger()=\r\n(10-((substring(0,1).toInteger() +\r\nsubstring(1,1).toInteger()*2 mod 10 +\r\nsubstring(1,1).toInteger()*2 div 10 +\r\nsubstring(2,1).toInteger() +\r\nsubstring(3,1).toInteger()*2 mod 10 +\r\nsubstring(3,1).toInteger()*2 div 10 +\r\nsubstring(4,1).toInteger() +\r\nsubstring(5,1).toInteger()*2 mod 10 +\r\nsubstring(5,1).toInteger()*2 div 10 +\r\nsubstring(6,1).toInteger() +\r\nsubstring(7,1).toInteger()*2 mod 10 +\r\nsubstring(7,1).toInteger()*2 div 10) mod 10)) mod 10",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.identifier:pna-id",
+        "path": "Practitioner.identifier",
+        "sliceName": "pna-id",
+        "short": "Palestinian National Identifier",
+        "definition": "Palestinian ID number",
+        "min": 0,
+        "max": "1",
+        "example": [
+          {
+            "valueString": "000000018",
+            "label": "Valid Example"
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "Practitioner.identifier:pna-id.system",
+        "path": "Practitioner.identifier.system",
+        "fixedUri": "http://fhir.health.gov.il/identifier/pna-national-id"
+      },
+      {
+        "id": "Practitioner.identifier:pna-id.value",
+        "path": "Practitioner.identifier.value",
+        "short": "A Palestininan ID number"
+      },
+      {
+        "id": "Practitioner.identifier:ppn",
+        "path": "Practitioner.identifier",
+        "sliceName": "ppn",
+        "short": "Passport Number",
+        "definition": "Passport number",
+        "min": 0,
+        "max": "*",
+        "mustSupport": false
+      },
+      {
+        "id": "Practitioner.identifier:ppn.type",
+        "path": "Practitioner.identifier.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "PPN",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.identifier:ppn.system",
+        "path": "Practitioner.identifier.system",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/passport-uri"
+        }
+      },
+      {
+        "id": "Practitioner.identifier:ppn.value",
+        "path": "Practitioner.identifier.value",
+        "short": "Passport Number"
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.name.family",
+        "path": "Practitioner.name.family",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.address",
+        "path": "Practitioner.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-address"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification",
+        "path": "Practitioner.qualification",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            },
+            {
+              "type": "value",
+              "path": "identifier.system"
+            }
+          ],
+          "rules": "open"
+        },
+        "definition": "The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner. For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.\n\n<mark>Note:</mark> \n\n<b><u>Certificates of all professions except nursing</b></u>\n\n• For temporary license (slice: [moh-temp-practitioner-license]): code = 1; SHALL have identifier, consisting of profession code, a hyphen (\\\"-\\\"), followed by a number. Example - 1-1111;\n \n• For permanent license (slice: [moh-practitioner-license]): code = 2; SHALL have identifier, consisting of profession code, a hyphen (\\\"-\\\"), followed by a number. Example - 1-1111;\n \n• For certificate of expretise (slice: [moh-expretise]): code = 5; SHOULD (if available, not mandatory) have identifier, consisting of a number. Example - 12345;\n \n• For instructor certificate (slice: [moh-instructor]): code = 13; SHOULD (if available, not mandatory) have identifier, consisting of a number. Example - 12345;\n \nCheck each slice for more specific details."
+      },
+      {
+        "id": "Practitioner.qualification.code",
+        "path": "Practitioner.qualification.code",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-certificate-type"
+        }
+      },
+      {
+        "id": "Practitioner.qualification.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-temp-practitioner-license",
+        "short": "רישיון זמני",
+        "definition": "Temporary practitioner license issued by Israeli Ministry of Health \n \n<mark>Note:</mark> identifier (מספר רישיון זמני למקצועות הבריאות) is <b>mandatory</b> and SHOULD include the profession-code, a dash (-) and a sequence number. I.e., \\<profession-code\\>-\\<profession-certificate-number\\> where profession-code is a value of <a href=\"https://simplifier.net/ilcore/practitioner-profession-moh-duplicate-2\">PractitionerProfessionMoH</a>",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2",
+                  "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                  "display": "רפואת שיניים"
+                }
+              ]
+            },
+            "label": "Valid example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-profession-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "min": 1,
+        "example": [
+          {
+            "valueString": "1-12345",
+            "label": "valid Israeli Pracitioner certitificate number example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH Practitioner License URI",
+        "min": 1,
+        "fixedUri": "http://practitioners.health.gov.il/Practitioners"
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "License number, including prefix",
+        "min": 1,
+        "example": [
+          {
+            "label": "valid Israeli Pracitioner certitificate number example",
+            "valueString": "1-12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-dash",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL have a number, followed by a hyphen (\"-\") and followed by another number",
+            "expression": "matches('^[0-9]+(-[0-9]+)$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "1",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "1"
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "רשיון זמני"
+      },
+      {
+        "id": "Practitioner.qualification:moh-temp-practitioner-license.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-practitioner-license",
+        "short": "רישיון קבוע",
+        "definition": "Permanent practitioner license issued by Israeli Ministry of Health \n \n<mark>Note:</mark> identifier (מספר רישיון קבוע למקצועות הבריאות) is <b>mandatory</b> and SHOULD include the profession-code, a dash (-) and a sequence number. I.e., \\<profession-code\\>-\\<profession-certificate-number\\> where profession-code is a value of <a href=\"https://simplifier.net/ilcore/practitioner-profession-moh-duplicate-2\">PractitionerProfessionMoH</a>",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2",
+                  "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                  "display": "רפואת שיניים"
+                }
+              ]
+            },
+            "label": "valid example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-profession-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "min": 1,
+        "example": [
+          {
+            "valueString": "1-12345",
+            "label": "valid Israeli Pracitioner certitificate number example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH Practitioner License URI",
+        "min": 1,
+        "fixedUri": "http://practitioners.health.gov.il/Practitioners"
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "License number, including prefix",
+        "min": 1,
+        "example": [
+          {
+            "label": "valid Israeli Pracitioner certitificate number example",
+            "valueString": "1-12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-dash",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL have a number, followed by a hyphen (\"-\") and followed by another number",
+            "expression": "matches('^[0-9]+(-[0-9]+)$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "2",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "2",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "2"
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "רשיון קבוע"
+      },
+      {
+        "id": "Practitioner.qualification:moh-practitioner-license.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-expertise",
+        "short": "תעודת מומחה",
+        "definition": "Practitioner expertise certificate issued by Israeli Ministry of Health.\n \n<mark>Note:</mark> <b>Practitioner:</b> identifier (מספר תעודת מומחה למקצועות הבריאות) is not mandatory and if exists, SHOULD be a sequence number only. I.e, \\<expertise-certificate-number\\> \n\n<b>Nurse:</b> identifier (מספר תעודת מומחה למקצועות הסיעוד) is <b>not mandatory</b> and if exists, SHOULD include the expertise-code, a dash (-) and a sequence number. I.e, \\<expertise-code\\>-\\<expertise-certificate-number\\> where expertise-code is a value of <a href=\"https://simplifier.net/ilcore/practitioner-expertise-moh-duplicate-2\">PractitionerExpertiseMoH</a>",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "1",
+                  "system": "http://fhir.health.gov.il/cs/practitioner-expertise-moh",
+                  "display": "רפואה פנימית"
+                }
+              ]
+            },
+            "label": "valid example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-expertise-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "example": [
+          {
+            "valueString": "108-12345",
+            "label": "Valid MOH expertise certification number"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "min": 1,
+        "example": [
+          {
+            "label": "Valid MOH expertise certification number",
+            "valueString": "108-12345"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier:moh-practitioner-expertise",
+        "path": "Practitioner.qualification.identifier",
+        "sliceName": "moh-practitioner-expertise",
+        "min": 0,
+        "max": "*",
+        "example": [
+          {
+            "valueString": "12345",
+            "label": "Valid practitioner expertise certifiaction number"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier:moh-practitioner-expertise.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH expertise certificate URI",
+        "fixedUri": "http://fhir.health.gov.il/identifier/practitioner-expertise"
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier:moh-practitioner-expertise.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "Certificate number",
+        "example": [
+          {
+            "label": "Valid practitioner expertise certifiaction number",
+            "valueString": "12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-digits",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL be a number with digits only",
+            "expression": "matches('^[0-9]*$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier:moh-nurse-expertise",
+        "path": "Practitioner.qualification.identifier",
+        "sliceName": "moh-nurse-expertise",
+        "min": 0,
+        "max": "*",
+        "example": [
+          {
+            "valueString": "108-12345",
+            "label": "Valid Nurse expertise certifiaction number"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier:moh-nurse-expertise.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH expertise certificate URI",
+        "fixedUri": "http://fhir.health.gov.il/identifier/nurse-expertise"
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.identifier:moh-nurse-expertise.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "Certificate number",
+        "example": [
+          {
+            "label": "Valid Nurse expertise certifiaction number",
+            "valueString": "108-12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-dash",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL have a number, followed by a hyphen (\"-\") and followed by another number",
+            "expression": "matches('^[0-9]+(-[0-9]+)$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "5",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "5",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "5"
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "תעודת מומחה"
+      },
+      {
+        "id": "Practitioner.qualification:moh-expertise.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-instructor",
+        "short": "תעודת מדריך",
+        "definition": "Practitioner instructor certificate issued by Israeli Ministry of Health.\n \n<mark>Note:</mark> identifier (מספר תעודת מדריך) is <b>not mandatory</b> and if exists, SHOULD be a sequence number. I.e, <expertise-code>-<instructor-certificate-number>",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "1",
+                  "system": "http://fhir.health.gov.il/identifier/practitioner-expertise",
+                  "display": "רפואה פנימית"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-expertise-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "example": [
+          {
+            "valueString": "108-12345",
+            "label": "Valid MOH expertise certification number"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH expertise certificate URI",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/practitioner-instructor"
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "Certificate number",
+        "min": 1,
+        "example": [
+          {
+            "label": "Valid MOH expertise certification number",
+            "valueString": "108-12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-digits",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL be a number with digits only",
+            "expression": "matches('^[0-9]*$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "13",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "13",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "13"
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "תעודת מדריך"
+      },
+      {
+        "id": "Practitioner.qualification:moh-instructor.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-nurse-temp-permit",
+        "short": "היתר זמני",
+        "definition": "The slice is used for temporary licenses (temporary permit to practice nursing) for nurses only.\n \n<mark>Note:</mark> identifier  (מספר רישיון זמני למקצועות הסיעוד) is mandatory and SHOULD be a sequence number only. I.e., \\<temporary-permit-certificate-number\\>",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "102",
+                  "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                  "display": "אח/ות מעשי/ת"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-nurse-profession-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "min": 1,
+        "example": [
+          {
+            "valueString": "12345",
+            "label": "Valid nurse registration certificate number example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH nurse certificate URI",
+        "min": 1,
+        "fixedUri": "http://practitioners.health.gov.il/Nurses"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "Certificate number",
+        "min": 1,
+        "example": [
+          {
+            "label": "Valid nurse registration certificate number example",
+            "valueString": "12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-digits",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL be a number with digits only",
+            "expression": "matches('^[0-9]*$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "102",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "102",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "102"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "היתר זמני"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-temp-permit.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-nurse-registration-certificate",
+        "short": "תעודת רישום",
+        "definition": "The slice is used for permanent licenses (permanent registration certificate to practice nursing) <b>for nurses only</b>.\n\n<mark>Note:</mark> identifier (מספר רישיון קבוע למקצועות הסיעוד) is <b>mandatory</b> and SHOULD be a sequence number only. I.e., \\<permanent-registration-certificate-number\\> ",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "101",
+                  "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+                  "display": "אח/ות מוסמכ/ת"
+                }
+              ]
+            },
+            "label": "Valid Example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-nurse-profession-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "min": 1,
+        "example": [
+          {
+            "valueString": "12345",
+            "label": "Valid nurse registration certificate number example"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH nurse certificate URI",
+        "min": 1,
+        "fixedUri": "http://practitioners.health.gov.il/Nurses"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "Certificate number",
+        "min": 1,
+        "example": [
+          {
+            "label": "Valid nurse registration certificate number example",
+            "valueString": "12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-digits",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL be a number with digits only",
+            "expression": "matches('^[0-9]*$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "26",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "26",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "26"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "תעודת רישום"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-registration-certificate.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course",
+        "path": "Practitioner.qualification",
+        "sliceName": "moh-nurse-advanced-course",
+        "short": "תעודת רישום קורס ע ב",
+        "definition": "The slice is used for advanced course certifications (by healthcare specialty) for nurses only.\n\n<mark>Note:</mark> identifier (מספר תעודת קורס על בסיסי למקצועות הסיעוד) is <b>not mandatory</b> and if exists, SHOULD include the advanced-course-code, a dash (-) and permanent-registration-certificate-number (nurse license-number as the moh-nurse-registration-certificate identifier) <advanced-course-code>-<permanent-registration-certificate-number> where advanced-course-code is a value from <a href=\"https://simplifier.net/ilcore/practitioner-advanced-course-moh-duplicate-2\">PractitionerAdvancedCourseMoH</a>. It means the identifier for different advanced course certificates for the same nurse will not be unique, but the practice-code will show the difference between them.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.health.gov.il/ValueSet/practitioner-advanced-course-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "example": [
+          {
+            "valueString": "108-12345",
+            "label": "Valid Nurse advanced course certifiaction number"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoH nurse advanced course certificate URI",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/nurse-advanced-course"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "Certificate number",
+        "min": 1,
+        "example": [
+          {
+            "label": "Valid Nurse advanced course certifiaction number",
+            "valueString": "108-12345"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "identifier-dash",
+            "severity": "error",
+            "human": "identifier.value in this slice SHALL have a number, followed by a hyphen (\"-\") and followed by another number",
+            "expression": "matches('^[0-9]+(-[0-9]+)$')",
+            "source": "http://fhir.health.gov.il/StructureDefinition/il-core-practitioner"
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "110",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "110",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-moh"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "110"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "תעודת רישום קורס ע ב"
+      },
+      {
+        "id": "Practitioner.qualification:moh-nurse-advanced-course.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license",
+        "path": "Practitioner.qualification",
+        "sliceName": "molsa-practitioner-sw-license",
+        "short": "רישיון עבודה סוציאלית",
+        "definition": "Social-worker license issued by Israeli Ministry of Labor, Social Affairs and Social Services",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.extension",
+        "path": "Practitioner.qualification.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.extension:practice",
+        "path": "Practitioner.qualification.extension",
+        "sliceName": "practice",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://fhir.health.gov.il/StructureDefinition/ext-qualification-practice"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.extension:practice.valueCodeableConcept",
+        "path": "Practitioner.qualification.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "45",
+              "system": "http://fhir.health.gov.il/cs/practitioner-profession-moh",
+              "display": "עבודה סוציאלית"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.identifier",
+        "path": "Practitioner.qualification.identifier",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.identifier.system",
+        "path": "Practitioner.qualification.identifier.system",
+        "short": "Israeli MoLSA social-worker License URI",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/identifier/molsa-socialworker-lic"
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.identifier.value",
+        "path": "Practitioner.qualification.identifier.value",
+        "short": "License number",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.code",
+        "path": "Practitioner.qualification.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "SW",
+              "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.code.coding",
+        "path": "Practitioner.qualification.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.code.coding:default-slice",
+        "path": "Practitioner.qualification.code.coding",
+        "sliceName": "default-slice",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "SW",
+          "system": "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa"
+        }
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.code.coding:default-slice.system",
+        "path": "Practitioner.qualification.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://fhir.health.gov.il/cs/practitioner-certificate-type-molsa"
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.code.coding:default-slice.code",
+        "path": "Practitioner.qualification.code.coding.code",
+        "min": 1,
+        "fixedCode": "SW"
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.code.coding:default-slice.display",
+        "path": "Practitioner.qualification.code.coding.display",
+        "fixedString": "רישיון עבודה סוציאלית"
+      },
+      {
+        "id": "Practitioner.qualification:molsa-practitioner-sw-license.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://fhir.health.gov.il/StructureDefinition/il-core-organization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
