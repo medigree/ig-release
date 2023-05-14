@@ -1,0 +1,9 @@
+{
+  "website" : {
+    "style" : "fhir.layout",
+    "url" : "http://fhir.openmrs.org",
+    "server" : "apache",
+    "org" : "OpenMRS",
+    "layout":{"id":"openmrs.fhir.[code]","canonical":"http://fhir.openmrs.org/[code]"}
+  }
+}

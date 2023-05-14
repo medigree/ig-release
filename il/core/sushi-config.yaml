@@ -1,0 +1,72 @@
+# ╭─────────────────────────────────ImplementationGuide-fish.json──────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: core
+# id: ILCoreTemp
+packageId: health.gov.il.fhir.core
+canonical: http://fhir.health.gov.il/core
+# version: 0.10.0
+version: 0.0.1
+name: ILCoreImplementationGuide
+title: IL Core Implementation Guide
+status: draft
+publisher: Kippi Bordowitz
+contact:
+  - name: Kippi Bordowitz
+    telecom:
+      - system: email
+        value: amos@outburn.co.il
+description: Implementation guide for Israel Core FHIR
+license: CC0-1.0
+fhirVersion: 4.0.1
+parameters:
+  apply-publisher: true
+  apply-contact: true
+  show-inherited-invariants: false
+  special-url:
+    - http://fhir.health.gov.il/cs/city-symbol
+    - http://fhir.health.gov.il/cs/hebrew-date-day
+    - http://fhir.health.gov.il/cs/hebrew-date-month
+    - http://hl7.org/fhir/sid/icd-9-cm
+    - http://fhir.health.gov.il/cs/icd9il
+    - http://fhir.health.gov.il/cs/icd9il-code-types
+    - http://fhir.health.gov.il/cs/institution-type-moh
+    - http://fhir.health.gov.il/cs/medical-service-moh
+    - http://qualification.health.gov.il
+    - http://israeldrugs.health.gov.il
+    - http://fhir.health.gov.il/cs/paying-entity-moh
+    - http://fhir.health.gov.il/cs/passport-uri
+    - http://fhir.health.gov.il/cs/practitioner-profession-moh
+    - http://fhir.health.gov.il/cs/practitioner-profession-molsa
+    - http://fhir.health.gov.il/cs/practitioner-expertise-moh
+    - http://fhir.health.gov.il/cs/practitioner-education-moh
+    - http://fhir.health.gov.il/cs/practitioner-advanced-course-moh
+    - http://fhir.health.gov.il/cs/practitioner-education-type-moh
+    - http://yarpa.co.il/catalog
+
+copyrightYear: 2020+
+releaseLabel: ci-build
+dependencies:
+  hl7.fhir.us.core:
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/ig
+    version: 4.1.0
+
+# added for testing purposes. Hopefully will stay on later too // Kippi 19/01/2023
+pages:
+  index.md:
+    title: Index
+  6_downloads.md:
+    title: Downloads
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  IG Home: index.html
+  Table of Contents: toc.html
+  Artifacts Summary: artifacts.html
+  Other Resources:
+    FHIR Spec: new-tab {{site.data.fhir.path}}index.html
+    ILCore Community : new-tab https://en.fhir-il-community.org/fhir-israel-core
