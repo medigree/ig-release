@@ -1,6 +1,6 @@
-Alias: MedicPriorityVs = http://fhir.openmrs.org/fhir/request-priority
+//Alias: MedicPriorityVs = http://fhir.openmrs.org/fhir/request-priority
 Alias: $systemUrl = http://fhir.openmrs.org
-Alias: MedicIntentVs = http://fhir.openmrs.org/fhir/CodeSystem/medicationrequest-intent
+//Alias: MedicIntentVs = http://fhir.openmrs.org/fhir/CodeSystem/medicationrequest-intent
 
 /** medication request resource profile*/
 
@@ -12,82 +12,63 @@ Description: "A FHIR MedicationRequest as understood by OpenMRS"
 * identifier 1..*
 * status 1..1
 * intent 1..1
-* intent from MedicationRequestIntentVs
-* category 0..0
+//* intent from MedicationRequestIntentVs
 * priority 1..1
-* priority from MedicationRequestPriorityVs
-* doNotPerform 0..0
-* reported[x] 0..0
+//* priority from MedicationRequestPriorityVs
 * medication[x] 1..1
 * medicationCodeableConcept 1..1
 * subject 1..1 
 * subject only Reference(OMRSPatient)
 * encounter 1..1
 * encounter only Reference(OMRSEncounter)
-* supportingInformation 0..0
 * authoredOn 0..1
 * requester 1..1
 * requester only Reference(OMRSPractitioner)
-* performer 0..0
-* performerType 0..0
-* recorder 0..0
 * reasonCode 0..*
-* reasonReference 0..0
-* instantiatesCanonical 0..0
-* instantiatesUri 0..0
 * basedOn 0..*
 * basedOn only Reference(OMRSMedicationRequest)
-* groupIdentifier 0..0
-* courseOfTherapyType 0..0
-* insurance 0..0
 * note 0..1
 * dosageInstruction 0..*
 * dispenseRequest 0..1
-* dispenseRequest.initialFill 0..0
-* dispenseRequest.dispenseInterval 0..0
-* dispenseRequest.validityPeriod 0..0
 * dispenseRequest.numberOfRepeatsAllowed 1..1
 * dispenseRequest.quantity 1..1
-* dispenseRequest.expectedSupplyDuration 0..0
-* dispenseRequest.performer 0..0
-* substitution 0..0
 * priorPrescription 0..1
 * priorPrescription only Reference(OMRSMedicationRequest)
-* detectedIssue 0..0
-* eventHistory 0..0
 
 /** Medication request Intent value set*/
 
-ValueSet: MedicationRequestIntentVs
-Id: medication-request-intent-vs
-Title: "Medication Request Intent Vs"
-Description: "Medication Request Intent ValueSet"
-* MedicIntentVs#proposal "Proposal"
-* MedicIntentVs#plan "Plan"
-* MedicIntentVs#order "Order"
-* MedicIntentVs#original-order "Original Order"
-* MedicIntentVs#reflex-order "Reflex Order"
-* MedicIntentVs#filler-order "Filler Order"
-* MedicIntentVs#instance-order "Instance Order"
-* MedicIntentVs#option "Option"
+// ValueSet: MedicationRequestIntentVs
+// Id: medication-request-intent-vs
+// Title: "Medication Request Intent Vs"
+// Description: "Medication Request Intent ValueSet"
+// * ^experimental = true
+// * MedicIntentVs#proposal "Proposal"
+// * MedicIntentVs#plan "Plan"
+// * MedicIntentVs#order "Order"
+// * MedicIntentVs#original-order "Original Order"
+// * MedicIntentVs#reflex-order "Reflex Order"
+// * MedicIntentVs#filler-order "Filler Order"
+// * MedicIntentVs#instance-order "Instance Order"
+// * MedicIntentVs#option "Option"
 
 
 
-ValueSet: MedicationRequestPriorityVs
-Id: medication-request-priority-vs
-Title: "Medication Request Priority ValueSet"
-Description: "Openmrs Medication Request Priority ValueSet"
-* MedicPriorityVs#routine "Routine"
-* MedicPriorityVs#urgent "Urgent"
-* MedicPriorityVs#asap "ASAP"
-* MedicPriorityVs#stat "STAT"
+// ValueSet: MedicationRequestPriorityVs
+// Id: medication-request-priority-vs
+// Title: "Medication Request Priority ValueSet"
+// Description: "Openmrs Medication Request Priority ValueSet"
+// * ^experimental = true
+// * MedicPriorityVs#routine "Routine"
+// * MedicPriorityVs#urgent "Urgent"
+// * MedicPriorityVs#asap "ASAP"
+// * MedicPriorityVs#stat "STAT"
 
 
 /** MedicationRequest OMRS VS FHIR Mapping*/
 
 Mapping: MedicationRequestMapping   
 Source: OMRSMedicationRequest
-Target: "http://hl7.org/fhir/3.0/StructureDefinition/MedicationRequest"
+Target: "MedicationRequest"
 Id: omrs-medication-request-mapping
 Title: "FHIR  vs OMRS FHIR2"
 Description: "MedicationRequest mapping shows how attributes of the FHIR MedicationRequest Resource map to the attributes of the OpenMRS Drug Order object"
@@ -110,8 +91,8 @@ Description: "MedicationRequest mapping shows how attributes of the FHIR Medicat
 Instance: OMRSMedicationRequestExample
 InstanceOf: OMRSMedicationRequest
 Usage: #example
-Title: "OMRS Medication Request Example"
-Description: "Example of the OMRS medication Request Resource"
+Title: "OpenMRS Medication Request Example"
+Description: "Example OpenMRS Medication Request resource"
 * identifier.id = "c9582307-b812-4acc-b82b-77c4c24ba7bc"
 * status = #active
 * intent = #order
@@ -146,7 +127,7 @@ Usage: #definition
 Title: "Search through MedicationRequest endpoint by subject uuid"
 * name = "MedicationRequestSubjectSearchParameter"
 * status = #active
-* description = "Searches for MedicationRequest by a given subject eg) /ws/fhir2/{release}/MedicationRequest?subject:Patient={patientUuid} "
+* description = "Searches for MedicationRequest by a given subject eg) /ws/fhir2/{release}/MedicationRequest?subject:Patient={patientUuid}"
 * code = #subject
 * base[0] = #MedicationRequest
 * target = #MedicationRequest
@@ -248,14 +229,14 @@ Title: "Search through MedicationRequest endpoint by the patient's family name"
 * target = #MedicationRequest
 * type = #string
 
-Instance: MedicationRequest-patient.name
+Instance: MedicationRequest-patient-name
 InstanceOf: SearchParameter
 Usage: #definition
 Title: "Search through MedicationRequest endpoint by the patient's full or partial name"
 * name = "MedicationRequestPatientNameSearchParameter"
 * status = #active
-* description = "Searches for MedicationRequest based on the patient's full or partial name eg) /ws/fhir2/{release}/MedicationRequest?patient.name={name}"
-* code = #patient.name
+* description = "Searches for MedicationRequest based on the patient's full or partial name eg) /ws/fhir2/{release}/MedicationRequest?patient-name={name}"
+* code = #patient-name
 * base[0] = #MedicationRequest
 * target = #MedicationRequest
 * type = #string 
@@ -263,7 +244,7 @@ Title: "Search through MedicationRequest endpoint by the patient's full or parti
 Instance: MedicationRequest-requestor
 InstanceOf: SearchParameter
 Usage: #definition
-Title: "Search through MedicationRequest endpoint by a given Practitioner "
+Title: "Search through MedicationRequest endpoint by a given Practitioner"
 * name = "MedicationRequestRequestorSearchParameter"
 * status = #active
 * description = "Searches for MedicationRequest by a given Practitioner Reference uuid eg) /ws/fhir2/{release}/MedicationRequest?requestor={Uuid}"

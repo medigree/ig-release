@@ -10,9 +10,9 @@ Description: "A Task resource represent an activity that is to be performed,and 
 * for only Reference(OMRSPatient)
 * authoredOn 1..1
 * status 1..1
-* status from OMRSPatientTaskStatusVS
+//* status from OMRSPatientTaskStatusVS
 * intent 1..1
-* intent from OMRSPatientTaskIntentVS
+//* intent from OMRSPatientTaskIntentVS
 * lastModified 0..1
 * output 0..* 
 * input 0..*
@@ -20,33 +20,14 @@ Description: "A Task resource represent an activity that is to be performed,and 
 * encounter only Reference(OMRSEncounter)
 * owner 0..1
 * owner only Reference(Organization)
-* statusReason 0..0
-* businessStatus 0..0
-* code 0..0
-* description 0..0
-* focus 0..0
-* executionPeriod 0..0
-* performerType 0..0
-* reasonCode 0..0
-* reasonReference 0..0
-* note 0..0
-* restriction 0..0
-* requester 0..0
-* instantiatesCanonical	0..0
-* instantiatesUri 0..0
-* groupIdentifier 0..0
-* partOf 0..0
-* priority 0..0
-* location 0..0
-* insurance 0..0
-* relevantHistory 0..0
+
 
 // OpenMRS Task  Example
 Instance: example-openmrs-Task
 InstanceOf: OpenMRSTask
 Usage: #example
-Title: "Openmrs Task"
-Description: "Example OMRS Task Resource"
+Title: "OpenMRS Task"
+Description: "Example OMRS Task resource"
 * id = "e8f8d71a-6c14-4105-b6fe-30f3cf6b7dc9"
 * status = #completed
 * basedOn = Reference(example-openmrs-ServiceRequest)
@@ -54,7 +35,7 @@ Description: "Example OMRS Task Resource"
 * for = Reference(example-openmrs-Patient)
 * authoredOn =  "2021-02-20"
 * lastModified = "2021-02-21"
-* owner.reference = "Organization/1832473e-2fe0-452d-abe9-3cdb9879522f"
+* owner = Reference(example-openmrs-Organization)
 * owner.display = "Clinical Laboratory @ Acme Hospital"
 * encounter = Reference(EncounterExample)
 
@@ -62,7 +43,7 @@ Description: "Example OMRS Task Resource"
 
 Mapping: TaskMapping
 Source: OpenMRSTask
-Target: "http://hl7.org/fhir/3.0/StructureDefinition/Task"
+Target: "Task"
 Id: task-mapping
 Title: "FHIR HL7 vs OMRS FHIR2"
 Description: "Task is used to represent an activity that is to be performed,and track the completion of said activity."

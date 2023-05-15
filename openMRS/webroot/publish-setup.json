@@ -4,6 +4,7 @@
     "url" : "http://fhir.openmrs.org",
     "server" : "apache",
     "org" : "OpenMRS",
+    "index-template":"index.template",
     "layout":{"id":"openmrs.fhir.[code]","canonical":"http://fhir.openmrs.org/[code]"}
   }
 }
