@@ -5,6 +5,10 @@
     "server" : "apache",
     "org" : "OpenMRS",
     "index-template":"index.template",
-    "layout":{"id":"openmrs.fhir.[code]","canonical":"http://fhir.openmrs.org/[code]"}
+    "layout-rules" : [{
+      "npm" : "openmrs.fhir.*",
+      "canonical" : "http://fhir.openmrs.org/{3}",
+      "destination" : "/{3}"
+    }]
   }
 }
