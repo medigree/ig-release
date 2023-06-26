@@ -4,11 +4,11 @@
     "url" : "http://fhir.openmrs.org",
     "server" : "apache",
     "org" : "OpenMRS",
-    "index-template":"index.template",
-    "layout-rules" : [{
-      "npm" : "openmrs.fhir.*",
-      "canonical" : "http://fhir.openmrs.org/{3}",
-      "destination" : "/{3}"
-    }]
-  }
+    "index-template":"index.template"
+  },
+  "layout-rules" : [{
+    "npm" : "openmrs.fhir.*",
+    "canonical" : "http://fhir.openmrs.org/{3}",
+    "destination" : "/{3}"
+  }]
 }
