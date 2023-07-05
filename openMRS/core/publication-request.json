@@ -1,0 +1,14 @@
+{
+    "package-id" : "openmrs.fhir.core",
+    "title" : "  Core", 
+    "category" : "base",
+    "introduction" : "OpenMRS Core FHIR Implementation Guide publication: FHIR resources used in OpenMRS, and search parameters that can be used to qery information in OpenMRS",
+    "version" : "0.1.0",
+    "desc" : "First stable release",
+    "mode" : "milestone",    
+    "path" : "http://fhir.openmrs.org/core/0.1.0",
+    "ci-build": "https://openmrs.github.io/openmrs-contrib-fhir2-ig",    
+    "first": true,
+    "status" : "release",
+    "sequence" : "Releases"
+  }
