@@ -1,2 +1,23 @@
 {
+  "packages" : [
+    {
+      "path" : "core/package-list.json",
+      "package-id" : "openmrs.fhir.core",
+      "title" : "  Core",
+      "canonical" : "http://fhir.openmrs.org/core",
+      "category" : "base",
+      "ci-build" : "https://openmrs.github.io/openmrs-contrib-fhir2-ig",
+      "version-count" : 1,
+      "latest" : {
+        "version" : "0.1.0",
+        "date" : "2023-06-30",
+        "path" : "http://fhir.openmrs.org/core/0.1.0"
+      },
+      "milestone" : {
+        "version" : "0.1.0",
+        "date" : "2023-06-30",
+        "path" : "http://fhir.openmrs.org/core/0.1.0"
+      }
+    }
+  ]
 }
