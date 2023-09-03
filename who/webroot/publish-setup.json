@@ -1,9 +1,14 @@
 {
   "website" : {
     "style" : "fhir.layout",
-    "url" : "http://fhir.org/guides/who",
+    "url" : "http://worldhealthorganization.github.io",
     "server" : "apache",
     "org" : "WHO",
-    "layout":{"id":"who.fhir.[code]","canonical":"http://fhir.org/guides/who/[code]"}
-  }
+    "index-template":"index.template"
+  },
+    "layout-rules" : [{
+      "npm" : "who.fhir.*",
+      "canonical" : "http://worldhealthorganization.github.io/{3}",
+      "destination" : "/{3}"
+    }]  
 }

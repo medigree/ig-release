@@ -1,0 +1,2 @@
+Profile: SMARTBusinessProcess
+Parent: PlanDefinition
