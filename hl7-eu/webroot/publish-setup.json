@@ -1,8 +1,14 @@
 {
   "website" : {
     "style" : "fhir.layout",
-    "url" : "http://hl7.eu/fhir/ig",
+    "url" : "http://hl7.eu/fhir",
     "server" : "apache",
-    "org" : "HL7 Europe"
-  }
+    "org" : "HL7 Europe",
+    "index-template":"index.template"
+  },
+  "layout-rules" : [{
+    "npm" : "hl7.fhir.eu.*",
+    "canonical" : "http://hl7.eu/fhir/{4}",
+    "destination" : "/{4}"
+  }]
 }
